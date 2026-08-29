@@ -1170,6 +1170,175 @@ tahun pada perputaran median --- jauh melampaui seluruh imbal hasil yang
 tercatat. Fakta ini dilaporkan terbuka, dan merupakan alasan tambahan mengapa
 kesimpulan penelitian ini tidak disandarkan pada metrik portofolio.
 
+\section{Lantai Acak: Apakah Sistemnya Mengalahkan Penarikan Acak?}
+\label{sec:lantai}
+
+Seluruh Bab~IV sampai titik ini membandingkan lima formulasi \emph{satu sama
+lain}. Pertanyaan yang belum dijawab, dan yang wajib dijawab agar angka-angka
+di atas punya makna absolut, adalah: apakah salah satu di antaranya lebih baik
+daripada tidak memakai model bahasa sama sekali?
+
+Pembandingnya dibangun langsung dari tata bahasa DSL. Enam ratus ekspresi
+ditarik acak dengan kedalaman 1--3, memakai daftar fungsi, rentang periode, dan
+enam \textit{leaf} data yang sama persis dengan yang diberikan kepada agen.
+Ekspresi itu kemudian dilewatkan rangkaian \textit{gate} yang sama dan dinilai
+oleh \code{Lab} yang sama pada jendela yang sama. Satu-satunya yang berbeda
+adalah asal ekspresinya.
+
+\input{assets/tables/idx_lantai}
+
+Hasilnya memisah dengan tajam menurut sumbu yang diuji, dan pemisahan itu
+sendiri adalah temuan.
+
+\subsection{Pada validitas, sistemnya menang telak}
+
+Keluarga $\mathcal{R}$ meloloskan 84,9\% ekspresinya melawan 57,7\% untuk
+penarikan acak --- selisih 27,3 poin persen dengan
+$p = 8{,}9\times10^{-22}$ dan $h$ Cohen $= 0{,}62$. Medium teks penuh juga
+menang, 78,3\% dengan $p = 1{,}5\times10^{-5}$. Rantai agen jelas mengerjakan
+sesuatu yang nyata: ia menuliskan ekspresi yang sah jauh lebih sering daripada
+penarikan acak dari tata bahasa yang sama.
+
+\subsection{\code{raw} tidak mengalahkan penarikan acak}
+
+Formulasi \code{raw} meloloskan 45,8\% ekspresinya --- \textbf{11,9 poin persen
+di bawah} penarikan acak, dengan $p = 0{,}098$. Selisih itu tidak signifikan,
+sehingga pernyataan yang sah adalah bahwa \code{raw} \emph{tidak dapat
+dibedakan dari penarikan acak}, dengan arah efek yang negatif.
+
+Ini pernyataan yang jauh lebih tajam daripada ``\code{raw} lebih buruk dari
+$\mathcal{R}$''. Seluruh rantai tiga agen, sepuluh langkah laten per agen, dan
+seluruh biaya komputasinya, ketika langkah latennya memakai proyeksi ridge,
+menghasilkan ekspresi sah tidak lebih sering daripada menarik simbol secara
+acak dari tata bahasanya.
+
+\subsection{Pada mutu sinyal, tidak ada yang mengalahkan penarikan acak}
+
+Kolom terakhir Tabel~\ref{tab:lantai} adalah temuan yang paling membatasi
+seluruh penelitian ini, dan justru karena itu harus dilaporkan paling jelas.
+Median $\lvert\mathrm{IC}\rvert$ ekspresi acak adalah 0,0102. Keluarga
+$\mathcal{R}$ mencapai 0,0103 ($p = 0{,}073$), \code{raw} 0,0076
+($p = 0{,}537$), dan medium teks 0,0084 ($p = 0{,}469$).
+
+\textbf{Tidak satu pun sumber ekspresi berbasis model bahasa menghasilkan
+sinyal yang lebih baik daripada penarikan acak dari tata bahasa DSL.}
+
+Tafsirnya harus hati-hati dan tidak boleh dilebihkan ke dua arah. Ini
+\emph{bukan} berarti model bahasanya tidak berguna: pada sumbu validitas ia
+menang dengan $p = 10^{-22}$, dan pada tugas penalaran umum ia jelas jauh di
+atas kebetulan. Yang ditunjukkan tabel ini adalah bahwa \emph{pada ranah
+pencarian faktor alpha dengan rancangan single-pass ini}, kemampuan yang
+terbukti dimiliki sistem adalah menuliskan ekspresi yang sah, bukan memilih
+ekspresi yang prediktif.
+
+Temuan ini menyatu dengan disosiasi Tingkat 5 dan membentuk satu gambaran yang
+konsisten pada tiga sumbu sekaligus:
+
+\begin{enumerate}
+  \item \textbf{Validitas} --- formulasi berpengaruh besar
+        ($p = 10^{-7}$ sampai $10^{-13}$), dan sistem mengalahkan acak
+        ($p = 10^{-22}$).
+  \item \textbf{Mutu sinyal} --- formulasi tidak berpengaruh
+        ($p = 0{,}21$; $p = 0{,}64$), dan sistem tidak mengalahkan acak
+        ($p = 0{,}07$).
+  \item \textbf{Keragaman sinyal} --- formulasi tidak berpengaruh (Subbab
+        berikut, seluruh sel berada dalam satu simpangan baku).
+\end{enumerate}
+
+Ketiganya menunjuk ke satu kesimpulan: yang diperbaiki proyeksi \textit{convex
+hull} adalah \emph{kemampuan kanal menuliskan simbol}, dan hanya itu.
+
+\section{Keragaman Sinyal: Berapa Banyak Faktor yang Benar-Benar Berbeda}
+
+Jumlah ekspresi bukan ukuran keragaman. Dua ekspresi dengan teks yang sangat
+berbeda dapat menghasilkan deret IC harian yang hampir identik, dan karenanya
+membawa satu sinyal yang sama. Untuk mengukurnya, korpus dinilai ulang pada
+jendela penuh 2021--2025 dengan deret IC harian per ekspresi disimpan, lalu
+dihitung \emph{rasio partisipasi} dari spektrum matriks korelasinya:
+\begin{equation}
+  n_{\text{eff}} = \frac{\bigl(\sum_i \lambda_i\bigr)^2}{\sum_i \lambda_i^2},
+  \label{eq:neff}
+\end{equation}
+dengan $\lambda_i$ nilai eigen matriks korelasi antar-deret IC. Besaran ini
+bernilai 1 bila seluruh ekspresi membawa satu sinyal yang sama dan $n$ bila
+seluruhnya saling ortogonal.
+
+Hasilnya tegas: dari \textbf{1\,003} ekspresi dengan deret IC harian,
+$n_{\text{eff}} = \textbf{36{,}6}$ --- yaitu hanya \textbf{3,7\%}. Seribu
+ekspresi yang berbeda secara tekstual ternyata membawa kurang dari empat puluh
+sinyal yang benar-benar berbeda.
+
+Temuan ini penting dilaporkan justru karena tidak menguntungkan narasi
+penelitian. Ia membatasi tafsir seluruh Bab~IV: sistem ini menghasilkan banyak
+ekspresi, tetapi tidak menghasilkan banyak \emph{ide}.
+
+\subsection{Apakah keluarga $\mathcal{R}$ juga lebih beragam?}
+
+Pertanyaan lanjutannya wajar: mungkin keunggulan keluarga $\mathcal{R}$ bukan
+hanya soal validitas, melainkan juga keragaman. Perbandingan naifnya
+menyesatkan. Rasio $n_{\text{eff}}/n$ menurun secara mekanis seiring
+bertambahnya $n$, dan sel \code{raw} justru memiliki jauh lebih sedikit
+ekspresi --- konsekuensi langsung temuan Tingkat 2. Karena itu rasio mentahnya
+tampak paling tinggi untuk \code{raw} (0,579 berbanding 0,22--0,28 untuk sel
+lain), yang akan salah terbaca sebagai ``\code{raw} lebih beragam''.
+
+Perbandingan yang sah menyamakan $n$ lebih dahulu. Setiap sel disubsampel ke
+$n = 17$, yaitu ukuran sel terkecil, sebanyak 200 ulangan, lalu
+$n_{\text{eff}}$-nya dirata-rata. Hasilnya seluruh sel berada pada rentang
+\textbf{9,8 sampai 12,3}, dengan \code{kv\_raw} pada 11,94 --- tepat di tengah,
+dan seluruh selisihnya berada dalam satu simpangan baku subsampel
+($\approx 1{,}3$).
+
+\textbf{Tidak ada perbedaan keragaman sinyal antar-formulasi.} Ini konfirmasi
+ketiga atas disosiasi Tingkat 5: keluarga $\mathcal{R}$ menghasilkan lebih
+banyak ekspresi yang sah, dengan mutu sinyal yang sama dan keragaman sinyal
+yang sama.
+
+\section{Peluruhan Sinyal Antar-Tahun}
+
+Kekhawatiran yang wajar terhadap seluruh penelitian pencarian faktor adalah
+bahwa sinyal yang terlihat hanyalah kecocokan terhadap satu periode. Bila
+demikian, $\lvert\mathrm{IC}\rvert$ seharusnya tinggi pada tahun seleksi lalu
+meluruh pada tahun-tahun sesudahnya.
+
+Tabel~\ref{tab:stabilitas} melaporkan rerata $\lvert\mathrm{IC}\rvert$ per
+tahun kalender atas seluruh korpus. Polanya \emph{tidak} meluruh:
+0,0140 pada 2021 (tahun seleksi), 0,0112 pada 2022, 0,0095 pada 2023,
+\textbf{0,0144} pada 2024 --- lebih tinggi daripada tahun seleksi --- dan
+0,0111 pada 2025.
+
+Fluktuasi antar-tahun jelas ada, tetapi tidak berbentuk peluruhan monoton dari
+tahun seleksi. Tafsir yang paling sederhana adalah bahwa besaran
+$\lvert\mathrm{IC}\rvert$ lebih ditentukan oleh keadaan pasar tiap tahun
+daripada oleh kedekatan tahun itu ke jendela seleksi. Ini melengkapi temuan
+Tingkat 6: bukan hanya tanda IC yang bertahan, besarannya pun tidak runtuh.
+
+\section{Keberpindahan Keputusan \textit{Gate} Antar-Pasar}
+
+Satu keberatan metodologis perlu ditutup. Laju lolos \textit{gate} pada
+Tabel~\ref{tab:keandalan} diukur \emph{saat generasi}, dan tahap eksekusi pada
+rangkaian \textit{gate} waktu itu memakai sampel pasar A-share. Apakah angka
+itu masih berlaku setelah penelitian berpindah ke pasar Indonesia?
+
+Pengujiannya langsung: jalankan rangkaian \textit{gate} yang sama --- ketujuh
+tahapnya, bukan hanya tahap eksekusi --- pada panel LQ45, lalu bandingkan
+keputusannya dengan yang tercatat.
+
+\input{assets/tables/idx_gatepasar}
+
+Kesesuaiannya sangat tinggi. Hal ini tidak mengejutkan bila diingat bahwa enam
+dari tujuh tahap \textit{gate} bersifat struktural dan tidak menyentuh data
+pasar sama sekali; satu-satunya tahap yang dapat berbeda adalah eksekusi, dan
+ekspresi yang menghasilkan kolom hidup pada satu panel harga-volume umumnya
+juga hidup pada panel lain dengan skema kolom yang sama.
+
+Perlu dicatat bahwa versi pertama pengujian ini keliru: ia membandingkan
+\emph{tahap eksekusi saja} pada IDX melawan keluaran \emph{rangkaian penuh}
+pada A-share. Perbandingan itu tidak setara --- tahap eksekusi sendirian jauh
+lebih permisif --- dan menghasilkan ketidaksesuaian semu yang didominasi arah
+``gagal di A-share, lolos di IDX''. Angka yang dilaporkan di sini berasal dari
+perbandingan rangkaian penuh melawan rangkaian penuh.
+
 \section{Rangkuman Pengujian Hipotesis}
 
 \begin{table}[htbp]
@@ -1196,6 +1365,14 @@ H3 mutu sinyal & median $|IC|$, kv & 0,0103 vs 0,0076 &
   \textbf{tidak ditolak} ($p=0{,}64$) \\
 H4 bentuk & lolos \textit{gate} sepanjang $\alpha$ &
   50, 55, 100, 100, 100\% & \textbf{diterima} (tangga) \\
+\hline
+\multicolumn{4}{l}{\textit{Pembanding lantai acak (bukan hipotesis a priori):}} \\
+--- & lolos \textit{gate}, $\mathcal{R}$ vs acak & 84,9\% vs 57,7\% &
+  unggul ($p=8{,}9\times10^{-22}$) \\
+--- & lolos \textit{gate}, \code{raw} vs acak & 45,8\% vs 57,7\% &
+  tak berbeda ($p=0{,}098$) \\
+--- & median $|IC|$, $\mathcal{R}$ vs acak & 0,0103 vs 0,0102 &
+  tak berbeda ($p=0{,}073$) \\
 \hline
 \end{tabular}
 \end{table}
@@ -1245,6 +1422,14 @@ lolos \textit{gate} yang identik.
 fungsi tangga berambang: 50\%, 55\%, 100\%, 100\%, 100\% sepanjang
 $\alpha = 0; 0{,}25; 0{,}5; 0{,}75; 1$.
 
+\textbf{Temuan tambahan --- lantai acak.} Enam ratus ekspresi yang ditarik
+acak dari tata bahasa DSL yang sama meloloskan \textit{gate} 57,7\%.
+Keluarga $\mathcal{R}$ mengalahkannya telak (84,9\%,
+$p = 8{,}9\times10^{-22}$), sedangkan \code{raw} \emph{tidak dapat dibedakan}
+darinya (45,8\%, $p = 0{,}098$, arah negatif). Pada sumbu mutu sinyal, tidak
+satu pun sumber berbasis model bahasa mengalahkan penarikan acak
+($p = 0{,}073$ untuk $\mathcal{R}$; $p = 0{,}47$ untuk medium teks).
+
 \subsection{Kontribusi utama}
 
 Kontribusi penelitian ini adalah sebuah \textbf{disosiasi} yang terukur:
@@ -1263,6 +1448,13 @@ memberi $p = 0{,}21$ pada korpus yang sama. Dari lengan penalaran umum, nilai-$p
 kontras \code{raw} melawan keluarga $\mathcal{R}$ turun berorde-orde seiring
 meningkatnya tuntutan kesetiaan simbol tugas: tidak signifikan pada
 ARC-Challenge, marginal pada GSM8K, dan $10^{-8}$ pada HumanEval+.
+
+Konfirmasi ketiga datang dari lantai acak. Pada sumbu validitas, sistem
+mengalahkan penarikan acak dengan $p = 10^{-22}$; pada sumbu mutu sinyal, ia
+tidak mengalahkannya sama sekali. Dan dari sumbu keragaman, setelah $n$
+disamakan lewat subsampel, seluruh formulasi memberi jumlah sinyal efektif
+yang sama dalam satu simpangan baku. Tiga sumbu, tiga pengukuran bebas, satu
+kesimpulan yang sama.
 
 Temuan ini mengoreksi cara membaca LatentMAS. Kegagalan formulasi ridge bukan
 kegagalan penalaran laten sebagai gagasan, melainkan kegagalan spesifik pada
@@ -1313,6 +1505,19 @@ batas likuiditas, aturan suspensi, maupun batas auto-reject. Biaya transaksi
 ditetapkan nol; pada perputaran median yang tercatat, biaya realistis akan
 melampaui seluruh imbal hasil yang terukur.
 
+\textbf{Mutu sinyal tidak melampaui penarikan acak.} Ini keterbatasan yang
+paling membatasi klaim praktis penelitian ini, dan sudah dinyatakan pada
+Subbab~\ref{sec:lantai}. Pada ranah pencarian faktor dengan rancangan
+\textit{single-pass} ini, kemampuan sistem yang terbukti adalah menuliskan
+ekspresi yang sah, bukan memilih ekspresi yang prediktif. Perlu ditegaskan
+bahwa keterbatasan ini \emph{tidak} membatalkan temuan utama: disosiasi yang
+menjadi kontribusi skripsi ini justru bekerja pada sumbu validitas, yaitu satu-
+satunya sumbu tempat sistem memang mengungguli lantai acak.
+
+\textbf{Keragaman sinyal rendah.} Dari 1\,003 ekspresi dengan deret IC harian,
+jumlah sinyal efektif hanya 36,6 atau 3,7\%. Korpus yang tampak besar secara
+tekstual jauh lebih kecil secara statistik.
+
 \textbf{Tanpa loop evolusi.} Rancangan bersifat \textit{single-pass}. Sistem
 pencarian faktor produksi umumnya menjalankan banyak putaran dengan umpan
 balik; hasil penelitian ini tidak dapat langsung dipindahkan ke rancangan
@@ -1325,7 +1530,13 @@ lampiran sebagai catatan, bukan sebagai bukti.
 
 \section{Saran}
 
-\textbf{Untuk penelitian lanjutan.} Pertama, pengujian ulang pada model dengan
+\textbf{Untuk penelitian lanjutan.} Nol, dan paling mendesak: hasil lantai
+acak menunjukkan bahwa mekanisme yang perlu diperbaiki bukan lagi kanal
+komunikasinya melainkan \emph{seleksinya}. Rancangan \textit{single-pass} tidak
+memberi sistem umpan balik apa pun tentang mutu ekspresi yang dihasilkannya,
+sehingga tidak ada jalan baginya untuk mengungguli penarikan acak pada sumbu
+itu. Menambahkan satu putaran umpan balik berbasis IC pada jendela latih yang
+terpisah adalah eksperimen paling langsung untuk mengujinya. Pertama, pengujian ulang pada model dengan
 embedding \textit{tied} akan menguji langsung mekanisme yang diusulkan: bila
 disosiasi ini benar disebabkan jarak ke \textit{convex hull}, maka pada model
 \textit{tied} ia harus menghilang. Kedua, sumbu interpolasi dapat diperhalus di
@@ -1346,6 +1557,14 @@ hampir tidak pernah gagal --- dengan biaya komputasi yang justru lebih rendah.
 
 % ===========================================================================
 \appendix
+% Kelas `laporanta1statugm` mendefinisikan \thesection memakai
+% \arabic{chapter}, yang benar untuk bab bernomor Romawi tetapi salah untuk
+% lampiran bernomor huruf: subbab Lampiran C akan tercetak "3.1." alih-alih
+% "C.1.". Dikembalikan ke perilaku baku LaTeX di sini saja.
+\renewcommand{\thesection}{\thechapter.\arabic{section}.}
+\renewcommand{\thesubsection}{\thechapter.\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
 
 \chapter{MATRIKS SEL EKSPERIMEN}
 

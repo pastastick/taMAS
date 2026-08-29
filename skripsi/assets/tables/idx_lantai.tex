@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Sistem melawan LANTAI ACAK: 600 ekspresi ditarik acak dari tata bahasa DSL yang sama, dilewatkan rangkaian \textit{gate} yang sama, dan dinilai pada jendela yang sama. Kolom kiri menguji VALIDITAS (uji eksak Fisher), kolom kanan menguji MUTU SINYAL (uji Mann--Whitney atas sebaran $\lvert IC\rvert$). Perbedaan kesimpulan antara kedua kolom adalah temuan tersendiri.}
+\label{tab:lantai}
+\small
+\begin{tabular}{lrrlrl}
+\hline
+Sumber ekspresi & Lolos \textit{gate} & Selisih & Fisher $p$ & Median $|IC|$ & M--W $p$ \\
+\hline
+penarikan acak & 346/600 = 57,7\% & --- & --- & 0,0102 & --- \\
+\hline
+keluarga $\mathcal{R}$ (kv) & 372/438 = 84,9\% & 27,3 pp & $8,85\times10^{-22}$ & 0,0103 & 0,073 \\
+\code{raw} (kv) & 27/59 = 45,8\% & -11,9 pp & 0,098 & 0,0076 & 0,537 \\
+\code{text} & 94/120 = 78,3\% & 20,7 pp & $1,48\times10^{-5}$ & 0,0084 & 0,469 \\
+\hline
+\end{tabular}
+\end{table}
