@@ -1,0 +1,10 @@
+{
+  "arity": 208,
+  "regulator evaluate failed": 93,
+  "semantics": 63,
+  "regulator reject": 37,
+  "unparsable expression": 35,
+  "execution": 33,
+  "variable": 5,
+  "ParseException": 3
+}

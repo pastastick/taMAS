@@ -1,0 +1,53 @@
+\chapter{Implementasi Empat Persamaan Langkah Laten}
+\label{lamp:kode}
+
+Fungsi berikut adalah satu-satunya tempat kelima persamaan langkah laten
+diwujudkan dalam kode; seluruh sel eksperimen memanggilnya lewat jalur yang
+sama. Komentar penjelas yang panjang dipendekkan karena isinya sudah diuraikan
+pada Bab~III. Berkas asli: \texttt{backend/llm/methods.py}.
+
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\scriptsize,
+breaklines=true,frame=single,showstringspaces=false]
+def latent_step_vec(
+    last_hidden: "torch.Tensor",
+    *,
+    mode: str,
+    model: Any,
+    realigner: LatentRealigner,
+    temp: float,
+    beta: float,
+) -> "torch.Tensor":
+    if mode == "raw":
+        return realigner.apply(last_hidden, model)
+
+    W_in = model.get_input_embeddings().weight                     # [V, d]
+    target_norm = realigner._ensure_matrix(model)[1].to(last_hidden.device)
+    T = max(temp, 1e-6)
+
+    out_emb = model.get_output_embeddings()
+    logits = (out_emb(last_hidden) if out_emb is not None
+              else last_hidden @ W_in.T).float()                    # [B, V]
+
+    if mode == "sample":
+        idx = torch.multinomial(torch.softmax(logits / T, dim=-1), 1)  # [B,1]
+        z = W_in[idx.squeeze(-1)].float()
+    elif mode == "moi":
+        # [penjelasan lengkap: Bab III]
+        probs = torch.softmax(logits / T, dim=-1)                  # [B, V]
+        idx = torch.multinomial(probs, 1)                          # [B, 1]
+        onehot = torch.zeros_like(probs).scatter_(-1, idx, 1.0)
+        H = (-(probs * probs.clamp_min(1e-12).log()).sum(-1, keepdim=True)
+             / torch.log(torch.tensor(float(probs.shape[-1]),
+                                      device=probs.device)))       # [B, 1]
+        w = (H * probs + (beta + 1.0 - H) * onehot) / (beta + 1.0)
+        z = (w.to(W_in.dtype) @ W_in).float()                      # [B, d]
+    else:
+        if mode == "gumbel":
+            u = torch.rand_like(logits).clamp_(1e-9, 1.0 - 1e-9)
+            logits = logits + (-torch.log(-torch.log(u)))
+        probs = torch.softmax(logits / T, dim=-1)
+        z = (probs.to(W_in.dtype) @ W_in).float()              # [B, d]
+
+    z = z * (target_norm / z.norm(dim=-1, keepdim=True).clamp_min(1e-6))
+    return z.to(last_hidden.dtype)
+\end{lstlisting}

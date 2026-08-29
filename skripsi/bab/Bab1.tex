@@ -1,0 +1,291 @@
+\pagenumbering{arabic}\setcounter{page}{1}
+\chapter{PENDAHULUAN}
+
+\section{Latar Belakang}
+
+Model bahasa besar (\textit{large language model}, LLM) semakin sering
+dijalankan bukan sebagai satu model tunggal, melainkan sebagai sistem
+\textit{multi-agent}: beberapa salinan model diberi peran berbeda dan bekerja
+berurutan, saling meneruskan hasil pekerjaan hingga jawaban akhir terbentuk.
+Pembagian peran semacam itu terbukti memperbaiki mutu jawaban pada tugas yang
+menuntut perencanaan, pemeriksaan ulang, dan perbaikan bertahap.
+
+Pada hampir seluruh sistem tersebut, medium yang menghubungkan antar-agen
+adalah teks. Setiap agen harus mengubah penalaran internalnya menjadi untaian
+kata, lalu agen berikutnya menguraikan kembali untaian itu menjadi representasi
+internalnya sendiri. Proses bolak-balik tersebut menimbulkan dua persoalan.
+Pertama, biaya komputasi meningkat karena setiap penyerahan pekerjaan
+mengharuskan pembangkitan token yang panjang. Kedua, terdapat penyempitan
+kanal: representasi internal yang kaya harus dimampatkan menjadi barisan token
+diskret, dan hanya sebagian yang dapat dipulihkan oleh agen penerima
+\citep{latentmas, cache2cache}.
+
+Sebagai jawaban atas kedua persoalan itu, \citet{latentmas} mengusulkan
+LatentMAS, kerangka kolaborasi \textit{multi-agent} yang berlangsung sepenuhnya
+di ruang laten. Alih-alih bertukar teks, setiap agen menjalankan sejumlah
+langkah penalaran di ruang representasi kontinu, lalu menyerahkan memori
+kerjanya berupa \textit{key-value cache} dari mekanisme \textit{attention}
+\citep{vaswani} kepada agen berikutnya. Pendekatan ini merupakan bagian dari
+paradigma penalaran laten yang lebih luas, yang memindahkan langkah penalaran
+dari barisan token diskret ke ruang representasi kontinu \citep{coconut,
+latentsurvey}. Pada sejumlah tolok ukur penalaran umum, kerangka tersebut
+dilaporkan menurunkan pemakaian token keluaran sebesar $70{,}8\%$--$83{,}7\%$
+dan mempercepat inferensi hingga sekitar empat kali lipat, sekaligus
+mempertahankan atau memperbaiki akurasi.
+
+Seluruh mekanisme tersebut bertumpu pada satu persamaan kecil. Karena langkah
+penalaran laten tidak menghasilkan token, keluaran satu langkah --- yaitu
+\textit{hidden state} lapisan terakhir --- harus dipetakan kembali menjadi
+sesuatu yang dapat dibaca model sebagai masukan. LatentMAS menyelesaikannya
+dengan sebuah pemetaan linier yang diperoleh dari regresi \textit{ridge}
+\citep{ridge} atas kedua matriks embedding model. Pemetaan itu diperkenalkan
+sebagai penyelesaian rekayasa terhadap ketidaksesuaian ruang masukan dan
+keluaran, dan tidak pernah dibandingkan terhadap alternatif mana pun. Dengan
+kata lain, komponen yang menanggung seluruh beban mekanisme kolaborasi laten
+justru merupakan komponen yang paling sedikit diuji.
+
+Pada saat yang sama, literatur penalaran laten untuk model tunggal telah
+menghasilkan beberapa cara lain membentuk masukan langkah berikutnya. Alih-alih
+memetakan \textit{hidden state} secara linier, ketiganya terlebih dahulu
+mengubahnya menjadi distribusi peluang atas kosakata, lalu membentuk masukan
+sebagai gabungan berbobot embedding token. \textit{Soft Thinking} memakai
+distribusi peluang itu secara langsung; \textit{Stochastic Soft Thinking}
+\citep{softthinking} menambahkan derau Gumbel agar penalaran tidak terkunci
+pada token berpeluang tertinggi; sedangkan \textit{Mixture of Inputs}
+\citep{moi} menggabungkan distribusi tersebut dengan token hasil pengambilan
+sampel melalui pembobotan yang bergantung pada entropi. Ketiganya dirancang dan
+diuji untuk model tunggal yang bernalar sendiri, dan belum pernah dipindahkan
+ke konteks kolaborasi laten antar-agen.
+
+Terdapat alasan teoretis untuk menduga bahwa pilihan persamaan tersebut
+berpengaruh, dan bahwa pengaruhnya tidak seragam antar jenis tugas. Ketiga cara
+alternatif di atas menghasilkan vektor yang selalu berada di dalam lambung
+konveks embedding token, yaitu wilayah yang memang pernah dilihat model selama
+pelatihan. Pemetaan linier \textit{ridge} tidak memiliki kendala tersebut:
+hasilnya dapat mendarat di mana saja dalam ruang berdimensi sama. Apabila
+vektor yang diumpankan berada jauh dari wilayah embedding yang sah, identitas
+token yang dibawanya dapat rusak. Kerusakan semacam itu masih dapat dipulihkan
+pada tugas yang jawabannya pendek, tetapi tidak pada tugas yang menuntut setiap
+simbol ditulis persis, seperti pembangkitan kode atau penulisan ekspresi
+matematis.
+
+Penelitian ini merumuskan kelima cara pembentukan langkah laten tersebut ke
+dalam satu kerangka matematis yang sama, sehingga keempatnya dapat dinyatakan
+sebagai pemilihan bobot pada simpleks peluang dan yang kelima dapat ditunjukkan
+berada di luar keluarga itu. Kelimanya kemudian dibandingkan secara terkendali
+pada kolaborasi \textit{multi-agent} sekuensial, dengan seluruh komponen lain
+--- topologi agen, \textit{prompt}, model, dan soal --- dijaga tetap. Pengujian
+dilakukan pada tiga tolok ukur penalaran umum yang mewakili tingkat tuntutan
+presisi simbolik yang berbeda, ditambah satu domain simbolik berupa
+pembangkitan ekspresi faktor alpha \citep{quantaalpha} sebagai pengujian
+eksternal. Seluruh eksperimen dijalankan pada model lokal Qwen3-8B
+\citep{qwen3}.
+
+\section{Rumusan Masalah}
+
+Berdasarkan latar belakang dan permasalahan yang telah diuraikan, penelitian ini dirumuskan ke dalam beberapa pertanyaan sebagai berikut.
+
+\begin{enumerate}
+
+      \item Bagaimana berbagai formulasi pembentukan representasi laten dapat
+            dinyatakan dalam suatu kerangka matematis yang seragam sehingga
+            memungkinkan perbandingan terkendali antar-metode pada sistem
+            multi-agen?
+
+      \item Bagaimana pengaruh formulasi representasi laten terhadap kemampuan
+            penalaran dan fidelitas informasi simbolik pada kolaborasi multi-agen,
+            dan apakah pengaruh tersebut berubah sesuai dengan tuntutan presisi
+            simbolik tugas?
+
+      \item Apakah komunikasi antar-agen melalui KV-cache mampu mempertahankan
+            kinerja penalaran yang sebanding dengan komunikasi berbasis teks
+            dengan biaya token dan waktu inferensi yang lebih rendah, serta
+            bagaimana pengaruh formulasi representasi laten terhadap efisiensi
+            tersebut?
+
+      \item Sejauh mana representasi laten mampu mempertahankan informasi
+            simbolik ketika digunakan untuk menghasilkan ekspresi faktor
+            terstruktur, dan apakah kualitas keluaran yang dihasilkan tetap dapat
+            dievaluasi melalui pengujian terhadap data pasar?
+
+\end{enumerate}
+
+
+\section{Pembatasan Masalah}
+
+Agar penelitian tetap terarah dan tidak meluas di luar ruang lingkup yang
+ditetapkan, penelitian ini dibatasi pada hal-hal berikut.
+
+\begin{enumerate}
+
+\item Model bahasa yang digunakan adalah Qwen3-8B dengan inferensi lokal.
+      Penelitian tidak menguji generalisasi terhadap ukuran maupun keluarga
+      model bahasa lainnya.
+
+\item Seluruh intervensi terhadap proses penalaran bersifat
+      \textit{training-free}. Tidak dilakukan perubahan bobot model,
+      \textit{fine-tuning}, maupun pembelajaran penguatan.
+
+\item Sistem multi-agen menggunakan topologi rantai sekuensial dengan
+      jumlah agen yang telah ditetapkan. Topologi hierarkis, bercabang, dan
+      bentuk koordinasi multi-agen lainnya tidak dievaluasi.
+
+\item Formulasi representasi laten yang dibandingkan dibatasi pada
+      \textit{raw}, \textit{soft}, \textit{sample}, \textit{Gumbel-Softmax},
+      dan \textit{Mixture of Inputs} (MoI).
+
+\item Medium komunikasi utama yang dibandingkan adalah komunikasi berbasis
+      teks dan komunikasi berbasis KV-cache, dengan konfigurasi agen tunggal
+      digunakan sebagai acuan. Medium gabungan KV-cache dan teks digunakan
+      secara terbatas sebagai kondisi pelengkap dan tidak menjadi dasar
+      utama pengujian statistik.
+
+\item Evaluasi kemampuan penalaran pada lengan utama dibatasi pada GSM8K,
+      ARC-Challenge, dan HumanEval-Plus. Ketiga tugas digunakan untuk
+      merepresentasikan tuntutan keluaran numerik, pilihan simbolik, dan
+      pembangkitan kode.
+
+\item Evaluasi simbolik tambahan menggunakan generasi ekspresi faktor
+      terstruktur berbasis domain-specific language (DSL). Lengan ini
+      digunakan sebagai pengujian kemampuan mempertahankan muatan simbolik
+      dan bukan sebagai penelitian mengenai strategi investasi.
+
+\item Evaluasi faktor dilakukan melalui validitas ekspresi dan metrik
+      kinerja faktor pada data pasar. Hasil \textit{backtest} tidak
+      ditafsirkan sebagai prediksi keuntungan investasi aktual.
+
+\end{enumerate}
+
+
+\section{Tujuan dan Manfaat Penelitian}
+
+Sejalan dengan rumusan masalah yang telah ditetapkan, penelitian ini bertujuan untuk:
+
+\begin{enumerate}
+
+      \item Merumuskan berbagai pendekatan pembentukan representasi laten ke dalam
+            suatu kerangka matematis yang seragam sehingga karakteristik dan
+            perbedaan antar-metode dapat dibandingkan secara terkendali.
+
+      \item Menganalisis pengaruh formulasi representasi laten terhadap kemampuan
+            penalaran pada sistem multi-agen serta mengidentifikasi hubungan
+            antara formulasi tersebut dan kemampuan mempertahankan informasi
+            simbolik pada tugas dengan tingkat tuntutan presisi yang berbeda.
+
+      \item Mengevaluasi efisiensi komunikasi antar-agen berbasis KV-cache
+            dibandingkan dengan komunikasi berbasis teks berdasarkan kinerja
+            penalaran, penggunaan token, dan waktu inferensi, serta menentukan
+            kondisi formulasi representasi laten yang memungkinkan komunikasi
+            laten mencapai kinerja yang sebanding dengan komunikasi teks.
+
+      \item Mengevaluasi kemampuan representasi laten dalam mempertahankan muatan
+            simbolik pada tugas generasi ekspresi faktor terstruktur serta
+            membandingkan keandalan dan kualitas ekspresi yang dihasilkan melalui
+            evaluasi validitas ekspresi dan pengujian pada data pasar.
+
+\end{enumerate}
+
+
+Manfaat yang diharapkan adalah sebagai berikut.
+
+\begin{enumerate}
+    \item Menyediakan kerangka matematis yang menyatukan beberapa pendekatan
+          penalaran laten yang selama ini dibahas terpisah, sehingga
+          keduanya dapat diperbandingkan tanpa mengubah sistem di sekitarnya.
+    \item Memberikan bukti empiris mengenai kondisi tempat kolaborasi laten
+          dapat dan tidak dapat diandalkan, khususnya pada keluaran yang
+          menuntut ketepatan simbolik.
+    \item Menyediakan acuan kinerja dan biaya bagi penerapan kolaborasi laten
+          pada model berukuran menengah yang dijalankan secara lokal.
+\end{enumerate}
+
+\section{Tinjauan Pustaka}
+
+Berikut beberapa literatur kunci yang menjadi acuan penelitian ini.
+
+\citet{latentmas} mengusulkan LatentMAS, kerangka kolaborasi
+\textit{multi-agent} di ruang laten. Setiap agen membangkitkan pikiran laten
+melalui representasi lapisan terakhir, lalu meneruskan memori kerjanya berupa
+KV-\textit{cache} kepada agen berikutnya tanpa melalui teks. Penelitian ini
+mengambil mekanisme tersebut sebagai objek yang diuji, khususnya persamaan
+pemetaan \textit{hidden state} yang menjadi tumpuannya.
+
+\citet{softthinking} menelaah mekanisme kerja \textit{soft thinking} dan
+menunjukkan bahwa penalaran lunak yang deterministik cenderung terkunci pada
+token berpeluang tertinggi. Sebagai perbaikan, penulis mengusulkan penambahan
+derau Gumbel pada logit sebelum pembentukan bobot. Penelitian ini mengadopsi
+persamaan tersebut sebagai salah satu kondisi yang dibandingkan.
+
+\citet{moi} mengusulkan \textit{Mixture of Inputs}, yang memperlakukan
+distribusi keluaran model sebagai \textit{prior} dan token hasil pengambilan
+sampel sebagai observasi, lalu membentuk masukan berikutnya dari ekspektasi
+\textit{posterior} keduanya. Bobot campurannya bergantung pada entropi
+distribusi, sehingga menyesuaikan diri terhadap tingkat keyakinan model.
+
+\citet{coconut} dan survei \citet{latentsurvey} menempatkan ketiga pendekatan
+di atas dalam paradigma penalaran laten yang lebih luas, yaitu pemindahan
+langkah penalaran dari barisan token diskret ke ruang representasi kontinu.
+
+\citet{quantaalpha} mengusulkan kerangka penemuan faktor alpha berbasis LLM
+yang memformulasikan pencarian faktor sebagai pembangkitan ekspresi simbolik
+dan mengevaluasinya melalui metrik seperti \textit{information coefficient} dan
+kinerja portofolio. Penelitian ini memakai domain tersebut sebagai pengujian
+eksternal terhadap kemampuan kanal laten mempertahankan muatan simbolik, bukan
+sebagai upaya mengembangkan kembali kerangka tersebut.
+
+\citet{ridge} memperkenalkan regresi \textit{ridge} sebagai penyelesaian
+teregularisasi bagi sistem persamaan yang berkondisi buruk. Bentuk tertutup
+penyelesaian tersebut merupakan dasar matriks pemetaan yang dipakai LatentMAS.
+
+\section{Metodologi Penelitian}
+
+Metodologi yang digunakan adalah studi literatur dan eksperimen terkendali.
+Studi literatur dilakukan dengan menelaah publikasi mengenai penalaran laten,
+kolaborasi \textit{multi-agent}, dan evaluasi model bahasa, kemudian
+menurunkan persamaan tiap metode dari sumber aslinya. Eksperimen dilakukan
+dengan menjalankan sistem \textit{multi-agent} pada beberapa tolok ukur dan
+satu domain simbolik, dengan seluruh kondisi memakai soal yang sama sehingga
+perbandingannya bersifat berpasangan. Analisis dilakukan menggunakan uji
+statistik nonparametrik yang sesuai untuk data berpasangan, disertai selang
+kepercayaan \textit{bootstrap} dan koreksi terhadap perbandingan berganda.
+Seluruh komputasi dilakukan menggunakan bahasa Python.
+
+\section{Sistematika Penulisan}
+
+Penyusunan laporan ini mengacu pada sistematika berikut.
+
+\noindent\textsc{Bab I Pendahuluan}
+
+Bab ini berisi latar belakang, rumusan masalah, pembatasan masalah, tujuan
+dan manfaat penelitian, tinjauan pustaka, metodologi penelitian, dan
+sistematika penulisan.
+
+\noindent\textsc{Bab II Landasan Teori}
+
+Bab ini menguraikan dasar teori yang digunakan, mencakup probabilitas dan
+distribusi yang relevan, teori informasi, inferensi Bayes, aljabar linear dan
+representasi vektor, arsitektur \textit{transformer} beserta KV-\textit{cache},
+penalaran laten dan ketiga metode pembentukan representasi laten, sistem
+\textit{multi-agent}, konsep evaluasi empiris model bahasa, faktor alpha
+beserta metrik evaluasinya, dan pengujian statistik yang dipakai.
+
+\noindent\textsc{Bab III Metodologi Penelitian}
+
+Bab ini menetapkan objek penelitian berupa persamaan langkah laten,
+menurunkan kelima persamaan yang dibandingkan ke dalam satu kerangka bersama,
+menyatakan rancangan dua sumbu eksperimen, hipotesis, data dan tugas evaluasi,
+protokol pengambilan sampel berpasangan, metrik, serta prosedur analisis
+statistik.
+
+\noindent\textsc{Bab IV Hasil dan Pembahasan}
+
+Bab ini menyajikan hasil eksperimen beserta pembahasannya, mencakup
+perbandingan akurasi antar-persamaan, keterbedaan hasil menurut jenis tugas,
+biaya komputasi medium laten, fidelitas simbolik keluaran, bukti mekanisme
+yang menjelaskan pola hasil, hasil pada domain faktor simbolik, serta batas
+berlaku seluruh temuan.
+
+\noindent\textsc{Bab V Kesimpulan dan Saran}
+
+Bab ini memuat kesimpulan yang menjawab rumusan masalah beserta saran bagi
+penelitian selanjutnya.

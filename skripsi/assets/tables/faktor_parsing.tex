@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Keluaran agen \textit{construct} pada lengan faktor simbolik. Kolom \textsc{Gagal} adalah panggilan yang keluarannya tidak dapat diurai menjadi objek JSON yang sah; kolom \textsc{Pulih} adalah panggilan yang hanya kehilangan prefiks pembuka objek dan dapat dipulihkan secara deterministik.}
+\label{tab:faktor-parsing}
+\small
+\begin{tabular}{llrrrrr}
+\hline
+Medium & Metode & Panggilan & Utuh & Pulih & Gagal & Gagal (\%) \\
+\hline
+teks & \texttt{raw} & 12 & 12 & 0 & 0 & 0 \\
+kv & \texttt{raw} & 18 & 4 & 0 & 14 & 78 \\
+kv & \texttt{soft} & 7 & 7 & 0 & 0 & 0 \\
+kv & \texttt{gumbel} & 16 & 10 & 0 & 6 & 38 \\
+kv & \texttt{sample} & 10 & 6 & 0 & 4 & 40 \\
+kv & \texttt{moi} & 14 & 10 & 0 & 4 & 29 \\
+kv+teks & \texttt{raw} & 15 & 5 & 0 & 10 & 67 \\
+kv+teks & \texttt{soft} & 12 & 0 & 12 & 0 & 0 \\
+kv+teks & \texttt{gumbel} & 12 & 0 & 12 & 0 & 0 \\
+kv+teks & \texttt{sample} & 12 & 0 & 12 & 0 & 0 \\
+kv+teks & \texttt{moi} & 18 & 0 & 14 & 4 & 22 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,5376 @@
+{
+  "_meta": {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "latent_steps": 10,
+    "latent_mode": "moi",
+    "use_realign": true,
+    "latent_beta": 0.5,
+    "seed": 0,
+    "dsl_pool_size": 71
+  },
+  "_summary": [
+    {
+      "payload": "dsl",
+      "arm": "text",
+      "n": 20,
+      "recall": 0.81,
+      "exact": 0.6,
+      "hallucinate": 0.0,
+      "n_pred_mean": 4.05,
+      "recall_by_position": [
+        0.6,
+        0.6,
+        0.85,
+        1.0,
+        1.0
+      ],
+      "dur_s": 3.17
+    },
+    {
+      "payload": "dsl",
+      "arm": "kv_full",
+      "n": 20,
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred_mean": 5,
+      "recall_by_position": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dur_s": 2.14
+    },
+    {
+      "payload": "dsl",
+      "arm": "kv_prompt_only",
+      "n": 20,
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred_mean": 5,
+      "recall_by_position": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dur_s": 2.14
+    },
+    {
+      "payload": "dsl",
+      "arm": "kv_latent_only",
+      "n": 20,
+      "recall": 0.37,
+      "exact": 0.0,
+      "hallucinate": 0.054,
+      "n_pred_mean": 2.05,
+      "recall_by_position": [
+        0.9,
+        0.7,
+        0.25,
+        0.0,
+        0.0
+      ],
+      "dur_s": 2.86
+    },
+    {
+      "payload": "dsl",
+      "arm": "none",
+      "n": 20,
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred_mean": 0,
+      "recall_by_position": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dur_s": 0.82
+    },
+    {
+      "payload": "token",
+      "arm": "text",
+      "n": 20,
+      "recall": 0.97,
+      "exact": 0.9,
+      "hallucinate": 0.0,
+      "n_pred_mean": 4.85,
+      "recall_by_position": [
+        0.9,
+        0.95,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dur_s": 4.36
+    },
+    {
+      "payload": "token",
+      "arm": "kv_full",
+      "n": 20,
+      "recall": 0.99,
+      "exact": 0.95,
+      "hallucinate": 0.0,
+      "n_pred_mean": 4.95,
+      "recall_by_position": [
+        0.95,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dur_s": 2.69
+    },
+    {
+      "payload": "token",
+      "arm": "kv_prompt_only",
+      "n": 20,
+      "recall": 0.99,
+      "exact": 0.95,
+      "hallucinate": 0.0,
+      "n_pred_mean": 4.95,
+      "recall_by_position": [
+        0.95,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dur_s": 2.7
+    },
+    {
+      "payload": "token",
+      "arm": "kv_latent_only",
+      "n": 20,
+      "recall": 0.13,
+      "exact": 0.0,
+      "hallucinate": 0.165,
+      "n_pred_mean": 1.25,
+      "recall_by_position": [
+        0.45,
+        0.2,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dur_s": 1.84
+    },
+    {
+      "payload": "token",
+      "arm": "none",
+      "n": 20,
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred_mean": 0,
+      "recall_by_position": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dur_s": 0.82
+    }
+  ],
+  "records": [
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 5.75,
+      "up_text_len": 50,
+      "up_text": "SUMIF, TS_COVARIANCE, BB_UPPER, PERCENTILE, TS_SUM",
+      "kv_len_in": 0,
+      "pred": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "truth": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "down_text": "SUMIF, TS_COVARIANCE, BB_UPPER, PERCENTILE, TS_SUM",
+      "payload_kind": "dsl",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.85,
+      "up_text_len": 46,
+      "up_text": "TS_RANK, TS_ARGMIN, REGRESI, TS_QUANTILE, SQRT",
+      "kv_len_in": 0,
+      "pred": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "truth": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "down_text": "TS_RANK, TS_ARGMIN, REGRESI, TS_QUANTILE, SQRT",
+      "payload_kind": "dsl",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 2.91,
+      "up_text_len": 26,
+      "up_text": "MEAN, TS_STD, GT, RANK, EQ",
+      "kv_len_in": 0,
+      "pred": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "truth": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "down_text": "MEAN, TS_STD, GT, RANK, EQ",
+      "payload_kind": "dsl",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 2.79,
+      "up_text_len": 27,
+      "up_text": "OR, WHERE, HIGHDAY, RSI, EQ",
+      "kv_len_in": 0,
+      "pred": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "truth": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "down_text": "OR,WHERE,HIGHDAY,RSI,EQ",
+      "payload_kind": "dsl",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.91,
+      "up_text_len": 77,
+      "up_text": "The next agent has received the payload: DELTA, SIGN, TS_PCTCHANGE, EQ, SQRT.",
+      "kv_len_in": 0,
+      "pred": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "truth": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "down_text": "DELTA, SIGN, TS_PCTCHANGE, EQ, SQRT",
+      "payload_kind": "dsl",
+      "trial": 4
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "text",
+      "dur_s": 2.28,
+      "up_text_len": 21,
+      "up_text": ", ZSCORE, TS_QUANTILE",
+      "kv_len_in": 0,
+      "pred": [
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "truth": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "down_text": "ZSCORE,TS_QUANTILE",
+      "payload_kind": "dsl",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.63,
+      "up_text_len": 47,
+      "up_text": "TS_MAX, TS_VAR, PERCENTILE, DECAYLINEAR, ZSCORE",
+      "kv_len_in": 0,
+      "pred": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "truth": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "down_text": "TS_MAX, TS_VAR, PERCENTILE, DECAYLINEAR, ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.54,
+      "up_text_len": 33,
+      "up_text": "ADD, EMA, TS_ARGMIN, ABS, TS_SKEW",
+      "kv_len_in": 0,
+      "pred": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "truth": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "down_text": "ADD, EMA, TS_ARGMIN, ABS, TS_SKEW",
+      "payload_kind": "dsl",
+      "trial": 7
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "text",
+      "dur_s": 1.83,
+      "up_text_len": 9,
+      "up_text": "DELAY, LT",
+      "kv_len_in": 0,
+      "pred": [
+        "DELAY",
+        "LT"
+      ],
+      "truth": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "down_text": "DELAY, LT, , ,",
+      "payload_kind": "dsl",
+      "trial": 8
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 2.89,
+      "up_text_len": 21,
+      "up_text": "HIGHDAY, WMA, TS_MEAN",
+      "kv_len_in": 0,
+      "pred": [
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "truth": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "down_text": "HIGHDAY,WMA,TS_MEAN,,$0.00",
+      "payload_kind": "dsl",
+      "trial": 9
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 2.93,
+      "up_text_len": 35,
+      "up_text": "EMA, DIVIDE, SCALE, TS_SUM, TS_RANK",
+      "kv_len_in": 0,
+      "pred": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "truth": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "down_text": "EMA, DIVIDE, SCALE, TS_SUM, TS_RANK",
+      "payload_kind": "dsl",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.64,
+      "up_text_len": 104,
+      "up_text": "I have memorized the payload: EXP, REGRESI, ZSCORE, REGBETA, FLOOR. I will relay them to the next agent.",
+      "kv_len_in": 0,
+      "pred": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "truth": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "down_text": "EXP, REGRESI, ZSCORE, REGBETA, FLOOR",
+      "payload_kind": "dsl",
+      "trial": 11
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 2.38,
+      "up_text_len": 14,
+      "up_text": "WMA, MAX, RANK",
+      "kv_len_in": 0,
+      "pred": [
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "truth": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "down_text": "WMA, MAX, RANK, ,",
+      "payload_kind": "dsl",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.1,
+      "up_text_len": 35,
+      "up_text": "TS_MAX, EMA, SUMIF, SCALE, MULTIPLY",
+      "kv_len_in": 0,
+      "pred": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "truth": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "down_text": "TS_MAX, EMA, SUMIF, SCALE, MULTIPLY",
+      "payload_kind": "dsl",
+      "trial": 13
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 2.65,
+      "up_text_len": 27,
+      "up_text": ", LT, BB_MIDDLE, PERCENTILE",
+      "kv_len_in": 0,
+      "pred": [
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "truth": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "down_text": "LT, BB_MIDDLE, PERCENTILE, , ,",
+      "payload_kind": "dsl",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.24,
+      "up_text_len": 33,
+      "up_text": "TS_PCTCHANGE, DELAY, EMA, GE, INV",
+      "kv_len_in": 0,
+      "pred": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "truth": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "down_text": "TS_PCTCHANGE, DELAY, EMA, GE, INV",
+      "payload_kind": "dsl",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 3.56,
+      "up_text_len": 44,
+      "up_text": "BB_MIDDLE, DIVIDE, WMA, TS_ARGMAX, TS_ZSCORE",
+      "kv_len_in": 0,
+      "pred": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "truth": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "down_text": "BB_MIDDLE, DIVIDE, WMA, TS_ARGMAX, TS_ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 16
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 3.11,
+      "up_text_len": 29,
+      "up_text": "MULTIPLY, MEAN, TS_COVARIANCE",
+      "kv_len_in": 0,
+      "pred": [
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "down_text": "MULTIPLY, MEAN, TS_COVARIANCE, ,",
+      "payload_kind": "dsl",
+      "trial": 17
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 2.72,
+      "up_text_len": 23,
+      "up_text": ", TS_SKEW, SQRT, DIVIDE",
+      "kv_len_in": 0,
+      "pred": [
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "down_text": "TS_SKEW,SQRT,DIVIDE",
+      "payload_kind": "dsl",
+      "trial": 18
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "text",
+      "dur_s": 1.63,
+      "up_text_len": 8,
+      "up_text": "SIGN, LT",
+      "kv_len_in": 0,
+      "pred": [
+        "SIGN",
+        "LT"
+      ],
+      "truth": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "down_text": "SIGN, LT",
+      "payload_kind": "dsl",
+      "trial": 19
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.38,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 136,
+      "pred": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "truth": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "down_text": "SUMIF, TS_COVARIANCE, BB_UPPER, PERCENTILE, TS_SUM",
+      "payload_kind": "dsl",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.38,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 136,
+      "pred": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "truth": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "down_text": "TS_RANK, TS_ARGMIN, REGRESI, TS_QUANTILE, SQRT",
+      "payload_kind": "dsl",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.99,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "truth": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "down_text": "MEAN, TS_STD, GT, RANK, EQ",
+      "payload_kind": "dsl",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.91,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "truth": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "down_text": "OR, WHERE, HIGHDAY, RSI, EQ",
+      "payload_kind": "dsl",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.11,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 132,
+      "pred": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "truth": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "down_text": "DELTA, SIGN, TS_PCTCHANGE, EQ, SQRT",
+      "payload_kind": "dsl",
+      "trial": 4
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.18,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 133,
+      "pred": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "truth": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "down_text": "TS_MAD, SCALE, MAX, ZSCORE, TS_QUANTILE",
+      "payload_kind": "dsl",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.34,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 135,
+      "pred": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "truth": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "down_text": "TS_MAX, TS_VAR, PERCENTILE, DECAYLINEAR, ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.19,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 133,
+      "pred": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "truth": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "down_text": "ADD, EMA, TS_ARGMIN, ABS, TS_SKEW",
+      "payload_kind": "dsl",
+      "trial": 7
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.9,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "truth": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "down_text": "SIGN, NE, SEQUENCE, DELAY, LT",
+      "payload_kind": "dsl",
+      "trial": 8
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.17,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 133,
+      "pred": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "truth": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "down_text": "MEDIAN, MULTIPLY, HIGHDAY, WMA, TS_MEAN",
+      "payload_kind": "dsl",
+      "trial": 9
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.94,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 131,
+      "pred": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "truth": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "down_text": "EMA, DIVIDE, SCALE, TS_SUM, TS_RANK",
+      "payload_kind": "dsl",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.18,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 133,
+      "pred": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "truth": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "down_text": "EXP, REGRESI, ZSCORE, REGBETA, FLOOR",
+      "payload_kind": "dsl",
+      "trial": 11
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.97,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "truth": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "down_text": "ZSCORE, SIGN, WMA, MAX, RANK",
+      "payload_kind": "dsl",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.05,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 131,
+      "pred": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "truth": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "down_text": "TS_MAX, EMA, SUMIF, SCALE, MULTIPLY",
+      "payload_kind": "dsl",
+      "trial": 13
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.19,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 133,
+      "pred": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "truth": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "down_text": "REGBETA, LOWDAY, LT, BB_MIDDLE, PERCENTILE",
+      "payload_kind": "dsl",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.12,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 132,
+      "pred": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "truth": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "down_text": "TS_PCTCHANGE, DELAY, EMA, GE, INV",
+      "payload_kind": "dsl",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.27,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 134,
+      "pred": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "truth": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "down_text": "BB_MIDDLE, DIVIDE, WMA, TS_ARGMAX, TS_ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 16
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.34,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 135,
+      "pred": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "down_text": "PROD, TS_VAR, MULTIPLY, MEAN, TS_COVARIANCE",
+      "payload_kind": "dsl",
+      "trial": 17
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.32,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 135,
+      "pred": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "down_text": "PROD, TS_MEAN, TS_SKEW, SQRT, DIVIDE",
+      "payload_kind": "dsl",
+      "trial": 18
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 1.89,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "truth": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "down_text": "SEQUENCE, FILTER, TS_RANK, SIGN, LT",
+      "payload_kind": "dsl",
+      "trial": 19
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.41,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 126,
+      "pred": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "truth": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "down_text": "SUMIF, TS_COVARIANCE, BB_UPPER, PERCENTILE, TS_SUM",
+      "payload_kind": "dsl",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.4,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 126,
+      "pred": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "truth": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "down_text": "TS_RANK, TS_ARGMIN, REGRESI, TS_QUANTILE, SQRT",
+      "payload_kind": "dsl",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.94,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 120,
+      "pred": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "truth": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "down_text": "MEAN, TS_STD, GT, RANK, EQ",
+      "payload_kind": "dsl",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.89,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 119,
+      "pred": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "truth": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "down_text": "OR, WHERE, HIGHDAY, RSI, EQ",
+      "payload_kind": "dsl",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.05,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 122,
+      "pred": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "truth": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "down_text": "DELTA, SIGN, TS_PCTCHANGE, EQ, SQRT",
+      "payload_kind": "dsl",
+      "trial": 4
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.2,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 123,
+      "pred": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "truth": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "down_text": "TS_MAD, SCALE, MAX, ZSCORE, TS_QUANTILE",
+      "payload_kind": "dsl",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.36,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 125,
+      "pred": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "truth": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "down_text": "TS_MAX, TS_VAR, PERCENTILE, DECAYLINEAR, ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.19,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 123,
+      "pred": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "truth": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "down_text": "ADD, EMA, TS_ARGMIN, ABS, TS_SKEW",
+      "payload_kind": "dsl",
+      "trial": 7
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.89,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 119,
+      "pred": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "truth": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "down_text": "SIGN, NE, SEQUENCE, DELAY, LT",
+      "payload_kind": "dsl",
+      "trial": 8
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.19,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 123,
+      "pred": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "truth": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "down_text": "MEDIAN, MULTIPLY, HIGHDAY, WMA, TS_MEAN",
+      "payload_kind": "dsl",
+      "trial": 9
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.95,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 121,
+      "pred": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "truth": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "down_text": "EMA, DIVIDE, SCALE, TS_SUM, TS_RANK",
+      "payload_kind": "dsl",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.2,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 123,
+      "pred": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "truth": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "down_text": "EXP, REGRESI, ZSCORE, REGBETA, FLOOR",
+      "payload_kind": "dsl",
+      "trial": 11
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.91,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 120,
+      "pred": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "truth": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "down_text": "ZSCORE, SIGN, WMA, MAX, RANK",
+      "payload_kind": "dsl",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.07,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 121,
+      "pred": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "truth": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "down_text": "TS_MAX, EMA, SUMIF, SCALE, MULTIPLY",
+      "payload_kind": "dsl",
+      "trial": 13
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.18,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 123,
+      "pred": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "truth": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "down_text": "REGBETA, LOWDAY, LT, BB_MIDDLE, PERCENTILE",
+      "payload_kind": "dsl",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.12,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 122,
+      "pred": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "truth": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "down_text": "TS_PCTCHANGE, DELAY, EMA, GE, INV",
+      "payload_kind": "dsl",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.24,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 124,
+      "pred": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "truth": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "down_text": "BB_MIDDLE, DIVIDE, WMA, TS_ARGMAX, TS_ZSCORE",
+      "payload_kind": "dsl",
+      "trial": 16
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.32,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 125,
+      "pred": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "down_text": "PROD, TS_VAR, MULTIPLY, MEAN, TS_COVARIANCE",
+      "payload_kind": "dsl",
+      "trial": 17
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.34,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 125,
+      "pred": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "truth": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "down_text": "PROD, TS_MEAN, TS_SKEW, SQRT, DIVIDE",
+      "payload_kind": "dsl",
+      "trial": 18
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 1.89,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 119,
+      "pred": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "truth": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "down_text": "SEQUENCE, FILTER, TS_RANK, SIGN, LT",
+      "payload_kind": "dsl",
+      "trial": 19
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 19.59,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "SUMIF"
+      ],
+      "truth": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "down_text": "SUMIF, TS_COVARIANT, SUMCO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, CO, ",
+      "payload_kind": "dsl",
+      "trial": 0
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 1.69,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "TS_RANK"
+      ],
+      "truth": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "down_text": "TS_RANK, TS_ARGOsystem",
+      "payload_kind": "dsl",
+      "trial": 1
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.15,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "down_text": "",
+      "payload_kind": "dsl",
+      "trial": 2
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "kv_latent_only",
+      "dur_s": 1.9,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "OR",
+        "WHERE",
+        "HIGHDAY"
+      ],
+      "truth": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "down_text": "OR, WHERE, HIGHDAY,  5",
+      "payload_kind": "dsl",
+      "trial": 3
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 1.6,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "DELTA",
+        "SIGN"
+      ],
+      "truth": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "down_text": "DELTA, SIGN, TS",
+      "payload_kind": "dsl",
+      "trial": 4
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.25,
+      "n_pred": 4,
+      "arm": "kv_latent_only",
+      "dur_s": 1.97,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "MIN"
+      ],
+      "truth": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "down_text": "TS_MAD, SCALE, MAX, MIN, RANGE",
+      "payload_kind": "dsl",
+      "trial": 5
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "kv_latent_only",
+      "dur_s": 2.27,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE"
+      ],
+      "truth": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "down_text": "TS_MAX, TS_VAR, PERCENTILE, TS_MAX, TS_VAR",
+      "payload_kind": "dsl",
+      "trial": 6
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.28,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "ADD",
+        "EMA"
+      ],
+      "truth": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "down_text": "ADD, EMA, TS,  5, 2023",
+      "payload_kind": "dsl",
+      "trial": 7
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "kv_latent_only",
+      "dur_s": 1.9,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "SIGN",
+        "NE",
+        "SEQUENCE"
+      ],
+      "truth": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "down_text": "SIGN, NE, SEQUENCE, DIRECTION, SPEED",
+      "payload_kind": "dsl",
+      "trial": 8
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 1.9,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "MEDIAN",
+        "MULTIPLY"
+      ],
+      "truth": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "down_text": "MEDIAN, MULTIPLY, START, STOP, END",
+      "payload_kind": "dsl",
+      "trial": 9
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 2.09,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "EMA"
+      ],
+      "truth": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "down_text": "EMA, EMA, EMA, EMA, EMA.",
+      "payload_kind": "dsl",
+      "trial": 10
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.63,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "EXP",
+        "REGRESI"
+      ],
+      "truth": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "down_text": "EXP, REGRESI, KOMISI, PELAYANAN, KOMISI",
+      "payload_kind": "dsl",
+      "trial": 11
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.19,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "ZSCORE",
+        "SIGN"
+      ],
+      "truth": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "down_text": "ZSCORE, SIGN, ATEGORIES, MEASURES, TRENDS",
+      "payload_kind": "dsl",
+      "trial": 12
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.5,
+      "n_pred": 4,
+      "arm": "kv_latent_only",
+      "dur_s": 2.0,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "TS_MAX",
+        "EMA",
+        "TS_MIN",
+        "MAX"
+      ],
+      "truth": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "down_text": "TS_MAX, EMA, TS_MIN, VAR, MAX",
+      "payload_kind": "dsl",
+      "trial": 13
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 1.6,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "REGBETA",
+        "LOWDAY"
+      ],
+      "truth": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "down_text": "REGBETA, LOWDAY",
+      "payload_kind": "dsl",
+      "trial": 14
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 2.31,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "TS_PCTCHANGE"
+      ],
+      "truth": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "down_text": "TS_PCTCHANGE, DELAYER, INBOUND, TRAFFIC, FLOW",
+      "payload_kind": "dsl",
+      "trial": 15
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.85,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "down_text": "BB, B, B, B, B.",
+      "payload_kind": "dsl",
+      "trial": 16
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.12,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "PROD",
+        "TS_VAR"
+      ],
+      "truth": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "down_text": "PROD, TS_VAR, TS_VAR, TS_VAR, TS_VAR",
+      "payload_kind": "dsl",
+      "trial": 17
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.3333333333333333,
+      "n_pred": 3,
+      "arm": "kv_latent_only",
+      "dur_s": 2.21,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "PROD",
+        "TS_MEAN",
+        "TS_VAR"
+      ],
+      "truth": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "down_text": "PROD, TS_MEAN, TS_VAR, CORR, COV",
+      "payload_kind": "dsl",
+      "trial": 18
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "kv_latent_only",
+      "dur_s": 2.04,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK"
+      ],
+      "truth": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "down_text": "SEQUENCE, FILTER, TS_RANK, TS_RANK, TS_RANK",
+      "payload_kind": "dsl",
+      "trial": 19
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.84,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "SUMIF",
+        "TS_COVARIANCE",
+        "BB_UPPER",
+        "PERCENTILE",
+        "TS_SUM"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 0
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.87,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "TS_RANK",
+        "TS_ARGMIN",
+        "REGRESI",
+        "TS_QUANTILE",
+        "SQRT"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 1
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "MEAN",
+        "TS_STD",
+        "GT",
+        "RANK",
+        "EQ"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 2
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "OR",
+        "WHERE",
+        "HIGHDAY",
+        "RSI",
+        "EQ"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 3
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "DELTA",
+        "SIGN",
+        "TS_PCTCHANGE",
+        "EQ",
+        "SQRT"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 4
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "TS_MAD",
+        "SCALE",
+        "MAX",
+        "ZSCORE",
+        "TS_QUANTILE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 5
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "TS_MAX",
+        "TS_VAR",
+        "PERCENTILE",
+        "DECAYLINEAR",
+        "ZSCORE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 6
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "ADD",
+        "EMA",
+        "TS_ARGMIN",
+        "ABS",
+        "TS_SKEW"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 7
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "SIGN",
+        "NE",
+        "SEQUENCE",
+        "DELAY",
+        "LT"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 8
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "MEDIAN",
+        "MULTIPLY",
+        "HIGHDAY",
+        "WMA",
+        "TS_MEAN"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 9
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.78,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "EMA",
+        "DIVIDE",
+        "SCALE",
+        "TS_SUM",
+        "TS_RANK"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 10
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "EXP",
+        "REGRESI",
+        "ZSCORE",
+        "REGBETA",
+        "FLOOR"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 11
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "ZSCORE",
+        "SIGN",
+        "WMA",
+        "MAX",
+        "RANK"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 12
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "TS_MAX",
+        "EMA",
+        "SUMIF",
+        "SCALE",
+        "MULTIPLY"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 13
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "REGBETA",
+        "LOWDAY",
+        "LT",
+        "BB_MIDDLE",
+        "PERCENTILE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 14
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "TS_PCTCHANGE",
+        "DELAY",
+        "EMA",
+        "GE",
+        "INV"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 15
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.79,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "BB_MIDDLE",
+        "DIVIDE",
+        "WMA",
+        "TS_ARGMAX",
+        "TS_ZSCORE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 16
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "PROD",
+        "TS_VAR",
+        "MULTIPLY",
+        "MEAN",
+        "TS_COVARIANCE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 17
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "PROD",
+        "TS_MEAN",
+        "TS_SKEW",
+        "SQRT",
+        "DIVIDE"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 18
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "SEQUENCE",
+        "FILTER",
+        "TS_RANK",
+        "SIGN",
+        "LT"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "dsl",
+      "trial": 19
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.27,
+      "up_text_len": 33,
+      "up_text": "ful78, qoc43, tix37, vem27, voq48",
+      "kv_len_in": 0,
+      "pred": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "truth": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "down_text": "ful78, qoc43, tix37, vem27, voq48",
+      "payload_kind": "token",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.26,
+      "up_text_len": 33,
+      "up_text": "dit81, fir50, sul17, zem22, zew71",
+      "kv_len_in": 0,
+      "pred": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "truth": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "down_text": "dit81, fir50, sul17, zem22, zew71",
+      "payload_kind": "token",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.43,
+      "up_text_len": 33,
+      "up_text": "but52, kid34, wad61, wod20, xek28",
+      "kv_len_in": 0,
+      "pred": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "truth": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "down_text": "but52, kid34, wad61, wod20, xek28",
+      "payload_kind": "token",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.57,
+      "up_text_len": 33,
+      "up_text": "mum25, nut23, saz59, wiw36, zux46",
+      "kv_len_in": 0,
+      "pred": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "truth": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "down_text": "mum25, nut23, saz59, wiw36, zux46",
+      "payload_kind": "token",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.61,
+      "up_text_len": 33,
+      "up_text": "deg14, duq77, heh14, nuk47, zit18",
+      "kv_len_in": 0,
+      "pred": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "truth": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "down_text": "deg14, duq77, heh14, nuk47, zit18",
+      "payload_kind": "token",
+      "trial": 4
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.53,
+      "up_text_len": 33,
+      "up_text": "luk37, nuf72, sop20, xij41, xox45",
+      "kv_len_in": 0,
+      "pred": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "truth": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "down_text": "luk37, nuf72, sop20, xij41, xox45",
+      "payload_kind": "token",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.55,
+      "up_text_len": 33,
+      "up_text": "bif38, cag99, kax91, pen64, wud13",
+      "kv_len_in": 0,
+      "pred": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "truth": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "down_text": "bif38, cag99, kax91, pen64, wud13",
+      "payload_kind": "token",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.37,
+      "up_text_len": 33,
+      "up_text": "faz12, fez83, fod57, jab79, jef71",
+      "kv_len_in": 0,
+      "pred": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "truth": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "down_text": "faz12, fez83, fod57, jab79, jef71",
+      "payload_kind": "token",
+      "trial": 7
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.3,
+      "up_text_len": 33,
+      "up_text": "cus15, ded92, mir33, ruf43, zaq35",
+      "kv_len_in": 0,
+      "pred": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "truth": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "down_text": "cus15, ded92, mir33, ruf43, zaq35",
+      "payload_kind": "token",
+      "trial": 8
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.12,
+      "up_text_len": 33,
+      "up_text": "hat97, hec96, hen77, laz66, lit82",
+      "kv_len_in": 0,
+      "pred": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "truth": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "down_text": "hat97, hec96, hen77, laz66, lit82",
+      "payload_kind": "token",
+      "trial": 9
+    },
+    {
+      "recall": 0.6,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 3,
+      "arm": "text",
+      "dur_s": 3.67,
+      "up_text_len": 21,
+      "up_text": ", pol29, ruv49, was20",
+      "kv_len_in": 0,
+      "pred": [
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "truth": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "down_text": "pol29, ruv49, was20, pol29, ruv49",
+      "payload_kind": "token",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.4,
+      "up_text_len": 33,
+      "up_text": "jih40, koq96, rab86, zem59, zip85",
+      "kv_len_in": 0,
+      "pred": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "truth": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "down_text": "jih40, koq96, rab86, zem59, zip85",
+      "payload_kind": "token",
+      "trial": 11
+    },
+    {
+      "recall": 0.8,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 4,
+      "arm": "text",
+      "dur_s": 4.42,
+      "up_text_len": 35,
+      "up_text": "hover72, sal99, wub14, xoc31, xoc61",
+      "kv_len_in": 0,
+      "pred": [
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "truth": [
+        "hov72",
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "down_text": "hover72, sal99, wub14, xoc31, xoc61",
+      "payload_kind": "token",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.3,
+      "up_text_len": 33,
+      "up_text": "bav88, coj80, deb61, rib37, tim69",
+      "kv_len_in": 0,
+      "pred": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "truth": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "down_text": "bav88, coj80, deb61, rib37, tim69",
+      "payload_kind": "token",
+      "trial": 13
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.33,
+      "up_text_len": 33,
+      "up_text": "dal67, fef87, fig93, hat60, jil98",
+      "kv_len_in": 0,
+      "pred": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "truth": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "down_text": "dal67, fef87, fig93, hat60, jil98",
+      "payload_kind": "token",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.56,
+      "up_text_len": 33,
+      "up_text": "jiw50, lac15, puc99, vif29, zos91",
+      "kv_len_in": 0,
+      "pred": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "truth": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "down_text": "jiw50, lac15, puc99, vif29, zos91",
+      "payload_kind": "token",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.44,
+      "up_text_len": 33,
+      "up_text": "beg44, jox47, nip21, nuc15, riw32",
+      "kv_len_in": 0,
+      "pred": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "truth": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "down_text": "beg44, jox47, nip21, nuc15, riw32",
+      "payload_kind": "token",
+      "trial": 16
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.3,
+      "up_text_len": 33,
+      "up_text": "gif71, kam32, leg84, miq80, vam61",
+      "kv_len_in": 0,
+      "pred": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "truth": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "down_text": "gif71, kam32, leg84, miq80, vam61",
+      "payload_kind": "token",
+      "trial": 17
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.12,
+      "up_text_len": 33,
+      "up_text": "for14, fut70, mig31, nif71, nir23",
+      "kv_len_in": 0,
+      "pred": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "truth": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "down_text": "for14, fut70, mig31, nif71, nir23",
+      "payload_kind": "token",
+      "trial": 18
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "text",
+      "dur_s": 4.58,
+      "up_text_len": 33,
+      "up_text": "dek17, qaf60, tuj64, wum67, xod18",
+      "kv_len_in": 0,
+      "pred": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "truth": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "down_text": "dek17, qaf60, tuj64, wum67, xod18",
+      "payload_kind": "token",
+      "trial": 19
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.73,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "truth": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "down_text": "ful78, qoc43, tix37, vem27, voq48",
+      "payload_kind": "token",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.66,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "truth": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "down_text": "dit81, fir50, sul17, zem22, zew71",
+      "payload_kind": "token",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.71,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "truth": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "down_text": "but52, kid34, wad61, wod20, xek28",
+      "payload_kind": "token",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.78,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "truth": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "down_text": "mum25, nut23, saz59, wiw36, zux46",
+      "payload_kind": "token",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.79,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 141,
+      "pred": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "truth": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "down_text": "deg14, duq77, heh14, nuk47, zit18",
+      "payload_kind": "token",
+      "trial": 4
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.79,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "truth": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "down_text": "luk37, nuf72, sop20, xij41, xox45",
+      "payload_kind": "token",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.77,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "truth": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "down_text": "bif38, cag99, kax91, pen64, wud13",
+      "payload_kind": "token",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.71,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "truth": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "down_text": "faz12, fez83, fod57, jab79, jef71",
+      "payload_kind": "token",
+      "trial": 7
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.63,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "truth": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "down_text": "cus15, ded92, mir33, ruf43, zaq35",
+      "payload_kind": "token",
+      "trial": 8
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.57,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 138,
+      "pred": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "truth": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "down_text": "hat97, hec96, hen77, laz66, lit82",
+      "payload_kind": "token",
+      "trial": 9
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.57,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 138,
+      "pred": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "truth": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "down_text": "get55, naw45, pol29, ruv49, was20",
+      "payload_kind": "token",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.72,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "truth": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "down_text": "jih40, koq96, rab86, zem59, zip85",
+      "payload_kind": "token",
+      "trial": 11
+    },
+    {
+      "recall": 0.8,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 4,
+      "arm": "kv_full",
+      "dur_s": 2.72,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 141,
+      "pred": [
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "truth": [
+        "hov72",
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "down_text": "hover72, sal99, wub14, xoc31, xoc61",
+      "payload_kind": "token",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.66,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "truth": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "down_text": "bav88, coj80, deb61, rib37, tim69",
+      "payload_kind": "token",
+      "trial": 13
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.62,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "truth": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "down_text": "dal67, fef87, fig93, hat60, jil98",
+      "payload_kind": "token",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.75,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 141,
+      "pred": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "truth": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "down_text": "jiw50, lac15, puc99, vif29, zos91",
+      "payload_kind": "token",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.7,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 140,
+      "pred": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "truth": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "down_text": "beg44, jox47, nip21, nuc15, riw32",
+      "payload_kind": "token",
+      "trial": 16
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.65,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 139,
+      "pred": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "truth": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "down_text": "gif71, kam32, leg84, miq80, vam61",
+      "payload_kind": "token",
+      "trial": 17
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.55,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 138,
+      "pred": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "truth": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "down_text": "for14, fut70, mig31, nif71, nir23",
+      "payload_kind": "token",
+      "trial": 18
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_full",
+      "dur_s": 2.78,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 142,
+      "pred": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "truth": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "down_text": "dek17, qaf60, tuj64, wum67, xod18",
+      "payload_kind": "token",
+      "trial": 19
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.72,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "truth": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "down_text": "ful78, qoc43, tix37, vem27, voq48",
+      "payload_kind": "token",
+      "trial": 0
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.69,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "truth": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "down_text": "dit81, fir50, sul17, zem22, zew71",
+      "payload_kind": "token",
+      "trial": 1
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.72,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "truth": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "down_text": "but52, kid34, wad61, wod20, xek28",
+      "payload_kind": "token",
+      "trial": 2
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.76,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "truth": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "down_text": "mum25, nut23, saz59, wiw36, zux46",
+      "payload_kind": "token",
+      "trial": 3
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.79,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 131,
+      "pred": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "truth": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "down_text": "deg14, duq77, heh14, nuk47, zit18",
+      "payload_kind": "token",
+      "trial": 4
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "truth": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "down_text": "luk37, nuf72, sop20, xij41, xox45",
+      "payload_kind": "token",
+      "trial": 5
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "truth": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "down_text": "bif38, cag99, kax91, pen64, wud13",
+      "payload_kind": "token",
+      "trial": 6
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.74,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "truth": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "down_text": "faz12, fez83, fod57, jab79, jef71",
+      "payload_kind": "token",
+      "trial": 7
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.68,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "truth": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "down_text": "cus15, ded92, mir33, ruf43, zaq35",
+      "payload_kind": "token",
+      "trial": 8
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.57,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 128,
+      "pred": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "truth": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "down_text": "hat97, hec96, hen77, laz66, lit82",
+      "payload_kind": "token",
+      "trial": 9
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.57,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 128,
+      "pred": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "truth": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "down_text": "get55, naw45, pol29, ruv49, was20",
+      "payload_kind": "token",
+      "trial": 10
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.66,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "truth": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "down_text": "jih40, koq96, rab86, zem59, zip85",
+      "payload_kind": "token",
+      "trial": 11
+    },
+    {
+      "recall": 0.8,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 4,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.71,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 131,
+      "pred": [
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "truth": [
+        "hov72",
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "down_text": "hover72, sal99, wub14, xoc31, xoc61",
+      "payload_kind": "token",
+      "trial": 12
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.69,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "truth": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "down_text": "bav88, coj80, deb61, rib37, tim69",
+      "payload_kind": "token",
+      "trial": 13
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.65,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "truth": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "down_text": "dal67, fef87, fig93, hat60, jil98",
+      "payload_kind": "token",
+      "trial": 14
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.76,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 131,
+      "pred": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "truth": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "down_text": "jiw50, lac15, puc99, vif29, zos91",
+      "payload_kind": "token",
+      "trial": 15
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.7,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 130,
+      "pred": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "truth": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "down_text": "beg44, jox47, nip21, nuc15, riw32",
+      "payload_kind": "token",
+      "trial": 16
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.69,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 129,
+      "pred": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "truth": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "down_text": "gif71, kam32, leg84, miq80, vam61",
+      "payload_kind": "token",
+      "trial": 17
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.57,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 128,
+      "pred": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "truth": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "down_text": "for14, fut70, mig31, nif71, nir23",
+      "payload_kind": "token",
+      "trial": 18
+    },
+    {
+      "recall": 1.0,
+      "exact": 1.0,
+      "hallucinate": 0.0,
+      "n_pred": 5,
+      "arm": "kv_prompt_only",
+      "dur_s": 2.78,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 132,
+      "pred": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "truth": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "down_text": "dek17, qaf60, tuj64, wum67, xod18",
+      "payload_kind": "token",
+      "trial": 19
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 1.49,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "ful78"
+      ],
+      "truth": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "down_text": "ful78, q",
+      "payload_kind": "token",
+      "trial": 0
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.6,
+      "n_pred": 5,
+      "arm": "kv_latent_only",
+      "dur_s": 2.56,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "dit81",
+        "fir50",
+        "sul12",
+        "tay34",
+        "vin56"
+      ],
+      "truth": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "down_text": "dit81, fir50, sul12, tay34, vin56",
+      "payload_kind": "token",
+      "trial": 1
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.15,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 2
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.5,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.49,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "mum25",
+        "nut25"
+      ],
+      "truth": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "down_text": "mum25, nut25, no25, payload25, 25",
+      "payload_kind": "token",
+      "trial": 3
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.14,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 4
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.2,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 5
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.05,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 6
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 1,
+      "arm": "kv_latent_only",
+      "dur_s": 2.34,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "faz12"
+      ],
+      "truth": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "down_text": "faz12, fe12, no12, 5, items",
+      "payload_kind": "token",
+      "trial": 7
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.09,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 8
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "hat97",
+        "hec96"
+      ],
+      "truth": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "down_text": "hat97, hec96, h2o21, c456, g789",
+      "payload_kind": "token",
+      "trial": 9
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.5,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.47,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "get55",
+        "naw55"
+      ],
+      "truth": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "down_text": "get55, naw55, get55, naw55, get55",
+      "payload_kind": "token",
+      "trial": 10
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.9,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "down_text": "**j, k, l, m**",
+      "payload_kind": "token",
+      "trial": 11
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.7,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "hov72",
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "down_text": "high,low,medium,high",
+      "payload_kind": "token",
+      "trial": 12
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.64,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "down_text": "**b,c,d,e,f**",
+      "payload_kind": "token",
+      "trial": 13
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.6,
+      "n_pred": 5,
+      "arm": "kv_latent_only",
+      "dur_s": 2.7,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "dal67",
+        "fef87",
+        "fef92",
+        "fef93",
+        "fef94"
+      ],
+      "truth": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "down_text": "dal67, fef87, fef92, fef93, fef94",
+      "payload_kind": "token",
+      "trial": 14
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.14,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "down_text": "",
+      "payload_kind": "token",
+      "trial": 15
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.68,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "down_text": "**b,e,d,c**",
+      "payload_kind": "token",
+      "trial": 16
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "kv_latent_only",
+      "dur_s": 1.37,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [],
+      "truth": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "down_text": "**payload**",
+      "payload_kind": "token",
+      "trial": 17
+    },
+    {
+      "recall": 0.2,
+      "exact": 0.0,
+      "hallucinate": 0.5,
+      "n_pred": 2,
+      "arm": "kv_latent_only",
+      "dur_s": 2.06,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "for14",
+        "fut75"
+      ],
+      "truth": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "down_text": "for14, fut75, system, payload, report",
+      "payload_kind": "token",
+      "trial": 18
+    },
+    {
+      "recall": 0.4,
+      "exact": 0.0,
+      "hallucinate": 0.6,
+      "n_pred": 5,
+      "arm": "kv_latent_only",
+      "dur_s": 2.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 57,
+      "pred": [
+        "dek17",
+        "qaf60",
+        "rsg85",
+        "tml24",
+        "uvp30"
+      ],
+      "truth": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "down_text": ".dek17, qaf60, rsg85, tml24, uvp30",
+      "payload_kind": "token",
+      "trial": 19
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "ful78",
+        "qoc43",
+        "tix37",
+        "vem27",
+        "voq48"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 0
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "dit81",
+        "fir50",
+        "sul17",
+        "zem22",
+        "zew71"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 1
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "but52",
+        "kid34",
+        "wad61",
+        "wod20",
+        "xek28"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 2
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.85,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "mum25",
+        "nut23",
+        "saz59",
+        "wiw36",
+        "zux46"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 3
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "deg14",
+        "duq77",
+        "heh14",
+        "nuk47",
+        "zit18"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 4
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.85,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "luk37",
+        "nuf72",
+        "sop20",
+        "xij41",
+        "xox45"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 5
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "bif38",
+        "cag99",
+        "kax91",
+        "pen64",
+        "wud13"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 6
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "faz12",
+        "fez83",
+        "fod57",
+        "jab79",
+        "jef71"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 7
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "cus15",
+        "ded92",
+        "mir33",
+        "ruf43",
+        "zaq35"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 8
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.83,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "hat97",
+        "hec96",
+        "hen77",
+        "laz66",
+        "lit82"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 9
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "get55",
+        "naw45",
+        "pol29",
+        "ruv49",
+        "was20"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 10
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.84,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "jih40",
+        "koq96",
+        "rab86",
+        "zem59",
+        "zip85"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 11
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "hov72",
+        "sal99",
+        "wub14",
+        "xoc31",
+        "xoc61"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 12
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "bav88",
+        "coj80",
+        "deb61",
+        "rib37",
+        "tim69"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 13
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.8,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "dal67",
+        "fef87",
+        "fig93",
+        "hat60",
+        "jil98"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 14
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "jiw50",
+        "lac15",
+        "puc99",
+        "vif29",
+        "zos91"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 15
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "beg44",
+        "jox47",
+        "nip21",
+        "nuc15",
+        "riw32"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 16
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "gif71",
+        "kam32",
+        "leg84",
+        "miq80",
+        "vam61"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 17
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.81,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "for14",
+        "fut70",
+        "mig31",
+        "nif71",
+        "nir23"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 18
+    },
+    {
+      "recall": 0.0,
+      "exact": 0.0,
+      "hallucinate": 0.0,
+      "n_pred": 0,
+      "arm": "none",
+      "dur_s": 0.82,
+      "up_text_len": 0,
+      "up_text": "",
+      "kv_len_in": 0,
+      "pred": [],
+      "truth": [
+        "dek17",
+        "qaf60",
+        "tuj64",
+        "wum67",
+        "xod18"
+      ],
+      "down_text": "item1,item2,item3,item4,item5",
+      "payload_kind": "token",
+      "trial": 19
+    }
+  ]
+}

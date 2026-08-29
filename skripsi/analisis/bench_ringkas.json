@@ -1,0 +1,298 @@
+{
+  "verifikasi": [
+    {
+      "tugas": "arc_challenge",
+      "n_sel": 7,
+      "soal_identik": true,
+      "n_soal": 100,
+      "n_variasi_sidik": 1
+    },
+    {
+      "tugas": "gsm8k",
+      "n_sel": 7,
+      "soal_identik": true,
+      "n_soal": 100,
+      "n_variasi_sidik": 1
+    },
+    {
+      "tugas": "humanevalplus",
+      "n_sel": 7,
+      "soal_identik": true,
+      "n_soal": 100,
+      "n_variasi_sidik": 1
+    }
+  ],
+  "n_uji_total": 63,
+  "n_signifikan_mentah": 8,
+  "n_signifikan_holm": 6,
+  "n_signifikan_bh": 6,
+  "cochran_q": [
+    {
+      "tugas": "arc_challenge",
+      "sel": [
+        "raw/kv",
+        "soft/kv",
+        "gumbel/kv",
+        "sample/kv",
+        "moi/kv"
+      ],
+      "Q": 6.714285714285714,
+      "df": 4,
+      "p": 0.15177952226129712
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": [
+        "raw/kv",
+        "soft/kv",
+        "gumbel/kv",
+        "sample/kv",
+        "moi/kv"
+      ],
+      "Q": 7.397260273972603,
+      "df": 4,
+      "p": 0.1163259480854954
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": [
+        "raw/kv",
+        "soft/kv",
+        "gumbel/kv",
+        "sample/kv",
+        "moi/kv"
+      ],
+      "Q": 65.66666666666667,
+      "df": 4,
+      "p": 1.8621270049238235e-13
+    }
+  ],
+  "kontras_keluarga": [
+    {
+      "tugas": "arc_challenge",
+      "akurasi_raw": 0.89,
+      "akurasi_keluarga_rerata": 0.925,
+      "delta": 0.035,
+      "ci_lo": -0.0025,
+      "ci_hi": 0.08,
+      "per_anggota": {
+        "soft": 0.94,
+        "gumbel": 0.91,
+        "sample": 0.94,
+        "moi": 0.91
+      }
+    },
+    {
+      "tugas": "gsm8k",
+      "akurasi_raw": 0.83,
+      "akurasi_keluarga_rerata": 0.8925,
+      "delta": 0.0625,
+      "ci_lo": -0.005,
+      "ci_hi": 0.135,
+      "per_anggota": {
+        "soft": 0.88,
+        "gumbel": 0.91,
+        "sample": 0.86,
+        "moi": 0.92
+      }
+    },
+    {
+      "tugas": "humanevalplus",
+      "akurasi_raw": 0.42,
+      "akurasi_keluarga_rerata": 0.715,
+      "delta": 0.295,
+      "ci_lo": 0.205,
+      "ci_hi": 0.3875,
+      "per_anggota": {
+        "soft": 0.69,
+        "gumbel": 0.71,
+        "sample": 0.74,
+        "moi": 0.72
+      }
+    }
+  ],
+  "disosiasi": [
+    {
+      "tugas_a": "arc_challenge",
+      "tugas_b": "gsm8k",
+      "delta_a": 0.034736500000000003,
+      "delta_b": 0.06209175,
+      "selisih_delta": -0.02735525,
+      "ci_lo": -0.1125,
+      "ci_hi": 0.055,
+      "p_dua_sisi": 0.5422
+    },
+    {
+      "tugas_a": "arc_challenge",
+      "tugas_b": "humanevalplus",
+      "delta_a": 0.034736500000000003,
+      "delta_b": 0.29441625000000005,
+      "selisih_delta": -0.25967975,
+      "ci_lo": -0.36,
+      "ci_hi": -0.15749999999999997,
+      "p_dua_sisi": 0.0
+    },
+    {
+      "tugas_a": "gsm8k",
+      "tugas_b": "humanevalplus",
+      "delta_a": 0.06209175,
+      "delta_b": 0.29441625000000005,
+      "selisih_delta": -0.2323245,
+      "ci_lo": -0.3475,
+      "ci_hi": -0.11500000000000002,
+      "p_dua_sisi": 0.0002
+    }
+  ],
+  "efisiensi": [
+    {
+      "tugas": "arc_challenge",
+      "sel": "raw/kv",
+      "token_per_soal": 219.4,
+      "token_per_soal_text": 1081.0,
+      "token_per_soal_baseline": 271.1,
+      "penghematan_token_vs_text": 0.7970397779833487,
+      "percepatan_vs_text": 3.6893203883495143,
+      "penghematan_token_vs_baseline": 0.1907045370711915
+    },
+    {
+      "tugas": "arc_challenge",
+      "sel": "soft/kv",
+      "token_per_soal": 154.1,
+      "token_per_soal_text": 1081.0,
+      "token_per_soal_baseline": 271.1,
+      "penghematan_token_vs_text": 0.8574468085106384,
+      "percepatan_vs_text": 5.428571428571429,
+      "penghematan_token_vs_baseline": 0.4315750645518259
+    },
+    {
+      "tugas": "arc_challenge",
+      "sel": "gumbel/kv",
+      "token_per_soal": 154.4,
+      "token_per_soal_text": 1081.0,
+      "token_per_soal_baseline": 271.1,
+      "penghematan_token_vs_text": 0.8571692876965773,
+      "percepatan_vs_text": 4.779874213836478,
+      "penghematan_token_vs_baseline": 0.4304684618222059
+    },
+    {
+      "tugas": "arc_challenge",
+      "sel": "sample/kv",
+      "token_per_soal": 145.8,
+      "token_per_soal_text": 1081.0,
+      "token_per_soal_baseline": 271.1,
+      "penghematan_token_vs_text": 0.8651248843663275,
+      "percepatan_vs_text": 5.714285714285714,
+      "penghematan_token_vs_baseline": 0.4621910734046477
+    },
+    {
+      "tugas": "arc_challenge",
+      "sel": "moi/kv",
+      "token_per_soal": 145.0,
+      "token_per_soal_text": 1081.0,
+      "token_per_soal_baseline": 271.1,
+      "penghematan_token_vs_text": 0.8658649398704903,
+      "percepatan_vs_text": 4.967320261437909,
+      "penghematan_token_vs_baseline": 0.465142014016968
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": "raw/kv",
+      "token_per_soal": 211.5,
+      "token_per_soal_text": 844.7,
+      "token_per_soal_baseline": null,
+      "penghematan_token_vs_text": 0.7496152480170475,
+      "percepatan_vs_text": 2.4974619289340105,
+      "penghematan_token_vs_baseline": null
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": "soft/kv",
+      "token_per_soal": 192.3,
+      "token_per_soal_text": 844.7,
+      "token_per_soal_baseline": null,
+      "penghematan_token_vs_text": 0.7723452113176276,
+      "percepatan_vs_text": 3.393103448275862,
+      "penghematan_token_vs_baseline": null
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": "gumbel/kv",
+      "token_per_soal": 197.0,
+      "token_per_soal_text": 844.7,
+      "token_per_soal_baseline": null,
+      "penghematan_token_vs_text": 0.7667811057180064,
+      "percepatan_vs_text": 1.7508896797153024,
+      "penghematan_token_vs_baseline": null
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": "sample/kv",
+      "token_per_soal": 187.4,
+      "token_per_soal_text": 844.7,
+      "token_per_soal_baseline": null,
+      "penghematan_token_vs_text": 0.7781460873682964,
+      "percepatan_vs_text": 2.981818181818182,
+      "penghematan_token_vs_baseline": null
+    },
+    {
+      "tugas": "gsm8k",
+      "sel": "moi/kv",
+      "token_per_soal": 189.8,
+      "token_per_soal_text": 844.7,
+      "token_per_soal_baseline": null,
+      "penghematan_token_vs_text": 0.7753048419557239,
+      "percepatan_vs_text": 3.0943396226415096,
+      "penghematan_token_vs_baseline": null
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": "raw/kv",
+      "token_per_soal": 176.8,
+      "token_per_soal_text": 997.2,
+      "token_per_soal_baseline": 122.3,
+      "penghematan_token_vs_text": 0.8227035699959888,
+      "percepatan_vs_text": 3.893258426966292,
+      "penghematan_token_vs_baseline": -0.4456255110384302
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": "soft/kv",
+      "token_per_soal": 121.5,
+      "token_per_soal_text": 997.2,
+      "token_per_soal_baseline": 122.3,
+      "penghematan_token_vs_text": 0.878158844765343,
+      "percepatan_vs_text": 6.078947368421052,
+      "penghematan_token_vs_baseline": 0.006541291905151292
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": "gumbel/kv",
+      "token_per_soal": 131.1,
+      "token_per_soal_text": 997.2,
+      "token_per_soal_baseline": 122.3,
+      "penghematan_token_vs_text": 0.868531889290012,
+      "percepatan_vs_text": 4.651006711409396,
+      "penghematan_token_vs_baseline": -0.07195421095666399
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": "sample/kv",
+      "token_per_soal": 126.0,
+      "token_per_soal_text": 997.2,
+      "token_per_soal_baseline": 122.3,
+      "penghematan_token_vs_text": 0.8736462093862816,
+      "percepatan_vs_text": 5.588709677419354,
+      "penghematan_token_vs_baseline": -0.030253475061324586
+    },
+    {
+      "tugas": "humanevalplus",
+      "sel": "moi/kv",
+      "token_per_soal": 121.6,
+      "token_per_soal_text": 997.2,
+      "token_per_soal_baseline": 122.3,
+      "penghematan_token_vs_text": 0.8780585639791416,
+      "percepatan_vs_text": 4.914893617021277,
+      "penghematan_token_vs_baseline": 0.005723630417007408
+    }
+  ]
+}

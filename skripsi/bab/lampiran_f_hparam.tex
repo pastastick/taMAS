@@ -1,0 +1,26 @@
+\chapter{Hiperparameter dan Lingkungan Eksekusi}
+\label{lamp:hparam}
+
+\begin{longtable}{ll}
+\hline
+Parameter & Nilai \\
+\hline\endhead
+Model & \texttt{Qwen/Qwen3-8B} \\
+Ukuran kosakata $V$ & 151.936 \\
+Dimensi \textit{hidden} $d$ & 4096 \\
+Embedding terikat & tidak \\
+Langkah laten $m$ & 10 \\
+Suhu langkah laten $T$ & 0,70 \\
+Regularisasi ridge $\lambda$ & $10^{-5}$ \\
+Parameter MoI $\beta$ & 1 \\
+Suhu pembangkitan & 0,60 \\
+\textit{top-p} & 0,95 \\
+Token baru maksimum & 2048 \\
+Rantai agen & \texttt{planner}, \texttt{critic}, \texttt{refiner}, \texttt{judger} \\
+Subsampel per sel & 100 \\
+\textit{Seed} pengambilan sampel & 0 \\
+\textit{Seed} pembangkitan & 0 \\
+GPU & NVIDIA A40 46 GB, CUDA 12.8 \\
+Kerangka kerja & PyTorch 2.6.0+cu124, HuggingFace Transformers \\
+\hline
+\end{longtable}

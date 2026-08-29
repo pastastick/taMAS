@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Korpus ekspresi yang benar-benar diserahkan sistem ujung-ke-ujung pada medium \texttt{text} dan \texttt{kv} (enam jalannya per sel). Ekspresi disebut hidup bila RankIC-nya terdefinisi dan skornya tidak konstan.}
+\label{tab:faktor-korpus}
+\small
+\begin{tabular}{llrrrr}
+\hline
+Medium & Metode & Ekspresi & Dapat dievaluasi & $\overline{|\text{RankIC}|}$ & $|t|\ge1{,}96$ \\
+\hline
+teks & \texttt{raw} & 36 & 20 & 0,0184 & 12 \\
+kv & \texttt{raw} & 11 & 3 & 0,0050 & 2 \\
+kv & \texttt{soft} & 33 & 25 & 0,0173 & 17 \\
+kv & \texttt{gumbel} & 30 & 26 & 0,0162 & 14 \\
+kv & \texttt{sample} & 22 & 21 & 0,0185 & 16 \\
+kv & \texttt{moi} & 28 & 22 & 0,0171 & 12 \\
+\hline
+\end{tabular}
+\end{table}

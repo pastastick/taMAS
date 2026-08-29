@@ -1,0 +1,224 @@
+\chapter{KESIMPULAN DAN SARAN}
+
+\section{Kesimpulan}
+
+Berdasarkan hasil eksperimen dan pembahasan pada Bab~IV, penelitian ini
+mengevaluasi penggunaan representasi laten sebagai media penalaran dan
+komunikasi pada sistem multi-agen melalui perbandingan lima formulasi langkah
+laten, yaitu \textit{raw}, \textit{soft}, \textit{sample}, \textit{Gumbel-Softmax},
+dan \textit{Mixture of Inputs} (MoI). Evaluasi dilakukan pada dua lengan
+eksperimen, yaitu lengan \textit{benchmark} untuk mengukur kemampuan penalaran
+dan efisiensi komunikasi serta lengan faktor simbolik untuk menguji kemampuan
+mempertahankan informasi berbentuk ekspresi terstruktur. Berdasarkan hasil
+tersebut, kesimpulan penelitian dapat dirumuskan sebagai berikut.
+
+\subsection{Formulasi Representasi Laten dalam Satu Kerangka Matematis}
+
+Berbagai formulasi langkah laten yang digunakan dalam penelitian dapat
+dinyatakan dalam kerangka umum
+\[
+z = \sum_{i=1}^{V} w_i W_{\mathrm{in}}[i],
+\qquad
+w\in\Delta^{V-1},
+\]
+untuk keluarga metode yang menghasilkan kombinasi konveks embedding token.
+Dalam kerangka tersebut, perbedaan utama antara \textit{soft}, \textit{sample},
+\textit{Gumbel-Softmax}, dan \textit{Mixture of Inputs} terletak pada aturan
+pembentukan bobot ($w$), sedangkan persamaan \textit{raw} pada LatentMAS tidak
+memiliki pembatasan bahwa koefisien harus tidak negatif dan berjumlah satu.
+Dengan demikian, \textit{raw} berada di luar keluarga relaksasi diskret yang
+dibandingkan.
+
+Pada MoI, bobot dapat dinyatakan sebagai kombinasi distribusi prediksi dan
+token hasil sampling. Dengan parameter ($\beta=1$), bobot MoI berada pada
+keluarga kombinasi konveks antara representasi \textit{soft} dan representasi
+hasil sampling. Gumbel-Softmax juga menghasilkan interpolasi antara distribusi
+kontinu dan kecenderungan menuju token diskret, tetapi melalui manipulasi
+logit dan parameter suhu.
+
+Perbedaan geometris tersebut konsisten dengan hasil pengukuran representasi.
+Kosinus antara langkah laten dan embedding token terdekat mencapai $0{,}927$ pada
+\textit{soft}, $0{,}985$ pada Gumbel, dan $1{,}000$ pada \textit{sample}, sedangkan
+\textit{raw} hanya mencapai $0{,}312$. Hasil ini menunjukkan bahwa anggota keluarga
+relaksasi menghasilkan representasi yang secara geometris lebih dekat dengan
+ruang embedding token dibandingkan persamaan \textit{raw}.
+
+\subsection{Pengaruh Formulasi terhadap Penalaran dan Presisi Simbolik}
+
+Hasil lengan \textit{benchmark} menunjukkan bahwa pengaruh formulasi langkah
+laten tidak seragam untuk seluruh jenis tugas. Pada GSM8K dan ARC-Challenge,
+kelima formulasi menghasilkan kinerja yang relatif berdekatan dan tidak
+menunjukkan perbedaan yang cukup kuat untuk menyimpulkan bahwa salah satu
+formulasi secara umum lebih unggul. Sebaliknya, pada HumanEval-Plus,
+\textit{raw} menunjukkan penurunan kinerja yang jelas dengan akurasi ($0{,}42$),
+sementara formulasi lainnya berada pada rentang ($0{,}69$)--($0{,}74$).
+
+Pengujian berpasangan menunjukkan bahwa perbedaan signifikan yang bertahan
+setelah koreksi multipisitas hanya melibatkan \textit{raw} pada HumanEval-Plus.
+Tidak ditemukan perbedaan signifikan antaranggota keluarga relaksasi. Dengan
+demikian, hasil penelitian lebih mendukung pengaruh \textit{keanggotaan
+keluarga formulasi} daripada keunggulan salah satu metode relaksasi tertentu.
+
+Pengaruh tersebut juga bergantung pada tuntutan presisi simbolik tugas.
+Perbedaan kerusakan antara HumanEval-Plus dan GSM8K maupun antara HumanEval-Plus
+dan ARC-Challenge signifikan, sedangkan GSM8K dan ARC-Challenge tidak berbeda
+secara meyakinkan. Oleh karena itu, data tidak mendukung urutan tiga tingkat
+tuntutan simbolik yang dirumuskan sebelumnya, tetapi mendukung pembedaan dua
+kelompok, yaitu tugas pembangkitan kode dan kedua tugas penalaran lainnya.
+
+Temuan tersebut diperkuat oleh pengamatan terhadap fidelitas simbolik.
+Kejadian korupsi token lebih banyak ditemukan pada \textit{raw}, termasuk
+kemunculan karakter yang tidak diharapkan serta kerusakan pada tingkat
+sub-kata. Pada tugas yang membutuhkan keluaran simbolik secara presisi,
+kerusakan semacam ini lebih mudah menyebabkan kegagalan keseluruhan dibanding
+pada tugas dengan jawaban pendek.
+
+Dengan demikian, kelemahan yang ditemukan bukan menunjukkan bahwa komunikasi
+melalui KV-\textit{cache} secara inheren kehilangan informasi. Bukti yang diperoleh
+justru menunjukkan bahwa masalah utama berada pada formulasi yang digunakan
+untuk membentuk representasi laten sebelum representasi tersebut dimasukkan ke
+dalam KV-\textit{cache}.
+
+\subsection{Efisiensi Komunikasi Laten}
+
+Komunikasi antar-agen melalui KV-\textit{cache} menunjukkan pengurangan biaya yang
+substansial dibandingkan komunikasi berbasis teks. Penghematan token keluaran
+mencapai $75{,}0\%$--$87{,}8\%$, sedangkan percepatan waktu inferensi mencapai
+$1{,}8\times$--$6{,}1\times$. Rentang penghematan token tersebut mencakup
+rentang $70{,}8\%$--$83{,}7\%$ yang dilaporkan oleh \textit{LatentMAS}, sehingga temuan
+efisiensi kerangka komunikasi laten dapat direplikasi pada implementasi,
+perangkat keras, dan konfigurasi eksperimen penelitian ini.
+
+Penghematan terutama berasal dari berkurangnya keluaran teks antar-agen.
+Pada medium teks, setiap agen perantara harus menghasilkan keluaran tekstual
+yang kemudian diproses oleh agen berikutnya. Pada medium KV-\textit{cache}, representasi
+internal diteruskan secara langsung sehingga proses verbalisasi penalaran
+antar-agen dapat dihilangkan.
+
+Namun, efisiensi tersebut tidak secara otomatis berarti peningkatan akurasi.
+Pada ketiga tugas, medium KV dengan formulasi keluarga relaksasi menghasilkan
+kinerja yang secara umum sebanding dengan medium teks, tanpa menunjukkan
+keunggulan akurasi yang konsisten. Oleh karena itu, temuan penelitian lebih
+tepat dirumuskan sebagai
+\[
+\boxed{
+\text{akurasi sebanding}
+\quad+\quad
+\text{biaya komunikasi lebih rendah}
+}
+\]
+daripada sebagai keunggulan akurasi komunikasi laten terhadap komunikasi teks.
+
+Efisiensi tersebut juga bergantung pada formulasi representasi laten. Pada
+HumanEval-Plus, penggunaan \textit{raw} menghasilkan akurasi ($0{,}42$) pada
+medium KV, jauh di bawah medium teks sebesar ($0{,}76$) dan bahkan di bawah
+konfigurasi agen tunggal sebesar ($0{,}72$). Dengan demikian, efisiensi tidak
+dapat dipandang sebagai sifat medium KV-\textit{cache} saja, tetapi sebagai sifat
+gabungan antara medium komunikasi dan formulasi representasi laten yang
+mengisinya.
+
+\subsection{Kemampuan Mempertahankan Muatan Simbolik pada Generasi Faktor}
+
+Lengan faktor simbolik memberikan pengujian tambahan terhadap kemampuan
+representasi laten dalam membawa informasi yang harus dipertahankan dalam
+bentuk simbolik dan terstruktur. Pada lengan ini, \textit{raw} menunjukkan
+tingkat kegagalan keluaran yang paling tinggi: 14 dari 18 panggilan tidak
+menghasilkan ekspresi yang dapat diurai, atau sebesar $78\%$. Sebaliknya,
+anggota keluarga relaksasi menghasilkan keluaran yang lebih dapat diandalkan,
+dengan tingkat kegagalan berada pada kisaran $29\%$--$40\%$ untuk metode
+yang mengalami kegagalan.
+
+Perbedaan tersebut berlanjut pada jumlah ekspresi yang dapat dievaluasi.
+\textit{Raw} menghasilkan 11 ekspresi dengan hanya 3 ekspresi yang dapat
+dievaluasi, sedangkan anggota keluarga relaksasi menghasilkan 22--33 ekspresi
+dengan 21--26 ekspresi yang dapat dievaluasi. Rerata
+($\lvert\mathrm{RankIC}\rvert$) pada ekspresi yang dapat dievaluasi berada
+pada kisaran ($0{,}0162$)--($0{,}0185$) untuk medium teks dan anggota keluarga
+relaksasi, sedangkan \textit{raw} menghasilkan ($0{,}0050$) berdasarkan hanya
+tiga ekspresi.
+
+Hasil tersebut memberikan bukti tambahan bahwa kemampuan kanal laten dalam
+mempertahankan muatan simbolik sangat dipengaruhi oleh formulasi representasi
+yang digunakan. Akan tetapi, karena jumlah jalan pada lengan faktor relatif
+kecil dan satuan pengamatannya berbeda dari lengan \textit{benchmark}, hasil
+ini diperlakukan sebagai bukti pendukung dan tidak digunakan sebagai dasar
+pengujian statistik formal.
+
+Nilai \textit{backtest} pada lengan faktor tidak ditafsirkan sebagai prediksi
+keuntungan investasi. Penggunaannya terbatas pada pengujian apakah ekspresi
+simbolik yang berhasil dibawa melalui sistem dapat dieksekusi dan menghasilkan
+sinyal yang dapat dievaluasi secara kuantitatif.
+
+\subsection{Kesimpulan Umum}
+
+Secara keseluruhan, penelitian menunjukkan bahwa representasi laten dapat
+digunakan sebagai media komunikasi antar-agen yang jauh lebih efisien daripada
+komunikasi berbasis teks tanpa harus mengorbankan kinerja penalaran pada tugas
+yang diuji, tetapi keberhasilan tersebut tidak hanya ditentukan oleh medium
+komunikasinya. Formulasi pembentukan representasi laten menjadi komponen
+penting yang menentukan apakah informasi yang diteruskan tetap berada pada
+bentuk yang dapat diproses secara efektif oleh model.
+
+Keluarga formulasi yang menghasilkan kombinasi konveks embedding token,
+yaitu \textit{soft}, \textit{sample}, \textit{Gumbel-Softmax}, dan MoI,
+menunjukkan perilaku yang relatif konsisten pada ketiga \textit{benchmark}
+serta lebih mampu mempertahankan informasi simbolik dibandingkan formulasi
+\textit{raw} pada tugas dengan tuntutan presisi simbolik tinggi. Sebaliknya,
+persamaan \textit{raw} yang digunakan dalam LatentMAS menunjukkan kelemahan
+terutama ketika keluaran menuntut ketepatan identitas simbol.
+
+Dengan demikian, temuan utama penelitian bukan bahwa satu metode relaksasi
+tertentu merupakan formulasi terbaik, melainkan bahwa \textbf{pemilihan
+ruang representasi tempat langkah laten dibentuk merupakan faktor penting
+dalam keberhasilan latent collaboration}. Medium KV-\textit{cache} menyediakan jalur
+komunikasi yang efisien, sedangkan formulasi langkah laten menentukan apakah
+informasi yang dimasukkan ke jalur tersebut tetap dapat digunakan secara
+efektif oleh agen berikutnya.
+
+\section{Saran}
+
+Beberapa arah lanjutan dapat ditempuh berdasarkan batas yang dinyatakan pada
+Bab~IV.
+
+\begin{enumerate}
+    \item \textit{Pengulangan lintas seed dan perbesaran sampel.}
+          Setiap sel pada penelitian ini dijalankan satu kali sehingga ragam
+          antar-\textit{seed} tidak terukur. Pengulangan dengan beberapa
+          \textit{seed} akan memisahkan efek metode dari ragam pembangkitan,
+          terutama untuk selisih kecil pada GSM8K dan ARC-Challenge yang saat
+          ini dilaporkan sebagai tidak signifikan.
+
+    \item \textit{Pengujian lintas backbone.} Penelitian ini
+          mengidentifikasi keterikatan matriks embedding (\textit{tied
+          embeddings}) sebagai variabel yang menentukan apakah matriks
+          \textit{realignment} bekerja atau tidak. Variabel tersebut dapat
+          diuji langsung dengan membandingkan model yang matriksnya terikat dan
+          tidak terikat pada ukuran yang sebanding.
+
+    \item \textit{Pengujian medium gabungan pada ukuran sampel memadai.}
+          Medium gabungan KV dan teks belum diuji sebagai kondisi penuh. Selain
+          itu, penyebab hilangnya prefiks keluaran pada lengan faktor perlu
+          ditelusuri sampai ke akar implementasinya, karena pada penelitian ini
+          bentuk kegagalannya dipulihkan tanpa dijelaskan.
+
+    \item \textit{Pengujian langsung hipotesis mekanistik.} Kerangka pada
+          Bab~III memungkinkan pembentukan persamaan antara yang berada pada
+          jarak terkendali dari lambung konveks, misalnya melalui interpolasi
+          antara persamaan resmi dan bobot \textit{soft}. Apabila akurasi
+          bergerak secara monoton mengikuti jarak tersebut, hubungan antara
+          geometri representasi dan kinerja tugas menjadi terbukti secara
+          kausal, bukan sekadar konsisten.
+
+    \item \textit{Perluasan topologi dan domain.} Rantai agen pada penelitian
+          ini bersifat sekuensial dengan panjang tetap. Topologi hierarkis,
+          jumlah agen yang berbeda, dan lengan faktor simbolik yang dijalankan
+          sebagai kondisi penuh --- termasuk lapisan evolusi yang sengaja tidak
+          diaktifkan di sini --- merupakan perluasan yang wajar.
+
+    \item \textit{Penilaian ekonomi yang lebih ketat pada domain faktor.}
+          Metrik \textit{backtest} pada penelitian ini dihitung tanpa
+          \textit{slippage}, tanpa batas likuiditas, dan dengan penyeimbangan
+          ulang harian penuh. Penilaian yang memperhitungkan biaya transaksi
+          dan kendala perdagangan diperlukan sebelum angka tersebut dapat
+          dibaca sebagai kinerja investasi.
+\end{enumerate}

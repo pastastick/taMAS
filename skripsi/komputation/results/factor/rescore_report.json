@@ -1,0 +1,1556 @@
+{
+  "window": [
+    "2021-01-01",
+    "2021-12-31"
+  ],
+  "budget_s": 900,
+  "n_unique_expr": 1004,
+  "n_with_series": 768,
+  "per_tag": [
+    {
+      "tag": "kv_mix_a025",
+      "ekspresi": 68,
+      "ber_ic": 53,
+      "hidup": 52,
+      "deret": 52,
+      "beda": 0,
+      "mean_abs_ic": 0.018254829786050728
+    },
+    {
+      "tag": "kv_mix_a05",
+      "ekspresi": 116,
+      "ber_ic": 96,
+      "hidup": 96,
+      "deret": 93,
+      "beda": 0,
+      "mean_abs_ic": 0.014452867580580274
+    },
+    {
+      "tag": "kv_mix_a075",
+      "ekspresi": 119,
+      "ber_ic": 101,
+      "hidup": 100,
+      "deret": 95,
+      "beda": 0,
+      "mean_abs_ic": 0.014675923808927849
+    }
+  ],
+  "diffs": [],
+  "missing_before": [
+    {
+      "tag": "kv_mix_a025",
+      "expr": "(TS_Z_SCORE($return, 5)) ? (1) : (-1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE($return, 5))",
+      "ic_baru": -0.005874341900025539
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RESID(TS_CORR($return, $volume, 5))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE($volume, 5) ? (1) : (-1) ? (TS_MIN($close, 5)) : (0.01)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE($volume, 10) ? (1) :(-1) ? (TS_MIN(($close), 10)): (0.01)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($return, 60, 0.9) ? (1) :(-1) ? (TS_QUANTILE($return, 60, 0.1) : (0.01)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(ZSCORE(TS_PCTCHANGE($volume, 10),TS_Z_SCORE(TS_PCTCHANGE($return, 10))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI(TS_PCTCHANGE($volume, 10), TS_PCTCHANGE($return, 10))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_MAD(TS_PCTCHANGE($volume, 10)),TS_MAD(TSPCTCHANGE($return, 10))",
+      "ic_baru": -0.008136443668668282
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_PCTCHANGE(TS_MEAN($close, 30), 60))",
+      "ic_baru": -0.014930683257695173
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE(TS_PCTCHANGE(TS_MEAN($close, 30), 60), 60) * TS_MAD($return, 60)",
+      "ic_baru": -0.017527536683612267
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "(TS_ARGMAX($close, 60) == $close) ? TS_PCTCHANGE($close, 60) : 0",
+      "ic_baru": -0.0022129848427028835
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_CORR($close, $volume, 30) * TS_PCTCHANGE(TS_MEAN($close, 60), 60)",
+      "ic_baru": -0.003535515579179795
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI($close, SEQUENCE(60)) * TS_PCTCHANGE(TS_MEAN($close, 30), 60)",
+      "ic_baru": 0.005039012491975381
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1)",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ARGMAX(TS_PCTCHANGE($close, 60), 30))",
+      "ic_baru": 0.010944541895567286
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1))",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "DECAYLINEAR(TS_PCTCHANGE($close, 60), 10)",
+      "ic_baru": -0.022397205242769527
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE(TS_MAD($return, 60), 30))",
+      "ic_baru": -0.015054181526718904
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_CORR($volume, $return, 60))",
+      "ic_baru": -0.01778343855654752
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ARGMIN(TS_PCTCHANGE($close, 60), 30))",
+      "ic_baru": -0.013038995646352275
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_PCTCHANGE($close, 60) - TS_PCTCHANGE($close, 30))",
+      "ic_baru": -0.006531214836786031
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE(TS_PCTCHANGE($close, 60), 20) * (1 - TS_MAD($return, 20) / TS_STD($return, 20))",
+      "ic_baru": -0.01593749095156124
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1)",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI(TS_PCTCHANGE($close, 60), SEQUENCE(60))",
+      "ic_baru": -0.004236038181588561
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "(TS_PCTCHANGE($close, 60) > 0 ? TS_ZSCORE(TS_PCTCHANGE($close, 60), 20) : 0) - (TS_PCTCHANGE($close, 60) < 0 ? TS_ZSCORE(TS_PCTCHANGE($close, 60), 20) : 0)",
+      "ic_baru": -0.0015467193443258682
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "KURT(TS_PCTCHANGE($close, 60)) - SKEW(TS_PCTCHANGE($close, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE(TS_MEAN($close, 30), 60))",
+      "ic_baru": -0.023480263331846645
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ARGMAX(TS_PCTCHANGE($close, 60), TS_STD($return, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(REGRESI($return, SEQUENCE(60)))",
+      "ic_baru": -0.006652538623803796
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1)",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_MAD($return, 60) / TS_STD($return, 60)",
+      "ic_baru": 0.0078145125950653
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_CORR($volume, $close, 60)",
+      "ic_baru": -0.010749525086284899
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($close, 60), 20))",
+      "ic_baru": -0.017673186322284835
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ARGMAX(TS_MEAN($return, 30), TS_MEAN($return, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(DECAYLINEAR(TS_PCTCHANGE($close, 60), 10))",
+      "ic_baru": -0.022397205242769527
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($return, 0.9, 60) - TS_QUANTILE($return, 0.1, 60)",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_CORR($close, $volume, 60))",
+      "ic_baru": -0.010749525086284899
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_MAD($return, 30))",
+      "ic_baru": -0.04480759485032725
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ARGMIN(TS_ZSCORE(TS_MAD($high - $low, 5), 10), 5))",
+      "ic_baru": -0.0032580910829380794
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI($return, TS_PCTCHANGE($high - $low, 3))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($volume, 20, 0.9) - TS_QUANTILE($volume, 20, 0.1)",
+      "ic_baru": -0.03939286092334897
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_CORR($high - $low, $return, 5) * TS_MAD($return, 10)",
+      "ic_baru": -0.03288640294807755
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ARGMAX(TS_PCTCHANGE($high, 5) - TS_PCTCHANGE($low, 5), 10)",
+      "ic_baru": 0.014876940839581583
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE(TS_STD($high - $low, 5)) * TS_RANK($return, 10)",
+      "ic_baru": -0.010171561284239388
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE(TS_QUANTILE($high - $low, 60, 0.9) - TS_QUANTILE($high - $low, 60, 0.1), 20)",
+      "ic_baru": -0.013549834438372035
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_MAD($high - $low, 30)) * RANK(TS_PCTCHANGE($return, 1))",
+      "ic_baru": -0.019934373509232772
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ARGMAX($high - $low, 10) - TS_ARGMIN($high - $low, 10)",
+      "ic_baru": 0.01659835350022029
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_STD($high - $low, 30)) * RANK(TS_ZSCORE($return, 5))",
+      "ic_baru": -0.02447088780024848
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_CORR($high - $low, $return, 20) - TS_CORR($high - $low, $return, 60)",
+      "ic_baru": -0.00880387350345819
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($high - $low, 60, 0.9) / TS_QUANTILE($high - $low, 60, 0.1)",
+      "ic_baru": -0.01940462751648435
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ARGMIN(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1), 20))",
+      "ic_baru": -0.004824937484951167
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE((TS_MAX($high, 3) - TS_MIN($low, 3)) - (TS_MAX($high, 1) - TS_MIN($low, 1)), 10))",
+      "ic_baru": 0.000259083576626137
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_CORR((($high - $low) / $volume), $return, 10))",
+      "ic_baru": -0.016448153705845434
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI(($high - $low), $return, 5) - REGRESI(($high - $low), $return, 10)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE(TS_PCTCHANGE($high - $low, 5), 5, 0.9) - TS_QUANTILE(TS_PCTCHANGE($high - $low, 5), 5, 0.1)",
+      "ic_baru": -0.015134764261042908
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_PCTCHANGE((TS_MAX($high, 3) - TS_MIN($low, 3)) - (TS_MAX($high, 1) - TS_MIN($low, 1)), 10) * SIGN($return)",
+      "ic_baru": 0.0100724288379436
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_ZSCORE(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1), 20)",
+      "ic_baru": -0.016726409401971367
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(DECAYLINEAR((TS_PCTCHANGE($high, 3) - TS_PCTCHANGE($low, 3)) * $volume, 10))",
+      "ic_baru": -0.025366279387159345
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "REGRESI(($high - $low) - TS_MEAN($high - $low, 5), SEQUENCE(1, 5), 5)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_SKEW(($high - $low), 5) * TS_ZSCORE(TS_ARGMAX($high - $low, 5), 20)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "TS_QUANTILE($return, 5, 0.9) - TS_QUANTILE($return, 5, 0.1)",
+      "ic_baru": -0.04677429525266274
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ZSCORE((TS_MAX($high, 3) - TS_MIN($low, 3)) - (TS_MAX($high, 2) - TS_MIN($low, 2)))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_CORR(($high - $low), $volume, 10))",
+      "ic_baru": -0.01639890067039335
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_ARGMAX(TS_PCTCHANGE($high - $low, 5), 10))",
+      "ic_baru": 0.01372192530797609
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK((TS_MAX($high, 3) - $close) - (TS_MIN($low, 3) - $close))",
+      "ic_baru": -0.034438077975345795
+    },
+    {
+      "tag": "kv_mix_a025",
+      "expr": "RANK(TS_COVARIANCE(($high - $low), $volume, 20))",
+      "ic_baru": -0.05098476810451424
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_SUM($volume, 5), 5))",
+      "ic_baru": -0.02057177379940759
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE(TS_PCTCHANGE($volume, 5), 20, 0.9) - TS_QUANTILE(TS_PCTCHANGE($volume, 5), 20, 0.1)",
+      "ic_baru": -0.011920001407030907
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI(TS_PCTCHANGE($return, 5), TS_PCTCHANGE($volume, 5), 5)",
+      "ic_baru": -0.00036245656597714513
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD(TS_PCTCHANGE($volume, 5), 5) - TS_MAD(TS_PCTCHANGE($return, 5), 5)",
+      "ic_baru": -0.00036020448405279815
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_CORR($volume, $return, 5) * TS_COVARIANCE($volume, $return, 5)",
+      "ic_baru": -0.037555081140661285
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX(TS_ZSCORE(TS_MEAN($return, 5), 5), 5) - TS_ARGMIN(TS_ZSCORE(TS_MEAN($return, 5), 5), 5)",
+      "ic_baru": 0.0031321285043454973
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE((TS_ARGMAX($volume, 20) - TS_ARGMIN($volume, 20)) * $return, 60))",
+      "ic_baru": -0.00042495027898465905
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_RANK((TS_QUANTILE($volume, 20, 0.9) - TS_QUANTILE($volume, 20, 0.1)) * $return, 60)",
+      "ic_baru": -0.010647963337644492
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE((TS_MEDIAN($volume, 20) - $volume) * $return, 5)",
+      "ic_baru": -0.0008502601191155311
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_CORR($volume, $return, 20) - TS_CORR($volume, $return, 60)) * $volume, 60)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ZSCORE((TS_SUMIF($volume, 20, $return > TS_MEAN($return, 20)) - TS_SUMIF($volume, 20, $return < TS_MEAN($return, 20))) / $volume, 60)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_MAD($volume, 20) - TS_MAD($volume, 60)) * (TS_PCTCHANGE($return, 5) - TS_PCTCHANGE($return, 20)), 60)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(DELAY(TS_SUM($volume, 5), 1), 20))",
+      "ic_baru": -0.007801978425980321
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($volume, 20, 0.9) - TS_QUANTILE($volume, 20, 0.1)",
+      "ic_baru": -0.03939286092334897
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_MEAN($volume, 10), TS_MEAN($volume, 20))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "SKEW(TS_LOG($volume, 10))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($volume, SEQUENCE(20))",
+      "ic_baru": -0.0041980970406212
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($volume, 5), 20)) * DELAY(TS_PCTCHANGE($return, 5), 1)",
+      "ic_baru": 0.0018427894020313113
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE(TS_PCTCHANGE($volume, 5), 20, 0.9) - TS_QUANTILE(TS_PCTCHANGE($volume, 5), 20, 0.1)",
+      "ic_baru": -0.011920001407030907
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI(TS_PCTCHANGE($return, 5), SEQUENCE(20)) - TS_PCTCHANGE($volume, 5)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD(TS_PCTCHANGE($volume, 5), 20) * SKEW(TS_PCTCHANGE($return, 5), 20)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_CORR($volume, $return, 20) * TS_COVARIANCE($volume, $return, 20)",
+      "ic_baru": -0.03534661387204436
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "DECAYLINEAR(TS_PCTCHANGE($volume, 5), 20) * DELAY(TS_PCTCHANGE($return, 5), 1)",
+      "ic_baru": 0.002085548387733745
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE((TS_ARGMAX($volume, 20) - TS_ARGMIN($volume, 20)) / TS_MAD($volume, 20), 60))",
+      "ic_baru": 0.0001739143768481736
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_QUANTILE($volume, 60, 0.9) - TS_QUANTILE($volume, 60, 0.1), 5) * $return",
+      "ic_baru": -0.00037173913164271745
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($return, $volume, 30) * TS_ZSCORE($volume, 10)",
+      "ic_baru": -0.001099404974007691
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_SKEW((TS_SUM($volume, 20) - TS_MEAN($volume, 20)) / TS_STD($volume, 20), 60)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($volume, 30, 0.8) / TS_QUANTILE($volume, 30, 0.2) * TS_PCTCHANGE($return, 5)",
+      "ic_baru": 0.00010891002514994879
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "SIGN(TS_PCTCHANGE($volume, 5)) * TS_ZSCORE($return, 10) * (TS_ARGMAX($volume, 20) - TS_ARGMIN($volume, 20))",
+      "ic_baru": 0.0007483262590612954
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_MAD($return, 20), 5))",
+      "ic_baru": -0.004470123365433249
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_MEAN($volume, 10), 10) * TS_CORR($return, $volume, 20)",
+      "ic_baru": -0.003442393703563519
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_SKEW($return, 30) * RANK(TS_STD($return, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($return, SEQUENCE(20), 20) * TS_PCTCHANGE(TS_MEDIAN($volume, 15), 15)",
+      "ic_baru": -0.0029585448656302697
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($return, 0.9, 30) - TS_QUANTILE($return, 0.1, 30)",
+      "ic_baru": -0.048184734035014457
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "(TS_ARGMAX($volume, 10) == $symbol) ? TS_ZSCORE($return, 5) : 0",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_MAD($return, 20) - TS_MAD($return, 60))",
+      "ic_baru": -0.013770206656471023
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($return, 20, 0.9) - TS_QUANTILE($return, 20, 0.1))",
+      "ic_baru": -0.049373267336385834
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_CORR($volume, $return, 20))",
+      "ic_baru": -0.016688367090453796
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_COVARIANCE($volume, $return, 20))",
+      "ic_baru": -0.03158519577372091
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ARGMIN($return, 20))",
+      "ic_baru": 0.000835190279688014
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ARGMAX($return, 20))",
+      "ic_baru": 0.008064786724099344
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($return, 20), 50)) * TS_ARGMIN($volume, 20)",
+      "ic_baru": -0.002790693921668136
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1) / TS_MAD($return, 60)",
+      "ic_baru": 0.013299544139866426
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "FILTER(TS_CORR($volume, $return, 30), DELAY(TS_ARGMAX($volume, 60), 1))",
+      "ic_baru": -0.011396196010984691
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_MEDIAN($return, 20), 10) * (1 - TS_RANK($volume, 30))",
+      "ic_baru": -0.007178906966364549
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "DECAYLINEAR(TS_STD($return, 10), 20) - TS_PCTCHANGE($close, 5)",
+      "ic_baru": 0.017018718758348487
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ZSCORE(TS_ARGMIN($volume, 30), 20) * TS_PCTCHANGE($close, 10)",
+      "ic_baru": -0.003979561371624541
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_MAD($return, 20), 5) - TS_PCTCHANGE(TS_MAD($return, 60), 5)",
+      "ic_baru": -0.0030727264127790206
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE($return, 20)) * RANK(1 / TS_STD($return, 60))",
+      "ic_baru": 0.029585502579386077
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_SKEW(TS_PCTCHANGE($close, 5), 20) * TS_ARGMAX($volume, 60)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($return, SEQUENCE(60)) * TS_ZSCORE($volume, 20)",
+      "ic_baru": -0.005366501681105927
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1) / TS_MAD($return, 20)",
+      "ic_baru": 0.020985768408954403
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "SIGN(TS_PCTCHANGE($high, 5)) * TS_ARGMIN($volume, 60) + TS_ARGMAX($close, 20)",
+      "ic_baru": -0.015052173614494178
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($return, 20, 0.9) - TS_QUANTILE($return, 20, 0.1))",
+      "ic_baru": -0.049373267336385834
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ZSCORE(TS_SKEW($return, 30))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI(TS_PCTCHANGE($close, 10), SEQUENCE(10))",
+      "ic_baru": -0.00747470921689048
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "FILTER(TS_CORR($volume, $return, 20), TS_STD($return, 20) < 0.05)",
+      "ic_baru": -0.00997660941564067
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD($return, 15) / TS_STD($return, 15)",
+      "ic_baru": 0.003335575803483164
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ARGMAX($return, 10) - TS_ARGMIN($return, 10))",
+      "ic_baru": 0.00960409611224597
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($close, 60), 20))",
+      "ic_baru": -0.017673186322284835
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE(TS_PCTCHANGE($close, 60), 100, 0.8) - TS_QUANTILE(TS_PCTCHANGE($close, 60), 100, 0.2)",
+      "ic_baru": -0.015914244540798518
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI(TS_PCTCHANGE($close, 60), SEQUENCE(20))",
+      "ic_baru": -0.004236038181588561
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD(TS_PCTCHANGE($close, 60), 20) * TS_ZSCORE(TS_PCTCHANGE($close, 60), 20)",
+      "ic_baru": -0.020586446762526533
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "KURT(TS_PCTCHANGE($close, 60)) - SKEW(TS_PCTCHANGE($close, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX(TS_PCTCHANGE($close, 60), 20) - TS_ARGMIN(TS_PCTCHANGE($close, 60), 20)",
+      "ic_baru": 0.01079748847647053
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ARGMAX(TS_PCTCHANGE($close, 60), 20))",
+      "ic_baru": 0.007022621976591985
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "ZSCORE(TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1))",
+      "ic_baru": -0.020959496056664154
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "DECAYLINEAR(TS_PCTCHANGE($close, 60), 20)",
+      "ic_baru": -0.01979252861857079
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_RSI($close, 60) < 30 ? 1 : (TS_RSI($close, 60) > 70 ? -1 : 0))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_BB_UPPER($close, 60, 2) - TS_BB_MIDDLE($close, 60, 2), 5)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "LOG(TS_MEAN($close, 60) / TS_MEAN($close, 30))",
+      "ic_baru": 0.02336014670475688
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($close, 30), 60))",
+      "ic_baru": -0.014230677042051065
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_CORR($return, TS_STD($return, 30), 60))",
+      "ic_baru": -0.005159580081914848
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_ARGMAX($close, 60) - TS_ARGMIN($close, 60)) * SIGN(TS_PCTCHANGE($close, 60)))",
+      "ic_baru": 0.0015440456586395847
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1))",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(REGRESI($return, SEQUENCE(60), 60))",
+      "ic_baru": -0.006244643163173288
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_KURT($return, 60) - TS_SKEW($return, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1)",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "FILTER(TS_PCTCHANGE($close, 60), RSI($return, 14) > 70)",
+      "ic_baru": 0.0008039310358852926
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_CORR($volume, $close, 30) * TS_ZSCORE($return, 60)",
+      "ic_baru": -0.00868448599212582
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "DECAYLINEAR(TS_MEAN($close, 60), 20) - $close",
+      "ic_baru": 0.027036433712978373
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX($high, 60) - TS_ARGMIN($volume, 60)",
+      "ic_baru": 0.0227695131035579
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "MACD($close, 12, 26) - BB_MIDDLE($return, 60)",
+      "ic_baru": -0.018020690428966105
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1))",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(REGRESI($close, SEQUENCE(60), 60))",
+      "ic_baru": -0.010610109463915954
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_CORR($close, $volume, 60) * TS_PCTCHANGE($close, 30))",
+      "ic_baru": -0.022618859089542385
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_MEAN($close, 60) - TS_MEAN($close, 30))",
+      "ic_baru": 0.019292769012412614
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_STD($close, 60) / TS_MAD($close, 60)) * TS_ZSCORE($close, 60))",
+      "ic_baru": -0.027530533119290542
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ARGMAX($close, 60) - TS_ARGMIN($close, 60))",
+      "ic_baru": 0.02309168745708464
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_CORR($high - $low, TS_STD($return, 5), 5)",
+      "ic_baru": -0.004488185624965616
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_SUM(($high - $low) * $volume, 5) / TS_SUM($volume, 5)",
+      "ic_baru": -0.03571338362563684
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX($high, 5) - TS_ARGMIN($low, 5)",
+      "ic_baru": 0.02168070304286391
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($high - $low, SEQUENCE(5), 5)",
+      "ic_baru": -0.005844998586004741
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_SKEW($high - $low, 5)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE((TS_QUANTILE($high, 60, 0.9) - TS_QUANTILE($low, 60, 0.1)) - (TS_MEAN($high, 60) - TS_MEAN($low, 60)), 60))",
+      "ic_baru": -0.0013796346710274686
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_ARGMAX($high, 60) - TS_ARGMIN($low, 60)) / TS_MAD($return, 60))",
+      "ic_baru": 0.02230141345275861
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_CORR((TS_PCTCHANGE($high, 60) - TS_PCTCHANGE($low, 60)), $return, 60))",
+      "ic_baru": -0.02496831895737132
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_SUMIF($high, 60, $volume > TS_MEDIAN($volume, 60)) - TS_SUMIF($low, 60, $volume > TS_MEDIAN($volume, 60))) / TS_SUM($volume, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK((TS_PCTCHANGE($high, 60) - TS_PCTCHANGE($low, 60)) * TS_ZSCORE($return, 60))",
+      "ic_baru": -0.01328467481539004
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_ZSCORE(TS_QUANTILE($high, 3, 0.9) - TS_QUANTILE($low, 3, 0.1), 5))",
+      "ic_baru": -0.010051250341082313
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX(TS_STD($return, 5)) - TS_ARGMIN(TS_STD($return, 5))",
+      "ic_baru": 0.007182140489298616
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_CORR($high - $low, $volume, 5))",
+      "ic_baru": -0.014543809931773993
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($return, TS_PCTCHANGE($high - $low, 5))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_SKEW($return, 5))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "ZSCORE(TS_CORR($high - $low, $return, 5))",
+      "ic_baru": -0.023788877434177562
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX($high - $low, 5) ? (TS_PCTCHANGE($close, 1)) : (TS_PCTCHANGE($close, -1))",
+      "ic_baru": 0.00440032157579984
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_CORR(($high - $low)/$volume, $return, 5)",
+      "ic_baru": -0.01400984208205494
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "REGRESI($high - $low, $return, 5)",
+      "ic_baru": -0.01143830587670865
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD($high - $low, 5) * (TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.034988439312099384
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "RANK(TS_PCTCHANGE(TS_QUANTILE($high, 5, 0.9) - TS_QUANTILE($low, 5, 0.1), 5))",
+      "ic_baru": -0.010218523836312766
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ZSCORE(TS_ARGMAX($high - $low, 5)) - TS_ZSCORE(TS_ARGMIN($high - $low, 5))",
+      "ic_baru": 0.008446564576025177
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_MAD($high - $low, 5) * (TS_CORR($return, $high - $low, 5) > 0 ? -1 : 1)",
+      "ic_baru": 0.025767609071215395
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_PCTCHANGE(TS_QUANTILE($high, 10, 0.8) - TS_QUANTILE($low, 10, 0.2), 10) / TS_STD($high - $low, 10)",
+      "ic_baru": -0.0007917720264626567
+    },
+    {
+      "tag": "kv_mix_a05",
+      "expr": "TS_ARGMAX($high - $low, 5) - TS_ARGMIN($high - $low, 5) / TS_MEDIAN($high - $low, 5)",
+      "ic_baru": -0.008681517342944952
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(TS_SUM($volume, 5), 5)) * DELAY(TS_PCTCHANGE($return, 5), 1)",
+      "ic_baru": 0.0024061712342232193
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX(TS_QUANTILE($volume, 20, 0.9), 20) - TS_ARGMIN(TS_QUANTILE($volume, 20, 0.1), 20)",
+      "ic_baru": 0.009351504352274536
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI(TS_PCTCHANGE($return, 5), SEQUENCE(5)) * INV(TS_STD($volume, 5))",
+      "ic_baru": 0.0001858143118923646
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($volume, 20) * (DELAY(TS_ZSCORE($return, 20), 1) - TS_ZSCORE($return, 20))",
+      "ic_baru": 0.010403867889483272
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($volume, 5, 0.8) - TS_QUANTILE($volume, 5, 0.2) * DELAY(TS_PCTCHANGE($return, 5), 1)",
+      "ic_baru": -0.025366693817635646
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SKEW($volume, 20) * DELAY(TS_PCTCHANGE($return, 20), 1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(DELAY(TS_STD($volume, 10), 1), 20))",
+      "ic_baru": -0.0038060442930946793
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_RESIDUAL($return, $volume, 5) - TS_MEAN(TS_RESIDUAL($return, $volume, 5), 20)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($volume, 5, 0.9) - TS_QUANTILE($volume, 5, 0.1)",
+      "ic_baru": -0.04142526324882359
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($volume, 10) / TS_MEDIAN($volume, 10)",
+      "ic_baru": -0.010948752036943269
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "(TS_ARGMAX($volume, 10) > TS_ARGMIN($volume, 10)) ? (TS_ZSCORE($return, 5)) : (0)",
+      "ic_baru": -0.004849874303037069
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(TS_PCTCHANGE($volume, 5), 10) * RANK(TS_CORR($return, $volume, 20))",
+      "ic_baru": -0.01667033173068177
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(DELAY(TS_SUM($volume, 5), 1), 20))",
+      "ic_baru": -0.007801978425980321
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($volume, 20, 0.9) - TS_QUANTILE($volume, 20, 0.1)",
+      "ic_baru": -0.03939286092334897
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "(TS_PCTCHANGE($volume, 5) > 0.3) ? (TS_ZSCORE($return, 5)) : (0)",
+      "ic_baru": -0.005773310033158127
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SKEW(TS_LOG($volume), 20) * TS_PCTCHANGE($return, 1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($return, $volume, 20) * TS_ZSCORE($return, 1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ARGMAX($volume, 20) - TS_ARGMIN($volume, 20))",
+      "ic_baru": 0.004831524797936631
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($volume, 20, 0.9) - TS_QUANTILE($volume, 20, 0.1))",
+      "ic_baru": -0.03939286092334897
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(REGRESI($volume, SEQUENCE(20), 20) - TS_MEAN($volume, 20))",
+      "ic_baru": 0.019722273861971958
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_STD($return, 20) / TS_MAD($return, 20))",
+      "ic_baru": -0.003962438238220308
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(SKEW(TS_PCTCHANGE($volume, 20)))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_CORR($volume, $return, 20))",
+      "ic_baru": -0.016688367090453796
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ARGMAX($volume, 20) - TS_ARGMIN($volume, 20))",
+      "ic_baru": 0.004831524797936631
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(TS_PCTCHANGE($return, 5), 20)) * (DELAY(TS_ARGMAX($volume, 10), 1) == $symbol ? 1 : -1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($return, 10) - TS_MAD($return, 20) / TS_ZSCORE($volume, 5) * DELAY(TS_ARGMIN($volume, 3), 1)",
+      "ic_baru": -0.0017555364024456055
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($return, $volume, 10) * TS_ZSCORE(TS_PCTCHANGE($volume, 5), 20) * DELAY(TS_ARGMAX($volume, 10), 1)",
+      "ic_baru": 0.002700178680940035
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($return, 5, 0.8) - TS_QUANTILE($return, 5, 0.2) * (DELAY(TS_ARGMAX($volume, 10), 1) == $symbol ? 1 : -1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SKEW($return, 10) * TS_ZSCORE($volume, 5) * DELAY(TS_ARGMAX($volume, 10), 1)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "INV(LOG(DECAYLINEAR($volume, 5))) * (DELAY(TS_ARGMAX($volume, 10), 1) == $symbol ? 1 : -1) * TS_ZSCORE(TS_PCTCHANGE($return, 5), 20)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_MAD($return, 20) - TS_MAD($return, 60))",
+      "ic_baru": -0.013770206656471023
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($return, 20, 0.9) - TS_QUANTILE($return, 20, 0.1))",
+      "ic_baru": -0.049373267336385834
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_SKEW($return, 20))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(REGRESI($return, SEQUENCE(20), 20))",
+      "ic_baru": -0.006483678771415662
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_MAD($volume, 20) - TS_MAD($volume, 60))",
+      "ic_baru": -0.0023555474862180757
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK((TS_PCTCHANGE($high, 20) - TS_PCTCHANGE($low, 20)) * $volume)",
+      "ic_baru": -0.012982166038143363
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($return, 20, 0.9) - TS_QUANTILE($return, 20, 0.1))",
+      "ic_baru": -0.049373267336385834
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_STD($return, 5) - TS_STD($return, 60))",
+      "ic_baru": -0.010591724554351594
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_CORR($volume, $return, 20) - TS_CORR($volume, $return, 60))",
+      "ic_baru": -0.005274873287214029
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ARGMIN($return, 20) - TS_ARGMIN($return, 60))",
+      "ic_baru": -0.008948343377528653
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_MAD($return, 20) / TS_MAD($return, 60))",
+      "ic_baru": -0.016460388213769068
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(REGRESI($return, SEQUENCE(60), 60) - REGRESI($return, SEQUENCE(20), 20))",
+      "ic_baru": -0.009378460815426929
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(TS_STD($return, 20), 5))",
+      "ic_baru": -0.008756424677874807
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMIN(TS_PCTCHANGE(TS_VAR($return, 30), 10))",
+      "ic_baru": -0.0027585336415808124
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_CORR($volume, TS_STD($return, 40), 20))",
+      "ic_baru": -0.011437847387496336
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE(TS_MAD($return, 50), 50, 0.9) - TS_QUANTILE(TS_MAD($return, 50), 50, 0.1)",
+      "ic_baru": -0.027425457076757535
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(RANK(TS_PCTCHANGE(TS_STD($return, 60), 15)), 20)",
+      "ic_baru": -0.013004276032257523
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX(TS_PCTCHANGE(TS_CORR($volume, $return, 30), 10))",
+      "ic_baru": 0.001022202959816381
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($return, 20, 0.9) - TS_QUANTILE($return, 20, 0.1))",
+      "ic_baru": -0.049373267336385834
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_STD($return, 10) / TS_STD($return, 60))",
+      "ic_baru": -0.016865681373651773
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ARGMIN($volume, 20) - DELAY(TS_ARGMIN($volume, 20), 5))",
+      "ic_baru": -0.002895448791006752
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(PERCENTILE(TS_QUANTILE($return, 60, 0.5), 20))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_MAD($return, 10) / TS_MAD($return, 60))",
+      "ic_baru": -0.013462549051155369
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(DELAY(TS_ARGMAX($volume, 30), 5) - TS_ARGMAX($volume, 30))",
+      "ic_baru": -0.005577305302983138
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(TS_MAD($return, 20), 5))",
+      "ic_baru": -0.004470123365433249
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1))",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(REGRESI($return, SEQUENCE(60), 60) - REGRESI($return, SEQUENCE(60), 30))",
+      "ic_baru": -0.0011347355122460902
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_SKEW($volume, 30))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_PCTCHANGE($close, 10) - TS_PCTCHANGE($close, 30))",
+      "ic_baru": 0.012633423254065369
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE(TS_STD($return, 20), 60, 0.9) - TS_QUANTILE(TS_STD($return, 20), 60, 0.1))",
+      "ic_baru": -0.030857739830630834
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1)",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_PCTCHANGE(TS_RANK($close, 60), 20)",
+      "ic_baru": 0.000292336713564745
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($close, SEQUENCE(60)) - REGRESI($return, SEQUENCE(60))",
+      "ic_baru": -0.0034259494987151397
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MEAN($close, 60) - TS_MEAN($close, 30)",
+      "ic_baru": 0.019292769012412614
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_STD($close, 60) / TS_MAD($close, 60)",
+      "ic_baru": -0.007325025557377989
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RSI($close, 60) - RSI($close, 30)",
+      "ic_baru": 0.012466293463034244
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ARGMAX(TS_PCTCHANGE($close, 60), 30))",
+      "ic_baru": 0.010944541895567286
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(TS_MEAN(TS_PCTCHANGE($close, 60)), 20)",
+      "ic_baru": -0.017869033571653974
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($return, 60, 0.9) - TS_QUANTILE($return, 60, 0.1)",
+      "ic_baru": -0.04204988627195433
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RSI($close, 14) - BB_MIDDLE($close, 20, 2)",
+      "ic_baru": -0.017160294373089666
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($volume, $close, 60)",
+      "ic_baru": -0.010749525086284899
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD(TS_PCTCHANGE($close, 60), 30)",
+      "ic_baru": -0.024543028969019838
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(ZSCORE(TS_PCTCHANGE($close, 60), 30))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX(TS_RANK($close, 60), 30) - TS_ARGMIN(TS_RANK($close, 60), 30)",
+      "ic_baru": -0.004890808760333463
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_COVARIANCE($close, $return, 60)",
+      "ic_baru": -0.028514875824229464
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($return, SEQUENCE(60))",
+      "ic_baru": -0.006652538623803796
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "KURT(TS_PCTCHANGE($close, 60)) - SKEW(TS_PCTCHANGE($close, 60))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SUM($volume * TS_PCTCHANGE($close, 60), 60) / TS_SUM($volume, 60)",
+      "ic_baru": -0.013672344842119401
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(EMA($close, 30) - EMA($close, 60))",
+      "ic_baru": -0.018105130663812117
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE($close, 60, 0.9) - TS_QUANTILE($close, 60, 0.1)",
+      "ic_baru": -0.02095949611415706
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($close, $volume, 60)",
+      "ic_baru": -0.010749525086284899
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(RANK(TS_PCTCHANGE($close, 60)), 20)",
+      "ic_baru": -0.017348399185841974
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($close, 60) / TS_STD($return, 60)",
+      "ic_baru": -0.00287449739195057
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX($close, 60) - TS_ARGMIN($close, 60)",
+      "ic_baru": 0.02309168745708464
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(ZSCORE(TS_PCTCHANGE($close, 60), 30))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_QUANTILE(TS_MAD($return, 30), 30, 0.9) - TS_QUANTILE(TS_MAD($return, 30), 30, 0.1)",
+      "ic_baru": -0.028863697046070697
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(RSI($close, 14), 20)",
+      "ic_baru": -0.014371437809603345
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "FILTER(TS_PCTCHANGE($close, 30) > BB_UPPER($close, 20, 2), $volume > TS_MEAN($volume, 20))",
+      "ic_baru": -0.0017914485801411157
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX(TS_PCTCHANGE($close, 30), 60) - TS_ARGMAX(TS_PCTCHANGE($close, 30), 30)",
+      "ic_baru": 0.01835906421963338
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($close, $volume, 60) * TS_STD($return, 30)",
+      "ic_baru": -0.030296499534140885
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($high - $low, $volume, 10) / TS_STD($high - $low, 10)",
+      "ic_baru": 0.029749541917530327
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(TS_ARGMAX($high - $low, 5) - TS_ARGMIN($high - $low, 5), 3)",
+      "ic_baru": 0.01571886697995565
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($high - $low, 5) / TS_MEDIAN($high - $low, 5)",
+      "ic_baru": -0.008512262080215473
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SKEW(($high - $close) / ($open - $low), 5)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI(($high - $low), $return, 5)",
+      "ic_baru": -0.01143830587670865
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_ZSCORE(TS_QUANTILE($high, 5, 0.9) - TS_QUANTILE($low, 5, 0.1), 20))",
+      "ic_baru": -0.00998601334462401
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_PCTCHANGE(TS_MAD($high - $low, 10), TS_STD($high - $low, 20))",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX($high - $low, 5) ? -TS_ZSCORE($return, 10) : TS_ZSCORE($return, 10)",
+      "ic_baru": -0.010577457155630571
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR(TS_PCTCHANGE($high, 5), TS_PCTCHANGE($low, 5), 20)",
+      "ic_baru": 0.0019826183063748858
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_PCTCHANGE(TS_ARGMAX($high - $low, 5), TS_ARGMIN($high - $low, 5), 10)",
+      "ic_baru": null
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($high - $low, $volume, 5) / TS_STD($high - $low, 5)",
+      "ic_baru": 0.0258421777096933
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX($high - $low, 5) ? TS_ZSCORE($return, 5) : 0",
+      "ic_baru": 0.00082203653261992
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_PCTCHANGE(TS_MAD($high - $low, 5), 1) * TS_RANK($high - $low, 5)",
+      "ic_baru": -0.005829773454887675
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "(TS_PCTCHANGE($high, 1) - TS_PCTCHANGE($low, 1)) / TS_STD($return, 5)",
+      "ic_baru": -0.0124155041657919
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($high - $low, SEQUENCE(5), 5) / TS_ZSCORE($return, 5)",
+      "ic_baru": -0.01768810719028739
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_QUANTILE($high - $low, 5, 0.9) - TS_QUANTILE($high - $low, 5, 0.1))",
+      "ic_baru": -0.035888800559133946
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_STD($high - $low, 5) * TS_PCTCHANGE($return, 5))",
+      "ic_baru": 0.010219760404147375
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "REGRESI($return, $high - $low, 5)",
+      "ic_baru": -0.003205700728349949
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ARGMAX($high - $low, 5) ? (TS_ZSCORE($return, 5)) : (0)",
+      "ic_baru": 0.00082203653261992
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_MAD($high - $low, 5) / TS_MAD($return, 5)",
+      "ic_baru": -0.011841445186045532
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(TS_CORR($high - $low, $return, 5), 10)",
+      "ic_baru": -0.022302850029925516
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "RANK(TS_PCTCHANGE(TS_QUANTILE($high, 5, 0.9) - TS_QUANTILE($low, 5, 0.1), 5))",
+      "ic_baru": -0.010218523836312766
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_ZSCORE(TS_ARGMAX($high - $low, 5)) * TS_PCTCHANGE($close, 5)",
+      "ic_baru": 0.00219262999112088
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "DECAYLINEAR(TS_MAD($high - $low, 5), 10) * TS_PCTCHANGE($return, 5)",
+      "ic_baru": 0.010312187036949833
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_CORR($high - $low, $return, 5) - TS_CORR($high - $low, $return, 20)",
+      "ic_baru": -0.009243577853449448
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "FILTER(TS_ARGMAX($high - $low, 5), $volume > TS_MEAN($volume, 20))",
+      "ic_baru": -0.007952724475238966
+    },
+    {
+      "tag": "kv_mix_a075",
+      "expr": "TS_SUM(TS_PCTCHANGE($high - $low, 1), 3) - TS_SUM(TS_PCTCHANGE($high - $low, 1), 5)",
+      "ic_baru": 0.007124173437355316
+    }
+  ]
+}

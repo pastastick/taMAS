@@ -1,0 +1,77 @@
+\chapter{LANDASAN TEORI}
+
+\section{Catatan}
+Intinya bab 2 di Proposal TA ini isinya dalah dasar-dasar teori yang kamu pakai. Di bawah ini ada contoh penulisan tentang teori vektor.
+
+\section{Vektor}
+Dalam analisis statistika multivariat, vektor sering digunakan sebagai representasi variabel atau observasi. Berikut merupakan teori yang menjadi dasar terkait vektor pada penelitian ini.
+\newline \textbf{Definisi 2.1.} \citep{johnsonwichern} \textit{Sebuah larik \textbf{x} dari bilangan real $x_1$, $x_2$, $\ldots$, $x_n$ disebut vektor dan dapat dituliskan sebagai berikut.}
+$$
+\text{\textit{\textbf{x}}} \bm{=}
+\begin{bmatrix}
+x_1 \\x_2 \\ \vdots \\x_n
+\end{bmatrix}
+\text{atau \,}
+\text{\textit{\textbf{x}}}^T 
+\bm{=} 
+\begin{bmatrix}
+x_1 & x_2 & \ldots & x_n
+\end{bmatrix}\text{.}
+$$ 
+\par Secara geometris, vektor \textbf{x} dapat direpresentasikan sebagai garis berarah dalam \textit{n} baris dengan komponen $x_1$ sepanjang baris pertama, sepanjang $x_2$ baris kedua, dan seterusnya hingga sepanjang $x_n$ baris ke-\textit{n}. Berikut merupakan beberapa operasi matematis pada vektor.
+\begin{enumerate}
+    \item Penjumlahan vektor
+    \par Jika vektor \textbf{a} dan \textbf{b} memiliki jumlah elemen yang sama, maka hasil penjumlahan vektor \textbf{a} dan \textbf{b} dapat didefiniskan sebagai berikut.
+    $$
+    \text{\textbf{a} + \textbf{b}} \bm{=} \text{\textbf{b} + \textbf{a}} \bm{=}
+        \begin{bmatrix}
+            a_1 \\a_2 \\\vdots \\a_n
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            b_1 \\b_2 \\\vdots \\b_n
+        \end{bmatrix}
+        \bm{=}
+        \begin{bmatrix}
+            a_1 + b_1 \\a_2 + b_2 \\\vdots \\a_n + b_n
+        \end{bmatrix}\text{.}
+    $$
+    \item Pengurangan vektor
+    \par Vektor negatif dari sebuah vektor \textbf{a}, dinotasikan dengan $\bm{-}$\textbf{a}, merupakan vektor yang memiliki panjang yang sama dengan vektor \textbf{a}, tetapi memiliki arah yang berlawanan dengan vektor \textbf{a}. Jika \textbf{a} $\bm{-}$ \textbf{b} merupakan selisih vektor \textbf{a} dan \textbf{b}, maka dapat dituliskan sebagai berikut.
+    $$
+    \text{\textbf{a} - \textbf{b}} \bm{=} \text{\textbf{a} + ($\bm{-}$\textbf{b})} \bm{=}
+        \begin{bmatrix}
+            a_1 \\a_2 \\\vdots \\a_n
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            -b_1 \\-b_2 \\\vdots \\-b_n
+        \end{bmatrix}
+        \bm{=}
+        \begin{bmatrix}
+            a_1 + (-b_1) \\a_2 + (-b_2) \\\vdots \\a_n + (-b_n)
+        \end{bmatrix}\text{.}
+    $$
+    \item Perkalian vektor dengan skalar
+    \par Sebuah vektor dapat diperbesar atau diperkecil dengan mengalikan vektor tersebut dengan suatu konstanta \textit{c}. Diberikan vektor \textbf{a} dan konstanta \textit{c}, maka vekor \textit{c}\textbf{a} dapat dituliskan sebagai berikut.
+    $$
+    \text{\textit{c}\textbf{a}} \bm{=}
+    \begin{bmatrix}
+        ca_1 \\ca_2 \\\vdots \\ca_n
+    \end{bmatrix}\text{.}
+    $$
+    \item \textit{Transpose} vektor
+    \par Operasi membalikkan sebuah vektor yang semula tersusun dalam bentuk kolom diubah ke dalam bentuk baris disebut sebagai \textit{transpose}. Diberikan sebuah vektor \textbf{a}, maka \textit{transpose} vektor \textbf{a} dapat dituliskan sebagai berikut.
+    $$
+    \text{\textbf{a}} \bm{=}
+    \begin{bmatrix}
+    a_1 \\a_2 \\ \vdots \\a_n
+    \end{bmatrix}
+    \text{di-\textit{transpose} menjadi \,}
+    \text{\textbf{a}}^T 
+    \bm{=} 
+    \begin{bmatrix}
+    a_1 & a_2 & \ldots & a_n
+    \end{bmatrix}\text{.}
+    $$
+\end{enumerate}

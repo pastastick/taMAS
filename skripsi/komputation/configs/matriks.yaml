@@ -1,0 +1,183 @@
+# =============================================================================
+# MATRIKS EKSPERIMEN SKRIPSI — 5 formulasi × 3 medium × 2 lengan
+#
+# Berkas ini adalah SATU sumber kebenaran untuk "sel apa saja yang harus
+# dijalankan". Ia TIDAK dibaca otomatis oleh runner mana pun: `run_bench.py`
+# dan `run_factor.py` sengaja mengambil parameter dari argumen CLI, satu proses
+# per sel, supaya 2–3 sel bisa jalan paralel di satu GPU (docs/HASIL_TAHAP0.md
+# §8.7). Berkas ini yang MENURUNKAN perintah-perintah itu — lihat
+# `scripts/gen_perintah.py`.
+#
+# Konfigurasi lama (`experiment*.yaml`, `backtest.yaml`) dihapus bersama
+# pipeline evolusi + RD-Agent yang membacanya. Riwayatnya ada di branch
+# `exp/alt3-gumbel-fidelitas`.
+# =============================================================================
+
+model: "Qwen/Qwen3-8B"          # dipatok satu backbone (keputusan desain skripsi)
+
+# ── SUMBU A — persamaan langkah laten (hidden state → input embedding) ──────
+# Inilah yang skripsi sebut "latent realignment". Himpunan yang dibandingkan:
+#
+#   M = {raw, soft, sample, gumbel, moi}        semua formulasi
+#   R = {soft, sample, gumbel, moi}  ⊂ M        keluarga relaksasi diskret
+#
+# `raw` adalah mekanisme resmi LatentMAS (ridge W_a, Teorema A.1) dan satu-
+# satunya anggota M di LUAR R, karena hasilnya tak dibatasi convex hull
+# embedding. Keempat anggota R memproyeksikan balik ke convex hull itu.
+#
+# Sampai 2026-08-27 `soft` dicatat di sini sebagai "kontrol, bukan salah satu
+# dari empat". Label itu DIBATALKAN: seluruh analisis yang sudah terbit
+# (kontras keluarga vs raw, Cochran Q dengan k=5) memperlakukan `soft` sebagai
+# anggota penuh R, dan skripsi menyebut lima formulasi. Peran pemisah efek yang
+# dulu jadi alasan label "kontrol" tetap berlaku sebagai TAFSIR — `soft` berada
+# di manifold embedding tanpa entropi tambahan, `gumbel` dengan — tapi itu cara
+# membaca hasil, bukan status desain yang berbeda.
+latent_modes: [raw, soft, sample, gumbel, moi]
+
+# ── SUMBU B — medium komunikasi antar-agen (rantai SEKUENSIAL) ──────────────
+#   text        : handoff via teks, tanpa KV, tanpa langkah laten
+#   kv_and_text : handoff via KV, agen tetap mengeluarkan teks
+#   kv          : handoff via KV, agen perantara laten murni (tak emit teks)
+# CATATAN PENTING: pada `text` tidak ada langkah laten sama sekali, sehingga
+# keempat nilai Sumbu A menghasilkan sel yang IDENTIK. Karena itu `text`
+# dijalankan SEKALI saja, bukan empat kali — ia satu baseline, bukan empat.
+comm_modes: [kv, kv_and_text]
+comm_mode_tanpa_laten: text
+
+# Lantai pembanding: satu agen (judger saja), tanpa rantai.
+baseline: true
+
+latent_steps: 10                # setelan produksi (B1); 40 dipakai di probe kanal
+latent_temp: 0.7
+latent_beta: 1.0                # mode moi; sweep β menunjukkan tak berpengaruh (§8.6)
+early_stop_cos: 0.999
+
+# ── LENGAN 1 — replikasi LatentMAS (1 benchmark per kategori) ───────────────
+bench:
+  tasks:
+    math:      gsm8k            # openai/gsm8k, split test
+    commonsense: arc_challenge  # allenai/ai2_arc ARC-Challenge, split test
+    code:      humanevalplus    # evalplus/humanevalplus, split test
+  # Subsample berpasangan. Diturunkan 200 → 100 pada 2026-08-10 setelah laju
+  # nyata terukur di A40 (2 sel serentak): `text` 57,3 dtk/soal, `kv` 20,1
+  # dtk/soal. Pada limit 200 seluruh 36 sel ≈ 62 jam kerja sel ≈ 31 jam dinding
+  # — biaya sewa GPU yang tak sepadan dengan tambahan presisinya. Pada 100:
+  # ≈ 16 jam, dengan DESAIN UTUH (kedua sumbu, kontrol `soft`, dan lantai
+  # `baseline` semuanya tetap dijalankan); yang berkurang hanya presisi, dan
+  # ketiga tugas masih bisa digabung untuk menaikkan daya uji.
+  # PERINGATAN: angka ini harus SAMA di semua sel. `bench/compare.py`
+  # memverifikasinya lewat sidik jari subsample dan MENGELUARKAN sel yang tak
+  # cocok — mengubahnya di tengah matriks berarti membuang sel yang sudah jadi.
+  limit: 100                    # humanevalplus punya 164 soal → ikut disubsample ke 100
+
+  # Medium yang dijalankan sebagai LAMPIRAN saja, bukan lengan uji. Tujuannya
+  # memperlihatkan seperti apa keluaran LLM ketika masukan yang diterimanya
+  # berupa laten — bukan menghasilkan angka yang dibandingkan.
+  #
+  # Kenapa `kv_and_text`: ia medium termahal (agennya mengeluarkan teks DAN
+  # mengoper KV), 15 sel yang memakan separuh total waktu lengan bench.
+  # Menjadikannya lampiran memangkas ~6,4 jam dinding.
+  #
+  # YANG HILANG, dan harus dinyatakan di skripsi: Sumbu B keluar dari analisis
+  # kuantitatif. Perbandingan medium yang tersisa `kv` vs `text` vs `baseline`
+  # masih menjawab pertanyaan inti (laten vs teks), tapi tak lagi memisahkan
+  # "KV membantu" dari "menghapus teks merugikan".
+  #
+  # Sel lampiran memakai tag `lampiran` (bukan `s0`) sehingga namanya berbeda
+  # di direktori hasil. `compare.py` sudah otomatis memisahkannya (grup per
+  # `limit`), tapi nama yang berbeda membuat pemisahan itu terlihat manusia.
+  comm_mode_lampiran: kv_and_text
+  limit_lampiran: 5
+  sample_seed: 0                # WAJIB sama di semua sel → uji berpasangan sah
+  seeds: [0]                    # seed generasi; tambah untuk replikasi multi-seed
+  temperature: 0.6
+  top_p: 0.95
+  max_new_tokens: 2048
+  metrik:
+    - accuracy                  # exact-match \boxed{} / pass@1 eksekusi
+    - format_rate               # keandalan format (disosiasi mutu vs format)
+    - total_time_s              # biaya
+
+# ── LENGAN 2 — tugas faktor alpha (simbolik / DSL) ──────────────────────────
+# KEDUDUKAN (diubah 2026-08-27). Lengan ini BUKAN lagi "domain tambahan" atau
+# "kondisi pelengkap". Ia lengan uji setara dengan bench, dan justru yang
+# paling menuntut: bench menanyakan "apakah agen masih bisa bernalar", lengan
+# ini menanyakan "apakah agen masih bisa membawa struktur yang harus tepat".
+# Datanya juga lebih kaya — `agent_trace` merekam per-agen (kv_len, token,
+# waktu, parsed_ok), sesuatu yang tak tersedia di lengan bench.
+#
+# BUKTINYA BERJENJANG, bukan satu uji hipotesis. Dengan 20 jalan per sel,
+# statistik inferensial formal tak akan kuat; yang dipakai adalah enam level
+# bukti yang saling menguatkan (lihat `metrik` di bawah).
+factor:
+  chain: "proposal,innovate,construct"   # rantai produksi (B16)
+
+  # Diperbesar 2026-08-27 dari 2 arah × 3 seed (= 6 jalan) menjadi 4 arah ×
+  # 5 seed (= 20 jalan) per sel. Dua arah tambahan sudah lama didefinisikan di
+  # `run_factor.py::DIRECTIONS` tapi tak pernah dijalankan: d0/d1 sama-sama
+  # keluarga mean-reversion, sehingga keluaran yang mirip bisa berarti "arahnya
+  # memang mirip". `opp_mom`/`opp_rev` berlawanan pada tiga sumbu sekaligus,
+  # jadi keragaman keluaran yang terukur tak lagi bisa dituduh artefak arah.
+  # Biaya: ~3,3x waktu lengan faktor lama (~154 menit) ≈ 8,5 jam waktu-sel,
+  # ≈ 4,5 jam dinding pada 2 slot A40 (satu sel faktor ~21 GB VRAM).
+  directions: [d0, d1, opp_mom, opp_rev]
+  seeds: [0, 1, 2, 3, 4]
+  guided_decoding: true
+  max_repair: 3
+
+  # ENAM LEVEL BUKTI, dari yang paling tak bergantung data pasar ke yang paling
+  # bergantung. Urutannya sengaja: level 1-2 sudah cukup membedakan formulasi
+  # tanpa menyentuh harga saham sama sekali, sehingga temuan utama lengan ini
+  # tidak bisa dituduh bergantung pada mutu backtest.
+  metrik:
+    l1_keandalan:   [parse_rate]                 # keluaran construct bisa diurai?
+    l2_eksekusi:    [evaluable_rate]             # ekspresi bisa dievaluasi?
+    l3_fidelitas:   [lolos_gate, corruption_hits, fidelity_pd, fidelity_dc, mech_drift]
+    l4_keberagaman: [n_ekspresi_unik, cakupan_fungsi_dsl, n_klaster_sinyal]
+    l5_mutu:        [ic, icir, tstat, n_days, coverage, n_unique]
+    l6_ketahanan:   [ic_holdout, tstat_holdout, berbalik_tanda]
+  backtest:
+    quantile: 0.1               # desil long–short
+    cost_bps: 0.0               # biaya satu-arah; naikkan untuk sensitivitas
+    window: seleksi             # "seleksi" = 2021 (segmen test conf)
+    # Level 6 dinilai pada jendela yang TAK PERNAH dipakai menyaring ekspresi
+    # mana pun. `backend/eval/skor_holdout.py` menghitungnya tanpa GPU dan
+    # tanpa menimpa angka seleksi di frontend_*.json.
+    holdout: ["2022-01-01", "2025-12-26"]
+
+# ── SUMBU C — interpolasi raw<->soft (dose-response) ────────────────────────
+# Kelima formulasi memberi lima titik TERPISAH, sehingga hubungan antara
+# geometri representasi dan kinerja hanya bisa dibaca sebagai "searah". Sumbu
+# ini mengisi jarak di antaranya secara kontinu lewat mode `mix`:
+#
+#   z(alpha) = normalisasi( (1-alpha)*z_raw + alpha*z_soft )
+#
+# Yang diuji adalah BENTUK hubungannya, bukan arahnya. Tiga kemungkinan hasil
+# dan ketiganya temuan: monoton (geometri memprediksi kinerja), ber-ambang
+# (ada batas jarak dari convex hull, di bawahnya kinerja runtuh), atau tak
+# berpola (geometri bukan penjelasnya — dan klaim mekanistik Bab IV harus
+# dilemahkan). Karena itu hipotesisnya sengaja TIDAK dinyatakan berarah.
+#
+# Titik ujung tak perlu dijalankan ulang: alpha=0 menghasilkan vektor identik
+# dengan mode `raw` dan alpha=1 identik dengan `soft`, keduanya sudah ada di
+# matriks. Jadi hanya tiga nilai tengah yang memakan GPU.
+interpolasi:
+  alphas: [0.0, 0.25, 0.5, 0.75, 1.0]
+  alphas_perlu_run: [0.25, 0.5, 0.75]   # 0 dan 1 dipakai ulang dari sel lama
+  # Dijalankan pada tugas tempat efek formulasi paling besar (selisih raw vs
+  # keluarga = 0,295), supaya kurvanya punya rentang yang bisa dibaca. Pada
+  # GSM8K/ARC-C selisihnya tak signifikan, jadi kurva di sana akan datar
+  # karena lantai efeknya, bukan karena geometrinya tak berpengaruh.
+  bench_tasks: [humanevalplus]
+  comm_mode: kv
+  jalankan_lengan_faktor: true
+
+# ── LENGAN 3 — probe kapasitas kanal (sudah dijalankan, Tahap 0/0B) ─────────
+# Tidak perlu diulang kecuali backbone berubah. Angka: docs/HASIL_TAHAP0.md.
+probe:
+  k: 5
+  trials: 20
+  seed: 0
+  payloads: [dsl, token]
+  latent_steps: [10, 40]
+  arm: kv_latent_only

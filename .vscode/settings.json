@@ -1,0 +1,135 @@
+{
+  // ========================================================================
+  // LaTeX Workshop Configuration
+  // ========================================================================
+  // Install extension: "James Yu" LaTeX Workshop
+  // https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop
+
+  // ── Building ────────────────────────────────────────────────────────
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoBuild.interval": 1000,
+
+  // Default recipe: latexmk
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (pdf)",
+      "tools": ["latexmk-pdf"]
+    },
+    {
+      "name": "pdflatex × 2",
+      "tools": ["pdflatex", "pdflatex"]
+    },
+    {
+      "name": "pdflatex → bibtex → pdflatex × 2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    }
+  ],
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-pdf",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%OUTDIR%/%DOCFILE%"]
+    }
+  ],
+
+  // ── Viewing ─────────────────────────────────────────────────────────
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.zoom": "page-fit",
+
+  // Keyboard shortcut: Ctrl+Alt+V (built-in) opens PDF
+  // or use: "latex-workshop.view.pdf.external.viewer.command": "evince" (Linux)
+
+  // ── Linting ─────────────────────────────────────────────────────────
+  "latex-workshop.linting.chktex.enabled": true,
+  "latex-workshop.linting.chktex.args": ["-wall", "-n 16", "-n 44"],
+
+  // ── Formatting ──────────────────────────────────────────────────────
+  "[latex]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latexindent.args": ["-c", "%DIR%/", "%TEMP%"],
+
+  // ── IntelliSense ────────────────────────────────────────────────────
+  "latex-workshop.intellisense.package.extra": {},
+
+  // ── Cleanup ─────────────────────────────────────────────────────────
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.idx",
+    "*.ilg",
+    "*.ind",
+    "*.log",
+    "*.out",
+    "*.synctex.gz",
+    "*.toc"
+  ],
+
+  // ── Output Directory ────────────────────────────────────────────────
+  "latex-workshop.latex.outDir": "./",
+
+  // ========================================================================
+  // General Editor Settings
+  // ========================================================================
+
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ── File Exclude (don't clutter explorer) ───────────────────────────
+  "files.exclude": {
+    "**/*.log": true,
+    "**/*.aux": true,
+    "**/*.bbl": true,
+    "**/*.blg": true,
+    "**/*.fls": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.synctex.gz": true,
+    "**/.DS_Store": true
+  },
+
+  // ========================================================================
+  // Search Settings
+  // ========================================================================
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/*.o": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  },
+
+  // ========================================================================
+}

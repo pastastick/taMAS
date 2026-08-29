@@ -1,0 +1,137 @@
+# =============================================================================
+# PROMPT LENGAN REPLIKASI LatentMAS — rantai SEKUENSIAL planner → critic →
+# refiner → judger.
+#
+# Sumber: reference/LatentMAS/prompts.py @ 9a9e4d3, fungsi
+#   build_agent_message_sequential_latent_mas   (jalur laten)
+#   build_agent_messages_sequential_text_mas    (jalur teks)
+# Teks instruksinya diambil APA ADANYA dari sana supaya perbandingan dengan
+# angka paper tetap sah; yang berubah hanya bentuknya (f-string Python →
+# template Jinja) agar bisa dijalankan `mas/agent.py` yang sama dengan lengan
+# faktor. Dua varian medium digabung dalam satu berkas lewat cabang
+# `{% if handoff == 'text' %}`: cabang `kv` memakai kalimat "latent KV
+# representation format" milik latent_mas, cabang `text` memakai blok
+# "## Plan from Planner Agent: {{ context }}" milik text_mas.
+#
+# Variabel Jinja yang WAJIB dioper pemanggil (lihat bench/pipeline.py):
+#   question     — pertanyaan soal (sudah termasuk pilihan A/B/C/D bila ARC)
+#   context      — keluaran teks agen sebelumnya (kosong di mode kv)
+#   handoff      — 'kv' | 'text'
+#   task_family  — 'math' | 'choice' | 'code'  (hanya dipakai judger)
+#
+# `mode` tiap agen di sini adalah mode NATIF; `bench/pipeline.py` menimpanya
+# sesuai comm_mode global persis seperti FrontEndPipeline._agent_mode:
+#   comm_mode=kv          → planner/critic/refiner jadi kv_only, judger tetap emit teks
+#   comm_mode=kv_and_text → semua kv_and_text (handoff KV, tapi teks tetap keluar)
+#   comm_mode=text        → semua text_only (handoff via teks, tanpa KV)
+#
+# System message sengaja SAMA PERSIS dengan repo rujukan ("You are Qwen, created
+# by Alibaba Cloud...") — mengubahnya akan membuat perbandingan dengan angka
+# paper tidak setara.
+# =============================================================================
+
+agents:
+  planner:
+    role: planner
+    mode: kv_and_text
+    temperature: null
+    keep_answer_in_kv: true
+    system: |-
+      You are Qwen, created by Alibaba Cloud. You are a helpful assistant.
+    user: |-
+      You are a Planner Agent. Given an input question, design a clear, step-by-step plan for how to solve the question.
+
+      ## Input Question:
+      {{ question }}
+
+      Your outlined plan should be concise with a few bullet points for each step. Do not produce the final answer.
+
+      Now output your plan to solve the question below:
+
+  critic:
+    role: critic
+    mode: kv_and_text
+    temperature: null
+    keep_answer_in_kv: true
+    system: |-
+      You are Qwen, created by Alibaba Cloud. You are a helpful assistant.
+    user: |-
+      Question: {{ question }}
+
+      You are a Critic Agent to evaluate the correctness of the input plan for the given question and provide helpful feedback for improving the plan.
+      {% if handoff == 'text' %}
+      ## Plan from Planner Agent:
+      {{ context }}
+      {% else %}
+      The plan information is provided in latent KV representation format.
+      {% endif %}
+      Review the plan and question and output:
+      (1) original plan contents
+      (2) constructive feedback on the original plan.
+
+      Format your response as follows:
+      Original Plan: [Copy the provided Planner Agent's plan here]
+      Feedback: [Your detailed feedback to improve the plan here]
+
+      Now, output your response below:
+
+  refiner:
+    role: refiner
+    mode: kv_and_text
+    temperature: null
+    keep_answer_in_kv: true
+    system: |-
+      You are Qwen, created by Alibaba Cloud. You are a helpful assistant.
+    user: |-
+      Question: {{ question }}
+
+      You are a Refiner Agent to provide a refined step-by-step plan for solving the given question.
+      {% if handoff == 'text' %}
+      ## Original Plan and Critic Feedback:
+      {{ context }}
+      {% else %}
+      You are provided with:
+      (1) latent-format information: a previous plan with feedback
+      (2) text-format information: the input question you need to solve.
+      {% endif %}
+      Based on the input, write a refined and improved plan to solve the question. Make sure your output plan is correct and concise.
+
+      Now, output your refined plan below:
+
+  judger:
+    role: judger
+    # Judger SELALU mengeluarkan teks — ia yang menghasilkan jawaban yang dinilai.
+    # Pipeline tidak pernah menurunkannya ke kv_only, bahkan pada comm_mode=kv.
+    mode: kv_and_text
+    temperature: null
+    keep_answer_in_kv: true
+    system: |-
+      You are Qwen, created by Alibaba Cloud. You are a helpful assistant.
+    user: |-
+      Target Question: {{ question }}
+
+      You are a helpful assistant. You are provided with {% if handoff == 'text' %}the Refiner Agent's plan as reference{% else %}latent information for reference{% endif %} and a target question to solve.
+      {% if handoff == 'text' %}
+      Refined Plan from Previous Agents:
+      {{ context }}
+      {% endif %}
+      The {% if handoff == 'text' %}plan{% else %}latent information{% endif %} might contain irrelevant contents. Ignore it if it is not helpful for solving the target question.
+
+      You must reason step-by-step to solve the provided Target Question without outputting other irrelevant information.
+      {% if task_family == 'choice' %}
+      Your final answer must be selected from A,B,C,D. For example \boxed{A}. Do not add any other contents inside the box.
+
+      Now, reason step by step and output the final answer inside \boxed{YOUR_FINAL_ANSWER}.
+      {% elif task_family == 'code' %}
+      You must put all python code as self-contained Python function(s) in markdown code blocks. For example:
+      ```python
+      import math
+      def add(a, b):
+          return a + b
+      ```
+      Do not add any other contents inside the markdown code block.
+
+      Now, reason step by step and output the final answer inside a ```python code block.
+      {% else %}
+      Now, reason step by step and output the final answer inside \boxed{YOUR_FINAL_ANSWER}.
+      {% endif %}

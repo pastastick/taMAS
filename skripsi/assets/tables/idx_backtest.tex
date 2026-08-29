@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\caption{Metrik portofolio \textit{long--short} kuintil (7 emiten per sisi), jendela seleksi 2021, median lintas-ekspresi per sel. Angka bersifat DESKRIPTIF: pada universe 37 emiten galat baku imbal hasil tahunan mencapai 19,9 poin persen (Persamaan~\eqref{eq:derauportofolio}), sehingga tabel ini tidak dipakai menyimpulkan formulasi mana yang unggul.}
+\label{tab:backtest}
+\small
+\begin{tabular}{llrrrrr}
+\hline
+Medium & Formulasi & Sharpe & Imbal tahunan & \textit{Max DD} & Perputaran & \textit{Hit rate} \\
+\hline
+teks & --- & -0,05 & -0,011 & -0,269 & 0,427 & 0,498 \\
+\hline
+kv & \code{raw} & -0,19 & -0,044 & -0,277 & 0,845 & 0,490 \\
+kv & \code{soft} & -0,16 & -0,040 & -0,300 & 0,448 & 0,486 \\
+kv & \code{gumbel} & 0,00 & 0,000 & -0,252 & 0,453 & 0,496 \\
+kv & \code{sample} & -0,06 & -0,017 & -0,282 & 0,408 & 0,494 \\
+kv & \code{moi} & -0,25 & -0,055 & -0,272 & 0,451 & 0,494 \\
+kv & \code{mix} $\alpha$=0,50 & -0,15 & -0,038 & -0,270 & 0,636 & 0,498 \\
+kv & \code{mix} $\alpha$=0,25 & -0,10 & -0,029 & -0,300 & 0,495 & 0,490 \\
+kv & \code{mix} $\alpha$=0,75 & -0,24 & -0,058 & -0,278 & 0,523 & 0,494 \\
+\hline
+kv+teks & \code{raw} & 0,07 & 0,018 & -0,263 & 0,729 & 0,494 \\
+kv+teks & \code{soft} & 0,21 & 0,061 & -0,258 & 0,675 & 0,498 \\
+kv+teks & \code{gumbel} & -0,12 & -0,031 & -0,279 & 0,739 & 0,494 \\
+kv+teks & \code{sample} & 0,19 & 0,048 & -0,234 & 0,613 & 0,502 \\
+kv+teks & \code{moi} & -0,33 & -0,083 & -0,304 & 0,716 & 0,486 \\
+\hline
+\end{tabular}
+\end{table}

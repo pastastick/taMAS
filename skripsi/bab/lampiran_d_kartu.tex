@@ -1,0 +1,47 @@
+\chapter{Kartu Faktor}
+\label{lamp:kartu}
+
+Tiga lintasan nyata dari lengan faktor simbolik, disajikan dengan format yang meniru kartu faktor pada lampiran QuantaAlpha. Kartu ketiga sengaja menampilkan sel yang gagal, karena bentuk kegagalannya merupakan bagian dari temuan dan bukan data yang hilang. Angka \textit{backtest} berasal dari simulasi kasar dan tidak boleh dibaca sebagai ramalan keuntungan.
+
+\begin{kartufaktor}{Medium teks $\cdot$ langkah laten \texttt{raw}}
+\barisfield{Hipotesis}{Mean reversion in low-volatility stocks occurs after abrupt volatility increases and volume surges, predicting positive returns in the short to medium term.}
+\barisfield{Nama faktor}{OddNormalizationFactor}
+\barisfield{Ekspresi}{}
+\begin{kotakekspresi}
+RANK(TS\_ARGMAX(\$return, 20)) / TS\_MAD(\$volume, 30)
+\end{kotakekspresi}
+\barisfield{Maksud}{This factor utilizes ODD NORMALISATION by ranking the most recent return peaks over 20 days and normalizing it by the median absolute deviation of volume over 30 days. It aims to highlight stocks with extreme returns amidst volatile volume.}
+\barisfield{Lolos \textit{gate}}{ya}
+\barisfield{RankIC}{+0,0383 \quad ICIR +0,422 \quad $t$ +6,59}
+\barisfield{Hari perdagangan}{243}
+\barisfield{\textit{Backtest}}{ARR +0,298 \quad Sharpe +2,30 \quad MDD -0,087 \quad \textit{turnover} +0,430}
+\end{kartufaktor}
+
+\begin{kartufaktor}{Medium kv $\cdot$ langkah laten \texttt{gumbel}}
+\barisfield{Hipotesis}{When small-cap stocks experience abnormally high-volume days, short-term reversals follow in next-period cross-sectional returns.}
+\barisfield{Nama faktor}{Volume Dispersion Signal}
+\barisfield{Ekspresi}{}
+\begin{kotakekspresi}
+TS\_QUANTILE(\$volume, 20, 0.9) - TS\_QUANTILE(\$volume, 20, 0.1)
+\end{kotakekspresi}
+\barisfield{Maksud}{Calculates the spread between upper and lower volume quantiles over a 20-day window to identify extreme volume regimes linked to reversals.}
+\barisfield{Lolos \textit{gate}}{ya}
+\barisfield{RankIC}{-0,0394 \quad ICIR -0,372 \quad $t$ -5,80}
+\barisfield{Hari perdagangan}{243}
+\barisfield{\textit{Backtest}}{ARR -0,361 \quad Sharpe -2,45 \quad MDD -0,373 \quad \textit{turnover} +0,111}
+\end{kartufaktor}
+
+\begin{kartufaktor}{Medium kv $\cdot$ langkah laten \texttt{raw}}
+\barisfield{Hipotesis}{short-term reversal after abnormally high-volume days in small-cap stocks}
+\barisfield{Nama faktor}{Asymmetric Volume Impact}
+\barisfield{Ekspresi}{}
+\begin{kotakekspresi}
+TS\_PCTCHANGE(\$volume, 20) *SIGN(\$return) / TS\_MAD(\$return, 60)
+\end{kotakekspresi}
+\barisfield{Maksud}{weights price changes by volume magnitude and asymmetry, focusing on reversal dynamics}
+\barisfield{Lolos \textit{gate}}{ya}
+\barisfield{RankIC}{-0,0080 \quad ICIR -0,176 \quad $t$ -2,74}
+\barisfield{Hari perdagangan}{243}
+\barisfield{\textit{Backtest}}{ARR -0,056 \quad Sharpe -0,74 \quad MDD -0,068 \quad \textit{turnover} +1,457}
+\end{kartufaktor}
+

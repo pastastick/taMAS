@@ -1,0 +1,207 @@
+\documentclass{skripsistatugm}
+\usepackage{amsmath, bm}
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk data Skripsi (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\titleind{
+JUDUL DALAM BAHASA INDONESIA
+\\ (STUDI KASUS ...)
+}
+
+\titleeng{
+JUDUL DALAM BAHASA INGGRIS
+\\ (CASE STUDY ...)
+}
+
+\fullname{Abdul Statistika}
+\NIM{XX/XXXXXX/XX/XXXXX}
+\yearenrollment{202X}
+\examdate{tanggal bulan tahun}
+\degree{Sarjana}
+\yearsubmit{202X}
+\firstsupervisor{Pembimbing}
+%\secondsupervisor{Nama Dosen Pembimbing ke-2}
+\firstexaminer{Ketua Penguji}
+\secondexaminer{Penguji 1}
+\thirdexaminer{Penguji 2}
+
+
+
+\begin{document}
+\cover\titlepage
+
+\approvalpage
+\declarepage
+%Setelah Anda selesai Ujian Akhir Skripsi, scan halaman pengesahan yang telah ditandatangani dosen pembimbing dan penguji, scan juga halaman pernyataan yang telah Anda tandatangani. Selanjutnya simpan hasil scan tersebut dalam bentuk PDF dengan nama pengesahanskripsi.pdf dan pernyataan.pdf (file disimpan di folder yang sama dengan folder dimana file Skripsi.tex tersimpan)
+%Hilangkan karakter % sebelum perintah "\approvalpagescan" dan "\declarepage" di bawah ini, dan tambahkan karakter % sebelum perintah "\approvalpage" di atas.
+%\approvalpagescan
+%\declarepagescan
+
+%-----------------------------------------------------------------
+%Halaman Persembahan (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\acknowledment
+\begin{flushright}
+\Large\emph\cal{Karya sederhana ini penulis persembahkan untuk ibu, bapak, dan diri penulis.}
+\end{flushright}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Halaman Motto (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\motto
+\begin{flushleft}
+\Large\emph\cal\textit{Man jadda wajada}.
+\end{flushleft}
+\textit{Barang siapa bersungguh-sungguh, maka ia akan berhasil.}
+
+
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Prakata (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\preface
+\textit{Bismillahirrahmanirrahim}. Puji syukur kepada Allah SWT atas limpahan berkah dan rahmat yang diberikan sehingga penulis dapat menyelesaikan tugas akhir yang berjudul ... sebagai salah satu syarat mendapakan gelar sarjana di program studi statisika Universias Gadjah Mada. Tugas akhir ini merupakan salah satu hasil dari proses belajar yang penulis jalani selama empat tahun berkuliah di universitas tercinta. 
+\par Penulis sadar bahwa dalam proses penyusunan tugas akhir ini tidak akan berjalan tanpa adanya dukungan dan bimbingan dari berbagai pihak. Maka dari itu, penulis ingin mengucapkan terima kasih kepada: 
+\begin{enumerate}
+    \item Bapak Prof. Dr.Eng Kuwat Triyana, M.Si., selaku Dekan Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Gadjah Mada.
+    \item Bapak Dr. Nanang Susyanto, M.Sc., selaku Ketua Departemen Matematika Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Gadjah Mada.
+    \item Bapak Prof. Dr.rer.nat Dedi Rosadi, M.Sc., selaku Ketua Program Studi Statistika Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Gadjah Mada.
+    
+\end{enumerate}
+\par Seperti manusia pada umumnya, penulis menyadari bahwa tugas akhir ini masih jauh dari kata sempurna. Oleh karena itu, semua kritik dan saran dari pembaca menjadi masukan yang sangat berharga bagi penulis. Semoga tugas akhir ini dapat bermenfaat untuk pembaca. Terima kasih. 
+\vspace{0.8cm}
+
+\begin{tabular}{p{7cm}c}
+&Yogyakarta, Juni 2024\\
+&\\
+&\\
+&Penulis
+\end{tabular}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Daftar Isi (TIDAK PERLU DIUBAH)
+%-----------------------------------------------------------------
+\newpage\phantomsection\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\makeatletter\renewcommand\l@chapter[2]{\ifnum \c@tocdepth >\z@\addpenalty\@secpenalty\addvspace{0em}\setlength\@tempdima{1.4em}\begingroup\parindent \z@ \rightskip \@pnumwidth\parfillskip -\@pnumwidth\leavevmode \bfseries\advance\leftskip\@tempdima\hskip -\leftskip#1\nobreak\ \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfil\nobreak\hb@xt@\@pnumwidth{\hss #2}\par\endgroup\fi}\makeatother
+\begin{singlespacing}\tableofcontents\end{singlespacing}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Daftar Tabel (JIKA DIPERLUKAN, HAPUS KARAKTER % SEBELUM \newpage dan \begin)
+%-----------------------------------------------------------------
+\newpage\phantomsection\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\begin{singlespacing}\listoftables\end{singlespacing}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Daftar Gambar (JIKA DIPERLUKAN, HAPUS KARAKTER % SEBELUM \newpage dan \begin)
+%-----------------------------------------------------------------
+\newpage\phantomsection\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\begin{singlespacing}\listoffigures\end{singlespacing}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Daftar Lambang (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+%\lambang
+%\begin{tabular}{cp{10.5cm}}
+%sebagai contoh
+  %$Q_i$ &: matriks pembobot \emph{state} subsistem $i$\\
+  %$R_i$ &: matriks pembobot masukan subsistem $i$
+  
+
+%\end{tabular}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Disini awal masukan Intisari (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\begin{abstractind}
+TULIS ABSTRAK,\\
+\\
+\textbf{Kata Kunci:} kata kunccci.
+\end{abstractind}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Abstract (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\begin{abstracteng}
+TULIS ABSTRAK ENGGRES,\\
+\\
+\textbf{Keyword:} keywordsssss
+
+\end{abstracteng}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Bab (ISI BAB I DAPAT DIEDIT DI FILE Bab1.tex,
+%ISI BAB II DAPAT DIEDIT DI FILE Bab2.tex, dst...)
+%-----------------------------------------------------------------
+\input{FILE SKRIPSI/BAB 1, 2, 5/Bab1}
+\input{FILE SKRIPSI/BAB 1, 2, 5/Bab2}
+\input{FILE SKRIPSI/TA 2/Bab3TA2}
+\input{FILE SKRIPSI/TA 2/Bab4TA2}
+\input{FILE SKRIPSI/BAB 1, 2, 5/Bab5}
+%-----------------------------------------------------------------
+%Disini akhir masukan Bab
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Daftar Pustaka (ISI SESUAI DENGAN DATA ANDA!)
+%-----------------------------------------------------------------
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+% TULIS SESUAI ABJAD YAAAA
+% SPESIAL untuk bimbingan Bapak Gunardi, WAJIB MEMAKAI \href dan mencantumkan sumber tempat kamu download buku atau paper atau apapun itu. Tidak boleh mencantumkan skripsi S1 di daftar pustaka, lebih lanjut bisa tanyakan sendiri ke bapak Gun.
+
+\bibitem[Ghozali(2011)]{ghozali}
+Ghozali, I. (2011). \emph{Aplikasi analisis multivariate dengan program SPSS Edisi 5}. Badan Penerbit Universitas Diponegoro. ISBN: 979-704-015-1.
+
+\bibitem[Hair dkk(2009)]{hair}
+Hair Jr Joseph, F., Black William, C., Babin Barry, J., \& Anderson Rolph, E. (2009). \href{https://www.drnishikantjha.com/papersCollection/Multivariate%20Data%20Analysis.pdf}{\emph{Multivariate Data Analysis 7th ed}}.
+
+\bibitem[Johnson dan Wichern(2007)]{johnsonwichern}
+Johnson, R. A., \& Wichern, D. W. (2007). \href{https://www.webpages.uidaho.edu/~stevel/519/Applied%20Multivariate%20Statistical%20Analysis%20by%20Johnson%20and%20Wichern.pdf.}{\emph{Applied multivariate statistical analysis. 6th}}. New Jersey, US: Pearson Prentice Hall. 
+
+\bibitem[Kaufman dan Rousseuw(2009)]{kaufman}
+Kaufman, L., \& Rousseeuw, P. J. (2009). \href{https://www.researchgate.net/publication/220695963_Finding_Groups_in_Data_An_Introduction_To_Cluster_Analysis.}{\emph{Finding groups in data: an introduction to cluster analysis}}. John Wiley \& Sons.
+
+
+\end{thebibliography}
+%-----------------------------------------------------------------
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Lampiran (JIKA DIPERLUKAN)
+%-----------------------------------------------------------------
+\appendix
+\chapter{Data}%KENDALI MODEL PREDIKTIF PADA SISTEM LINIER INTERKONEKSI}
+
+\chapter{Syntax R}
+\lstset{language=R, frame=single}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt, basicstyle=\footnotesize}
+\lstset{xleftmargin=6pt, xrightmargin=8pt, rulesepcolor=\color{black}}
+\lstset{keywordstyle=\color{blue},breaklines=true, breakindent=27pt}
+\lstinputlisting{syntax R template.R}
+
+\end{document}

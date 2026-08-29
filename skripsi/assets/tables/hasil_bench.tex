@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{Hasil lengan \textit{benchmark}: akurasi, biaya token, dan waktu untuk tujuh perlakuan pada tiga tugas ($n=100$ soal identik per tugas, Qwen3-8B, $m=10$ langkah laten). Kolom \textsc{Selisih} membandingkan rerata empat anggota keluarga relaksasi terhadap \texttt{raw} pada medium KV.}
+\label{tab:hasil-bench}
+\small
+\begin{tabular}{llrrrrrrrr}
+\hline
+ & & \multicolumn{2}{c}{Acuan} & \multicolumn{5}{c}{Medium KV} & \\
+\cline{3-4}\cline{5-9}
+Tugas & Metrik & Tunggal & Teks & \texttt{raw} & \texttt{soft} & \texttt{gumbel} & \texttt{sample} & \texttt{moi} & Selisih \\
+\hline
+\multirow{3}{*}{GSM8K} & Akurasi & 0,92 & 0,90 & 0,83 & 0,88 & 0,91 & 0,86 & \textbf{0,92} & +0,062 \\
+& Token & --- & 845 & 212 & 192 & 197 & 187 & 190 &  \\
+& Waktu (dtk) & 15,7 & 49,2 & 19,7 & 14,5 & 28,1 & 16,5 & 15,9 &  \\
+\hline
+\multirow{3}{*}{ARC-C} & Akurasi & 0,91 & 0,93 & 0,89 & \textbf{0,94} & 0,91 & \textbf{0,94} & 0,91 & +0,035 \\
+& Token & 271 & 1081 & 219 & 154 & 154 & 146 & 145 &  \\
+& Waktu (dtk) & 20,3 & 76,0 & 20,6 & 14,0 & 15,9 & 13,3 & 15,3 &  \\
+\hline
+\multirow{3}{*}{HumanEval+} & Akurasi & 0,72 & 0,76 & 0,42 & 0,69 & 0,71 & \textbf{0,74} & 0,72 & +0,295 \\
+& Token & 122 & 997 & 177 & 122 & 131 & 126 & 122 &  \\
+& Waktu (dtk) & 10,9 & 69,3 & 17,8 & 11,4 & 14,9 & 12,4 & 14,1 &  \\
+\hline
+\end{tabular}
+\end{table}

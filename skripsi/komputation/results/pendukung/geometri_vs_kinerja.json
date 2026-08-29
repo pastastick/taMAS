@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "catatan": "n=5 (lima mode); korelasi DESKRIPTIF, bukan uji inferensial. Melengkapi, bukan menggantikan, sumbu interpolasi (mix).",
+    "geometry_source": "results/probe/b7_probe_Qwen_Qwen3-8B.json"
+  },
+  "geometry": {
+    "raw": 0.312,
+    "soft": 0.9269,
+    "gumbel": 0.9848,
+    "sample": 1.0,
+    "moi": 1.0
+  },
+  "korelasi": {
+    "recall_dsl": {
+      "spearman": 0.9746794344808964,
+      "pearson": 0.9979464566880232,
+      "per_mode": {
+        "raw": {
+          "geometry": 0.312,
+          "recall": 0.0
+        },
+        "soft": {
+          "geometry": 0.9269,
+          "recall": 0.34
+        },
+        "gumbel": {
+          "geometry": 0.9848,
+          "recall": 0.35
+        },
+        "sample": {
+          "geometry": 1.0,
+          "recall": 0.36
+        },
+        "moi": {
+          "geometry": 1.0,
+          "recall": 0.38
+        }
+      }
+    },
+    "recall_token": {
+      "spearman": 0.6842105263157895,
+      "pearson": 0.8195690780578736,
+      "per_mode": {
+        "raw": {
+          "geometry": 0.312,
+          "recall": 0.0
+        },
+        "soft": {
+          "geometry": 0.9269,
+          "recall": 0.06
+        },
+        "gumbel": {
+          "geometry": 0.9848,
+          "recall": 0.19
+        },
+        "sample": {
+          "geometry": 1.0,
+          "recall": 0.13
+        },
+        "moi": {
+          "geometry": 1.0,
+          "recall": 0.13
+        }
+      }
+    },
+    "acc_arc_challenge": {
+      "spearman": 0.43259045634870014,
+      "pearson": 0.6848748038735663,
+      "per_mode": {
+        "raw": {
+          "geometry": 0.312,
+          "accuracy": 0.89
+        },
+        "soft": {
+          "geometry": 0.9269,
+          "accuracy": 0.94
+        },
+        "gumbel": {
+          "geometry": 0.9848,
+          "accuracy": 0.91
+        },
+        "sample": {
+          "geometry": 1.0,
+          "accuracy": 0.94
+        },
+        "moi": {
+          "geometry": 1.0,
+          "accuracy": 0.91
+        }
+      }
+    },
+    "acc_gsm8k": {
+      "spearman": 0.5642880936468347,
+      "pearson": 0.7715925188517091,
+      "per_mode": {
+        "raw": {
+          "geometry": 0.312,
+          "accuracy": 0.83
+        },
+        "soft": {
+          "geometry": 0.9269,
+          "accuracy": 0.88
+        },
+        "gumbel": {
+          "geometry": 0.9848,
+          "accuracy": 0.91
+        },
+        "sample": {
+          "geometry": 1.0,
+          "accuracy": 0.86
+        },
+        "moi": {
+          "geometry": 1.0,
+          "accuracy": 0.92
+        }
+      }
+    },
+    "acc_humanevalplus": {
+      "spearman": 0.9746794344808964,
+      "pearson": 0.9977078715510831,
+      "per_mode": {
+        "raw": {
+          "geometry": 0.312,
+          "accuracy": 0.42
+        },
+        "soft": {
+          "geometry": 0.9269,
+          "accuracy": 0.69
+        },
+        "gumbel": {
+          "geometry": 0.9848,
+          "accuracy": 0.71
+        },
+        "sample": {
+          "geometry": 1.0,
+          "accuracy": 0.74
+        },
+        "moi": {
+          "geometry": 1.0,
+          "accuracy": 0.72
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+% ============================================================================
+% PROPOSAL TUGAS AKHIR (TA 1) — Program Studi Statistika UGM
+% Template resmi: laporanta1statugm.cls
+% Kompilasi: latexmk -pdf skripsi_ta1.tex
+% ============================================================================
+\documentclass{laporanta1statugm}
+
+\usepackage{bm}        % math tebal (dipakai di persamaan)
+
+% ── Paket tambahan: gambar & kartu faktor ───────────────────────────────
+\usepackage{booktabs}          % \toprule \midrule \bottomrule (tabel metrik)
+\usepackage[most]{tcolorbox}   % kartu faktor bergaya Lampiran C QuantaAlpha
+
+% Warna kartu (meniru kartu Lampiran C QuantaAlpha)
+\definecolor{kartubiru}{RGB}{31,56,100}
+\definecolor{kartuabu}{RGB}{247,247,249}
+\definecolor{kartubadge}{RGB}{214,232,255}
+
+% Kartu utama: header biru tua, badan putih
+\newtcolorbox{kartufaktor}[1]{
+  enhanced, breakable,
+  colback=white, colframe=kartubiru,
+  boxrule=0.9pt, arc=2.5mm,
+  title={\bfseries #1},
+  fonttitle=\large,
+  coltitle=white, colbacktitle=kartubiru,
+  attach boxed title to top left={xshift=0mm, yshift=-2.8mm},
+  boxed title style={arc=2mm, boxrule=0pt, left=3mm, right=3mm},
+  top=5mm, left=4mm, right=4mm, bottom=3mm
+}
+
+% Kotak abu-abu untuk ekspresi faktor (monospace)
+\newtcolorbox{kotakekspresi}{
+  colback=kartuabu, colframe=black!25,
+  boxrule=0.5pt, arc=1.5mm,
+  left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  fontupper=\ttfamily\small
+}
+
+% Badge fase evolusi
+\newcommand{\fasebadge}[1]{%
+  \tcbox[on line, colback=kartubadge, colframe=kartubadge,
+         arc=1mm, boxrule=0pt, left=1mm, right=1mm,
+         top=0.3mm, bottom=0.3mm]{\small\textcolor{kartubiru}{#1}}}
+
+% Baris kunci–nilai di dalam kartu
+\newcommand{\barisfield}[2]{\makebox[3.8cm][l]{\textbf{#1}}#2\par\vspace{0.8mm}}
+
+% Kotak "respon mentah agen" bergaya Lampiran D LatentMAS (header oranye,
+% badan krem, font kecil) untuk menampilkan keluaran verbatim tiap agen.
+\definecolor{kartuoranye}{RGB}{184,101,44}
+\definecolor{kartukrem}{RGB}{253,246,227}
+\newtcolorbox{kotakrespon}[1]{
+  enhanced, breakable,
+  colback=kartukrem, colframe=kartuoranye,
+  boxrule=0.8pt, arc=1mm,
+  title={\bfseries #1},
+  fonttitle=\bfseries,
+  coltitle=white, colbacktitle=kartuoranye,
+  top=3mm, left=3.5mm, right=3.5mm, bottom=3mm,
+  fontupper=\renewcommand{\baselinestretch}{1}\footnotesize\selectfont
+}
+
+% ── Perintah bantu (seperlunya) ─────────────────────────────────────────
+\newcommand{\code}[1]{\texttt{#1}}                        % kode inline
+\newcommand{\important}[1]{\textbf{#1}}                    % penekanan
+\newcommand{\todo}[1]{{\color{red}\textbf{[TODO: #1]}}}   % penanda kerjaan
+\newcommand{\draft}{{\color{red}\textit{[DRAFT]}}}
+% \needref: formula hasil rekonstruksi/interpretasi (bukan transkripsi literal dari
+% kode) yang butuh rujukan paper/buku untuk pembuktian teoretis. Untuk direview user.
+\newcommand{\needref}[1]{{\color{blue}\textbf{[VERIFIKASI: #1]}}}
+
+% ── Data laporan ────────────────────────────────────────────────────────
+\titleind{JUDUL SEMENTARA: Evaluasi Komunikasi Laten pada Sistem Multi-Agen: Perbandingan Formulasi Representasi Laten terhadap Komunikasi Berbasis Teks
+}
+
+\fullname{Harun Yahya}
+\NIM{22/505239/PA/21749}
+\yearsubmit{2026}
+
+\begin{document}
+\cover
+
+\newpage\phantomsection\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\tableofcontents
+
+% ── Isi Bab ─────────────────────────────────────────────────────────────
+\input{bab/Bab1}
+\input{bab/Bab2}
+\input{bab/Bab3}
+\input{bab/Bab4_TA1}
+
+% ── Daftar Pustaka ──────────────────────────────────────────────────────
+\input{bab/DaftarPustaka}
+
+% ── Lampiran ────────────────────────────────────────────────────────────
+\appendix
+\input{bab/lampiran_a_sel}
+\input{bab/lampiran_c_transkrip}
+\input{bab/lampiran_f_hparam}
+
+\end{document}

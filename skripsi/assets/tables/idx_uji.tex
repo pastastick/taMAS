@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{Uji formal keluarga $\mathcal{R}$ melawan \code{raw}. Dua baris pertama tiap medium menguji VALIDITAS keluaran (uji eksak Fisher, ukuran efek $h$ Cohen); dua baris berikutnya menguji MUTU SINYAL (uji Mann--Whitney atas sebaran $\lvert IC\rvert$, ukuran efek \textit{rank-biserial}). Perbedaan arah kesimpulan antara kedua kelompok baris inilah temuan utama penelitian.}
+\label{tab:uji}
+\small
+\begin{tabular}{lllrrl}
+\hline
+Medium & Ukuran & $\mathcal{R}$ vs \code{raw} & Selisih & Ukuran efek & Nilai-$p$ \\
+\hline
+kv & lolos \textit{gate}/jalan & 97,5\% vs 50,0\% & 47,5 pp & $h$=1,253 & $5,69\times10^{-7}$ \\
+ & ekspresi hidup & 89,4\% vs 48,3\% & 41,1 pp & $h$=0,941 & $3,02\times10^{-12}$ \\
+ & median $|IC|$ 2021 & 0,0103 vs 0,0076 & --- & $r_{rb}$=0,143 & 0,207 \\
+ & median $|IC|$ holdout & 0,0060 vs 0,0091 & --- & $r_{rb}$=-0,126 & 0,265 \\
+\hline
+kv+teks & lolos \textit{gate}/jalan & 100,0\% vs 30,0\% & 70,0 pp & $h$=1,982 & $8,77\times10^{-13}$ \\
+ & ekspresi hidup & 86,4\% vs 58,6\% & 27,7 pp & $h$=0,641 & $4,12\times10^{-4}$ \\
+ & median $|IC|$ 2021 & 0,0111 vs 0,0129 & --- & $r_{rb}$=0,067 & 0,639 \\
+ & median $|IC|$ holdout & 0,0062 vs 0,0066 & --- & $r_{rb}$=0,063 & 0,662 \\
+\hline
+\end{tabular}
+\end{table}

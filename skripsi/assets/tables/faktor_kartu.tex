@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Faktor dengan statistik-$t$ RankIC terbesar pada tiap sel medium yang menghasilkan ekspresi hidup, beserta metrik \textit{backtest} portofolio desil \textit{long--short}. Angka \textit{backtest} tidak boleh dibaca sebagai ramalan keuntungan; lihat batas berlaku.}
+\label{tab:kartu-faktor}
+\small
+\begin{tabular}{llrrrrr}
+\hline
+Sel & Ekspresi & RankIC & $t$ & ARR & Sharpe & MDD \\
+\hline
+teks/\texttt{raw} & \texttt{\scriptsize RANK(TS\_ARGMAX(\$return, 20 ... (\$volume, 30)} & +0,0383 & +6,59 & +0,298 & +2,30 & -0,087 \\
+kv/\texttt{gumbel} & \texttt{\scriptsize TS\_QUANTILE(\$volume, 20, 0 ... ume, 20, 0.1)} & -0,0394 & -5,80 & -0,361 & -2,45 & -0,373 \\
+kv/\texttt{moi} & \texttt{\scriptsize INV(LOG(SUMAC(\$volume, 10) ...  \$return, 30)} & -0,0346 & -5,36 & -0,202 & -1,60 & -0,223 \\
+kv/\texttt{sample} & \texttt{\scriptsize TS\_MAD(TS\_SUM(\$volume, 5), ... eturn, 5), 5)} & -0,0194 & -5,19 & -0,209 & -2,49 & -0,262 \\
+kv/\texttt{soft} & \texttt{\scriptsize TS\_QUANTILE(\$volume, 20, 0 ... E(\$return, 1)} & -0,0310 & -5,66 & -0,269 & -2,68 & -0,287 \\
+\hline
+\end{tabular}
+\end{table}

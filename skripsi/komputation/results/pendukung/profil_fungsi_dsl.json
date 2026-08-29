@@ -1,0 +1,157 @@
+{
+  "RANK": {
+    "detik": 1.25,
+    "status": "ok",
+    "ekspresi": "RANK($volume)"
+  },
+  "TS_MEAN": {
+    "detik": 2.02,
+    "status": "ok",
+    "ekspresi": "TS_MEAN($close,60)"
+  },
+  "TS_STD": {
+    "detik": 2.07,
+    "status": "ok",
+    "ekspresi": "TS_STD($close,60)"
+  },
+  "TS_ZSCORE": {
+    "detik": 4.22,
+    "status": "ok",
+    "ekspresi": "TS_ZSCORE($volume,60)"
+  },
+  "TS_RANK": {
+    "detik": 3.11,
+    "status": "ok",
+    "ekspresi": "TS_RANK($close,60)"
+  },
+  "TS_PCTCHANGE": {
+    "detik": 2.49,
+    "status": "ok",
+    "ekspresi": "TS_PCTCHANGE($volume,60)"
+  },
+  "TS_MAX": {
+    "detik": 1.99,
+    "status": "ok",
+    "ekspresi": "TS_MAX($close,60)"
+  },
+  "TS_MIN": {
+    "detik": 2.04,
+    "status": "ok",
+    "ekspresi": "TS_MIN($close,60)"
+  },
+  "TS_SUM": {
+    "detik": 2.03,
+    "status": "ok",
+    "ekspresi": "TS_SUM($volume,60)"
+  },
+  "TS_ARGMAX": {
+    "detik": 3.61,
+    "status": "ok",
+    "ekspresi": "TS_ARGMAX($close,60)"
+  },
+  "TS_ARGMIN": {
+    "detik": 3.6,
+    "status": "ok",
+    "ekspresi": "TS_ARGMIN($close,60)"
+  },
+  "TS_MEDIAN": {
+    "detik": 3.17,
+    "status": "ok",
+    "ekspresi": "TS_MEDIAN($close,60)"
+  },
+  "TS_VAR": {
+    "detik": 2.06,
+    "status": "ok",
+    "ekspresi": "TS_VAR($close,60)"
+  },
+  "DELAY": {
+    "detik": 1.69,
+    "status": "ok",
+    "ekspresi": "DELAY($close,60)"
+  },
+  "DELTA": {
+    "detik": 1.7,
+    "status": "ok",
+    "ekspresi": "DELTA($close,60)"
+  },
+  "SIGN": {
+    "detik": 0.01,
+    "status": "ok",
+    "ekspresi": "SIGN($return)"
+  },
+  "ABS": {
+    "detik": 1.58,
+    "status": "ok",
+    "ekspresi": "ABS($return)"
+  },
+  "LOG": {
+    "detik": 0.0,
+    "status": "ok",
+    "ekspresi": "LOG($volume)"
+  },
+  "TS_CORR": {
+    "detik": 13.68,
+    "status": "ok",
+    "ekspresi": "TS_CORR($close,$volume,60)"
+  },
+  "TS_COVARIANCE": {
+    "detik": 13.63,
+    "status": "ok",
+    "ekspresi": "TS_COVARIANCE($close,$volume,60)"
+  },
+  "TS_QUANTILE": {
+    "detik": 3.13,
+    "status": "ok",
+    "ekspresi": "TS_QUANTILE($volume,60,0.9)"
+  },
+  "DECAYLINEAR": {
+    "detik": 7.0,
+    "status": "ok",
+    "ekspresi": "DECAYLINEAR($close,60)"
+  },
+  "WMA": {
+    "detik": 12.41,
+    "status": "ok",
+    "ekspresi": "WMA($close,60)"
+  },
+  "HIGHDAY": {
+    "detik": 3.86,
+    "status": "ok",
+    "ekspresi": "HIGHDAY($close,60)"
+  },
+  "LOWDAY": {
+    "detik": 3.9,
+    "status": "ok",
+    "ekspresi": "LOWDAY($close,60)"
+  },
+  "TS_MAD": {
+    "detik": 69.61,
+    "status": "ok",
+    "ekspresi": "TS_MAD($return,60)"
+  },
+  "TS_SKEW": {
+    "detik": 120.0,
+    "status": ">120s",
+    "ekspresi": "TS_SKEW($return,60)"
+  },
+  "TS_KURT": {
+    "detik": 120.0,
+    "status": ">120s",
+    "ekspresi": "TS_KURT($return,60)"
+  },
+  "REGRESI": {
+    "detik": 80.69,
+    "status": "ok",
+    "ekspresi": "REGRESI($return,$volume,60)"
+  },
+  "REGBETA": {
+    "detik": 72.56,
+    "status": "ok",
+    "ekspresi": "REGBETA($return,$volume,60)"
+  },
+  "SEQUENCE": {
+    "detik": 0.01,
+    "status": "KeyError",
+    "ekspresi": "TS_MEAN(SEQUENCE(60),5)"
+  }
+}

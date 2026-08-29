@@ -1,0 +1,152 @@
+\chapter{Transkrip Rantai Agen}
+\label{lamp:transkrip}
+
+Keluaran verbatim keempat agen untuk satu soal GSM8K yang sama, dibandingkan antara persamaan langkah laten resmi (\texttt{raw}) dan salah satu anggota keluarga relaksasi diskret (\texttt{gumbel}), pada medium gabungan KV dan teks. Teks tidak disunting; pemenggalan baris ditambahkan agar muat di halaman.
+
+\section*{Persamaan langkah laten \texttt{raw}}
+\subsection*{Agen \texttt{planner}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+- **Understand the problem**: Identify that Mandy owes $100 with a monthly interest rate of 2%, and she pays after 3 months.  
+- **Calculate the total interest**: Use the formula for simple interest: Interest = Principal [U+00D7] Rate [U+00D7] Time.  
+- **Add the interest to the principal**: Calculate the total amount owed by adding the interest to the original $100.  
+- **Determine the final payment**: Present the total amount Mandy should pay Benedict after 3 months.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{critic}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+Original Plan:  
+- **Understand the problem**: Identify that Mandy owes $100 with a monthly interest rate of 2%, and she pays after 3 months.  
+- **Calculate the total interest**: Use the formula for simple interest: Interest = Principal [U+00D7] Rate [U+00D7] Time.  
+- **Add the interest to the principal**: Calculate the total amount owed by adding the interest to the original $100.  
+- **Determine the final payment**: Present the total amount Mandy should pay Benedict after 3 months.
+
+Feedback:  
+The original plan is clear and logically structured, but it can be slightly refined for better precision. Specifically, the step "Use the formula for simple interest" should include the exact formula (Interest = Principal [U+00D7] Rate [U+00D7] Time) to ensure clarity. Additionally, the step "Add the interest to the principal" could be more explicitly worded as "Calculate the total amount by adding the calculated interest to the principal amount." These small adjustments will make the plan even more precise and easier to follow.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{refiner}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+Refined Plan:  
+- **Understand the problem**: Identify that Mandy owes $100 with a monthly interest rate of 2%, and she pays after 3 months.  
+- **Calculate the total interest**: Use the simple interest formula: Interest = Principal [U+00D7] Rate [U+00D7] Time, where Principal = $100, Rate = 2% (or 0.02), and Time = 3 months.  
+- **Compute the total amount owed**: Add the calculated interest to the original principal amount of $100.  
+- **Determine the final payment**: Present the total amount Mandy should pay Benedict after 3 months, including both the principal and the accumulated interest.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{judger}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+To solve the problem, we need to calculate the total amount Mandy should pay Benedict after 3 monthss, including both the principal and the accumulated interest.
+
+### Step-by-step Reasoning:
+
+1. **Identify the principal amount**:  
+   - The principal amount is $100.
+
+2. **Determine the monthly interest rate**:  
+   - The monthly interest.rate is 2%, which can be expressed as a decimal: 0.02.
+
+3. **Calculate the total interest over 3 monthss**:  
+   - Use the simple interest formula:  
+     $$
+     \text{Interest} = \text{Principal} \times \text{Rate} \times \text{Time}
+     $$
+     $$
+     \text{Interest} = 100 \times 0.02 \times 3 = 6
+     $$
+
+4. **Add the interest to the principal to get the total amount owed**:  
+   - Total amount = Principal + Interest  
+     $$
+     \text{Total Amount} = 100 + 6 = 106
+     $$
+
+### Final Answer:
+$$
+\boxed{106}
+$$
+\end{lstlisting}
+
+\section*{Persamaan langkah laten \texttt{gumbel}}
+\subsection*{Agen \texttt{planner}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+- Calculate the monthly interest for the first month by multiplying the principal amount ($100) by the monthly interest rate (2%).  
+- Add the first month's interest to the principal to get the new balance after the first month.  
+- Calculate the monthly interest for the second month using the updated balance.  
+- Add the second month's interest to the balance to get the new balance after the second month.  
+- Calculate the monthly interest for the third month using the updated balance after two months.  
+- Add the third month's interest to the balance to determine the total amount Mandy should pay Benedict after three months.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{critic}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+Feedback:  
+The original plan is incomplete and lacks clarity in the steps. It should explicitly mention that the interest is compounded monthly, which means each month's interest is calculated based on the current balance (including previously accrued interest). The plan should also include a clear instruction to calculate the total amount after three months by summing up the principal and all the compounded interest. Additionally, it would be helpful to specify that the final amount includes both the original debt and the accumulated interest over the three months.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{refiner}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+- Start with the principal amount of $100.  
+- Calculate the monthly interest for each of the three months using the formula: Interest = Principal [U+00D7] Monthly Interest Rate (2%).  
+- Add the first month's interest to the principal to get the new balance after the first month.  
+- Use the updated balance as the new principal for the second month and calculate the interest again.  
+- Add the second month's interest to the balance to get the new balance after the second month.  
+- Use the updated balance as the new principal for the third month and calculate the interest again.  
+- Add the third month's interest to the balance to determine the total amount Mandy should pay Benedict after three months.
+\end{lstlisting}
+
+\subsection*{Agen \texttt{judger}}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,frame=single]
+To solve the problem, we need to calculate the total amount Mandy should pay Benedict after 3 months, including monthly compound interest.
+
+### Step-by-Step Calculation:
+
+1. **Initial Principal**: $100  
+2. **Monthly Interest Rate**: 2% = 0.02  
+3. **Time Period**: 3 months  
+
+We use the formula for compound interest:  
+$$
+A = P(1 + r)^t
+$$  
+Where:  
+- $ A $ is the final amount  
+- $ P $ is the principal ($100)  
+- $ r $ is the monthly interest rate (0.02)  
+- $ t $ is the time in months (3)
+
+$$
+A = 100(1 + 0.02)^3 = 100(1.02)^3
+$$
+
+Calculate $ (1.02)^3 $:  
+$$
+(1.02)^3 = 1.061208
+$$
+
+Now multiply by the principal:  
+$$
+A = 100 \times 1.061208 = 106.1208
+$$
+
+Rounded to two decimal places:  
+$$
+\boxed{106.12}
+$$
+\end{lstlisting}
+
+\section*{Contoh Korupsi Token yang Terekam}
+
+Cuplikan jawaban yang memuat aksara di luar ASCII pada tugas berbahasa Inggris. Aksara tersebut ditampilkan sebagai titik kode Unicode.
+
+\begin{longtable}{lp{8cm}}
+\hline
+Sel & Cuplikan \\
+\hline\endhead
+\texttt{arc\_challenge\_gumbel\_kv\_s0} & \texttt{of ice, which scrapes and[U+78E8][U+5E73] (} \\
+\texttt{arc\_challenge\_raw\_kv\_s0} & \texttt{the effects of a hypoxic[U+4E8B][U+4EF6].} \\
+\texttt{arc\_challenge\_soft\_kv\_s0} & \texttt{[U+73CA][U+745A][U+7901][U+662F]} \\
+\texttt{gsm8k\_moi\_kv\_s0} & \texttt{1. **[U+786E][U+5B9A][U+6BCF][U+79CD]} \\
+\texttt{gsm8k\_raw\_kv\_s0} & \texttt{To solve the problem of[U+30B3]  O} \\
+\texttt{humanevalplus\_raw\_kv\_s0} & \texttt{'No'     \#Count.digits.in[U+6574][U+4E2A]fi} \\
+\hline
+\end{longtable}

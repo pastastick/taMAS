@@ -1,0 +1,167 @@
+{
+  "verifikasi_tabel_daya": {
+    "cocok": true,
+    "tabel": {
+      "6": {
+        "0.15": {
+          "klaim": 0.0,
+          "dihitung": 0.0
+        },
+        "0.25": {
+          "klaim": 0.0,
+          "dihitung": 0.0
+        },
+        "0.35": {
+          "klaim": 0.002,
+          "dihitung": 0.002
+        },
+        "0.5": {
+          "klaim": 0.016,
+          "dihitung": 0.016
+        }
+      },
+      "20": {
+        "0.15": {
+          "klaim": 0.067,
+          "dihitung": 0.067
+        },
+        "0.25": {
+          "klaim": 0.383,
+          "dihitung": 0.383
+        },
+        "0.35": {
+          "klaim": 0.755,
+          "dihitung": 0.755
+        },
+        "0.5": {
+          "klaim": 0.979,
+          "dihitung": 0.979
+        }
+      },
+      "40": {
+        "0.15": {
+          "klaim": 0.567,
+          "dihitung": 0.567
+        },
+        "0.25": {
+          "klaim": 0.957,
+          "dihitung": 0.957
+        },
+        "0.35": {
+          "klaim": 0.999,
+          "dihitung": 0.999
+        },
+        "0.5": {
+          "klaim": 1.0,
+          "dihitung": 1.0
+        }
+      },
+      "100": {
+        "0.15": {
+          "klaim": 0.998,
+          "dihitung": 0.998
+        },
+        "0.25": {
+          "klaim": 1.0,
+          "dihitung": 1.0
+        },
+        "0.35": {
+          "klaim": 1.0,
+          "dihitung": 1.0
+        },
+        "0.5": {
+          "klaim": 1.0,
+          "dihitung": 1.0
+        }
+      }
+    }
+  },
+  "uji_formal": {
+    "comm_mode": "kv",
+    "raw": {
+      "n": 20,
+      "lolos": 10
+    },
+    "diagnostik_per_anggota_vs_raw": {
+      "soft": {
+        "n": 20,
+        "mean_a": 1,
+        "mean_b": 0.5,
+        "delta": 0.5,
+        "ci95": [
+          0.3,
+          0.7
+        ],
+        "test": "mcnemar_exact",
+        "p": 0.001953125,
+        "b01": 10,
+        "b10": 0
+      },
+      "sample": {
+        "n": 20,
+        "mean_a": 0.95,
+        "mean_b": 0.5,
+        "delta": 0.44999999999999996,
+        "ci95": [
+          0.2,
+          0.7
+        ],
+        "test": "mcnemar_exact",
+        "p": 0.01171875,
+        "b01": 10,
+        "b10": 1
+      },
+      "gumbel": {
+        "n": 20,
+        "mean_a": 1,
+        "mean_b": 0.5,
+        "delta": 0.5,
+        "ci95": [
+          0.3,
+          0.7
+        ],
+        "test": "mcnemar_exact",
+        "p": 0.001953125,
+        "b01": 10,
+        "b10": 0
+      },
+      "moi": {
+        "n": 20,
+        "mean_a": 0.95,
+        "mean_b": 0.5,
+        "delta": 0.44999999999999996,
+        "ci95": [
+          0.2,
+          0.7
+        ],
+        "test": "mcnemar_exact",
+        "p": 0.01171875,
+        "b01": 10,
+        "b10": 1
+      }
+    },
+    "uji_formal_keluarga_R_vs_raw": {
+      "lengkap": true,
+      "anggota": [
+        "soft",
+        "sample",
+        "gumbel",
+        "moi"
+      ],
+      "r_pass": 78,
+      "r_n": 80,
+      "p_r": 0.975,
+      "raw_pass": 10,
+      "raw_n": 20,
+      "p_raw": 0.5,
+      "delta_pp": 47.5,
+      "p_fisher_exact": 5.687164488664822e-07,
+      "cohens_h": 1.2532358975033746,
+      "ci95_diff": [
+        0.25,
+        0.7
+      ],
+      "signifikan_alpha05": true
+    }
+  }
+}

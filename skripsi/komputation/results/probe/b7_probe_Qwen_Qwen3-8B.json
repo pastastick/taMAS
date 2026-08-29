@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "model": "Qwen/Qwen3-8B",
+    "steps": 10,
+    "temp": 0.7,
+    "moi_beta": 1.0,
+    "modes": [
+      "raw",
+      "soft",
+      "gumbel",
+      "sample",
+      "moi"
+    ]
+  },
+  "inertness": {
+    "raw": {
+      "hidden_identical": false,
+      "max_abs_diff": 55.625,
+      "cos": 0.242015,
+      "latent_vecs_identical": false
+    },
+    "soft": {
+      "hidden_identical": true,
+      "max_abs_diff": 0.0,
+      "cos": 1.0,
+      "latent_vecs_identical": true
+    }
+  },
+  "geometry": {
+    "raw": {
+      "max_cos_embed_mean": 0.312,
+      "max_cos_embed_min": 0.1636,
+      "max_cos_embed_max": 0.3845,
+      "n_steps": 10
+    },
+    "soft": {
+      "max_cos_embed_mean": 0.9269,
+      "max_cos_embed_min": 0.7842,
+      "max_cos_embed_max": 1.0,
+      "n_steps": 10
+    },
+    "gumbel": {
+      "max_cos_embed_mean": 0.9848,
+      "max_cos_embed_min": 0.8626,
+      "max_cos_embed_max": 1.0,
+      "n_steps": 10
+    },
+    "sample": {
+      "max_cos_embed_mean": 1.0,
+      "max_cos_embed_min": 1.0,
+      "max_cos_embed_max": 1.0,
+      "n_steps": 10
+    },
+    "moi": {
+      "max_cos_embed_mean": 1.0,
+      "max_cos_embed_min": 0.9998,
+      "max_cos_embed_max": 1.0,
+      "n_steps": 10
+    }
+  },
+  "geometry_mix": {
+    "0.0": {
+      "max_cos_embed_mean": 0.312,
+      "max_cos_embed_min": 0.1636,
+      "max_cos_embed_max": 0.3845,
+      "n_steps": 10
+    },
+    "0.25": {
+      "max_cos_embed_mean": 0.4519,
+      "max_cos_embed_min": 0.2763,
+      "max_cos_embed_max": 0.5375,
+      "n_steps": 10
+    },
+    "0.5": {
+      "max_cos_embed_mean": 0.7197,
+      "max_cos_embed_min": 0.6259,
+      "max_cos_embed_max": 0.7964,
+      "n_steps": 10
+    },
+    "0.75": {
+      "max_cos_embed_mean": 0.9244,
+      "max_cos_embed_min": 0.8163,
+      "max_cos_embed_max": 0.9579,
+      "n_steps": 10
+    },
+    "1.0": {
+      "max_cos_embed_mean": 0.9269,
+      "max_cos_embed_min": 0.7842,
+      "max_cos_embed_max": 1.0,
+      "n_steps": 10
+    }
+  }
+}

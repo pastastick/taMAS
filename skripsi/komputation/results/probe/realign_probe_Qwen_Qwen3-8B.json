@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "tied": false,
+  "vocab": 151936,
+  "d_h": 4096,
+  "reg_lambda": 1e-05,
+  "frobenius_M_minus_I": 66.5685043334961,
+  "relative_deviation": 1.0401328802108765,
+  "cos(h, hM)_mean": 0.011244813911616802,
+  "cos(h, hM)_min": -0.0476437471807003,
+  "norm_ratio_mean": 0.30647262930870056,
+  "gram_eig_min": 6.131455898284912,
+  "gram_eig_max": 24465.1953125,
+  "shrink_min": 0.9999983906745911,
+  "shrink_mean": 0.9999999403953552,
+  "target_norm(mean ||W_in[i]||)": 1.375832200050354,
+  "embed_norm_std": 0.31400349736213684,
+  "cos(W_in_row, W_out_row)_mean": 0.004136672243475914,
+  "cos(W_in_row, W_out_row)_median": 0.004116646014153957
+}

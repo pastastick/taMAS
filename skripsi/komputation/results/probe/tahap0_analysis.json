@@ -1,0 +1,3296 @@
+[
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=0.25)",
+    "recall_a": 0.35,
+    "recall_b": 0.35,
+    "d_recall": 0.0,
+    "ci95": [
+      -0.09,
+      0.09
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=0.5)",
+    "recall_a": 0.35,
+    "recall_b": 0.37,
+    "d_recall": -0.02,
+    "ci95": [
+      -0.11,
+      0.07
+    ],
+    "p_wilcoxon": 0.8293,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.11,
+      0.05
+    ],
+    "p_wilcoxon": 0.6381,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.11,
+      0.05
+    ],
+    "p_wilcoxon": 0.6381,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.35,
+    "recall_b": 0.36,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.09,
+      0.07
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.11,
+      0.05
+    ],
+    "p_wilcoxon": 0.6381,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "raw",
+    "recall_a": 0.35,
+    "recall_b": 0.0,
+    "d_recall": 0.35,
+    "ci95": [
+      0.27,
+      0.43
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.35,
+    "recall_b": 0.0,
+    "d_recall": 0.35,
+    "ci95": [
+      0.27,
+      0.43
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "sample",
+    "recall_a": 0.35,
+    "recall_b": 0.36,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.08,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 7,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "soft",
+    "recall_a": 0.35,
+    "recall_b": 0.34,
+    "d_recall": 0.01,
+    "ci95": [
+      -0.09,
+      0.12
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 14,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=0.5)",
+    "recall_a": 0.35,
+    "recall_b": 0.37,
+    "d_recall": -0.02,
+    "ci95": [
+      -0.06,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.08,
+      0.0
+    ],
+    "p_wilcoxon": 0.4993,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.08,
+      0.0
+    ],
+    "p_wilcoxon": 0.4993,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.35,
+    "recall_b": 0.36,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.03,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.35,
+    "recall_b": 0.38,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.08,
+      0.0
+    ],
+    "p_wilcoxon": 0.4993,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "raw",
+    "recall_a": 0.35,
+    "recall_b": 0.0,
+    "d_recall": 0.35,
+    "ci95": [
+      0.26,
+      0.43
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 17,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.35,
+    "recall_b": 0.0,
+    "d_recall": 0.35,
+    "ci95": [
+      0.26,
+      0.43
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 17,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "sample",
+    "recall_a": 0.35,
+    "recall_b": 0.36,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.07,
+      0.05
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 3,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "soft",
+    "recall_a": 0.35,
+    "recall_b": 0.34,
+    "d_recall": 0.01,
+    "ci95": [
+      -0.09,
+      0.11
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 12,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.37,
+    "recall_b": 0.38,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.03,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.37,
+    "recall_b": 0.38,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.03,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.37,
+    "recall_b": 0.36,
+    "d_recall": 0.01,
+    "ci95": [
+      -0.03,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.37,
+    "recall_b": 0.38,
+    "d_recall": -0.01,
+    "ci95": [
+      -0.03,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "raw",
+    "recall_a": 0.37,
+    "recall_b": 0.0,
+    "d_recall": 0.37,
+    "ci95": [
+      0.29,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.37,
+    "recall_b": 0.0,
+    "d_recall": 0.37,
+    "ci95": [
+      0.29,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "sample",
+    "recall_a": 0.37,
+    "recall_b": 0.36,
+    "d_recall": 0.01,
+    "ci95": [
+      -0.03,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "soft",
+    "recall_a": 0.37,
+    "recall_b": 0.34,
+    "d_recall": 0.03,
+    "ci95": [
+      -0.06,
+      0.12
+    ],
+    "p_wilcoxon": 0.6807,
+    "n_nonzero": 11,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.38,
+    "recall_b": 0.38,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.38,
+    "recall_b": 0.36,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.38,
+    "recall_b": 0.38,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "sample",
+    "recall_a": 0.38,
+    "recall_b": 0.36,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "soft",
+    "recall_a": 0.38,
+    "recall_b": 0.34,
+    "d_recall": 0.04,
+    "ci95": [
+      -0.04,
+      0.13
+    ],
+    "p_wilcoxon": 0.51,
+    "n_nonzero": 11,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.38,
+    "recall_b": 0.36,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.38,
+    "recall_b": 0.38,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "raw",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "sample",
+    "recall_a": 0.38,
+    "recall_b": 0.36,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "soft",
+    "recall_a": 0.38,
+    "recall_b": 0.34,
+    "d_recall": 0.04,
+    "ci95": [
+      -0.04,
+      0.13
+    ],
+    "p_wilcoxon": 0.51,
+    "n_nonzero": 11,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.36,
+    "recall_b": 0.38,
+    "d_recall": -0.02,
+    "ci95": [
+      -0.06,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "raw",
+    "recall_a": 0.36,
+    "recall_b": 0.0,
+    "d_recall": 0.36,
+    "ci95": [
+      0.28,
+      0.44
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.36,
+    "recall_b": 0.0,
+    "d_recall": 0.36,
+    "ci95": [
+      0.28,
+      0.44
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "sample",
+    "recall_a": 0.36,
+    "recall_b": 0.36,
+    "d_recall": 0.0,
+    "ci95": [
+      -0.06,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 2,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "soft",
+    "recall_a": 0.36,
+    "recall_b": 0.34,
+    "d_recall": 0.02,
+    "ci95": [
+      -0.08,
+      0.12
+    ],
+    "p_wilcoxon": 0.8458,
+    "n_nonzero": 12,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "raw",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.38,
+    "recall_b": 0.0,
+    "d_recall": 0.38,
+    "ci95": [
+      0.31,
+      0.45
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 19,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "sample",
+    "recall_a": 0.38,
+    "recall_b": 0.36,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "soft",
+    "recall_a": 0.38,
+    "recall_b": 0.34,
+    "d_recall": 0.04,
+    "ci95": [
+      -0.04,
+      0.13
+    ],
+    "p_wilcoxon": 0.51,
+    "n_nonzero": 11,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.0,
+    "recall_b": 0.0,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.36,
+    "d_recall": -0.36,
+    "ci95": [
+      -0.44,
+      -0.28
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw",
+    "mode_b": "soft",
+    "recall_a": 0.0,
+    "recall_b": 0.34,
+    "d_recall": -0.34,
+    "ci95": [
+      -0.42,
+      -0.25
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 16,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw(M=I)",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.36,
+    "d_recall": -0.36,
+    "ci95": [
+      -0.44,
+      -0.28
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw(M=I)",
+    "mode_b": "soft",
+    "recall_a": 0.0,
+    "recall_b": 0.34,
+    "d_recall": -0.34,
+    "ci95": [
+      -0.42,
+      -0.25
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 16,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "sample",
+    "mode_b": "soft",
+    "recall_a": 0.36,
+    "recall_b": 0.34,
+    "d_recall": 0.02,
+    "ci95": [
+      -0.07,
+      0.12
+    ],
+    "p_wilcoxon": 0.8422,
+    "n_nonzero": 12,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=0.25)",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=0.5)",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.19,
+    "recall_b": 0.11,
+    "d_recall": 0.08,
+    "ci95": [
+      0.02,
+      0.14
+    ],
+    "p_wilcoxon": 0.0348,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "raw",
+    "recall_a": 0.19,
+    "recall_b": 0.0,
+    "d_recall": 0.19,
+    "ci95": [
+      0.12,
+      0.25
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 14,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.19,
+    "recall_b": 0.0,
+    "d_recall": 0.19,
+    "ci95": [
+      0.12,
+      0.25
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 14,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "sample",
+    "recall_a": 0.19,
+    "recall_b": 0.13,
+    "d_recall": 0.06,
+    "ci95": [
+      0.01,
+      0.11
+    ],
+    "p_wilcoxon": 0.0699,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "soft",
+    "recall_a": 0.19,
+    "recall_b": 0.06,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0059,
+    "n_nonzero": 12,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=0.5)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.13,
+    "recall_b": 0.11,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "raw",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "sample",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.25)",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.13,
+    "recall_b": 0.11,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "raw",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "sample",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=0.5)",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=2)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.13,
+    "recall_b": 0.11,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "sample",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "moi(\u03b2=4)",
+    "recall_a": 0.13,
+    "recall_b": 0.11,
+    "d_recall": 0.02,
+    "ci95": [
+      0.0,
+      0.06
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "raw",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "sample",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=2)",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "moi(\u03b2=8)",
+    "recall_a": 0.11,
+    "recall_b": 0.13,
+    "d_recall": -0.02,
+    "ci95": [
+      -0.06,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "raw",
+    "recall_a": 0.11,
+    "recall_b": 0.0,
+    "d_recall": 0.11,
+    "ci95": [
+      0.05,
+      0.18
+    ],
+    "p_wilcoxon": 0.0081,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.11,
+    "recall_b": 0.0,
+    "d_recall": 0.11,
+    "ci95": [
+      0.05,
+      0.18
+    ],
+    "p_wilcoxon": 0.0081,
+    "n_nonzero": 8,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "sample",
+    "recall_a": 0.11,
+    "recall_b": 0.13,
+    "d_recall": -0.02,
+    "ci95": [
+      -0.06,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=4)",
+    "mode_b": "soft",
+    "recall_a": 0.11,
+    "recall_b": 0.06,
+    "d_recall": 0.05,
+    "ci95": [
+      -0.02,
+      0.13
+    ],
+    "p_wilcoxon": 0.3739,
+    "n_nonzero": 5,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "raw",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.13,
+    "recall_b": 0.0,
+    "d_recall": 0.13,
+    "ci95": [
+      0.06,
+      0.2
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "sample",
+    "recall_a": 0.13,
+    "recall_b": 0.13,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=8)",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw",
+    "mode_b": "raw(M=I)",
+    "recall_a": 0.0,
+    "recall_b": 0.0,
+    "d_recall": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 0,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.13,
+    "d_recall": -0.13,
+    "ci95": [
+      -0.2,
+      -0.06
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw",
+    "mode_b": "soft",
+    "recall_a": 0.0,
+    "recall_b": 0.06,
+    "d_recall": -0.06,
+    "ci95": [
+      -0.11,
+      -0.02
+    ],
+    "p_wilcoxon": 0.0628,
+    "n_nonzero": 5,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw(M=I)",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.13,
+    "d_recall": -0.13,
+    "ci95": [
+      -0.2,
+      -0.06
+    ],
+    "p_wilcoxon": 0.0036,
+    "n_nonzero": 9,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw(M=I)",
+    "mode_b": "soft",
+    "recall_a": 0.0,
+    "recall_b": 0.06,
+    "d_recall": -0.06,
+    "ci95": [
+      -0.11,
+      -0.02
+    ],
+    "p_wilcoxon": 0.0628,
+    "n_nonzero": 5,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 10,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "sample",
+    "mode_b": "soft",
+    "recall_a": 0.13,
+    "recall_b": 0.06,
+    "d_recall": 0.07,
+    "ci95": [
+      0.01,
+      0.14
+    ],
+    "p_wilcoxon": 0.1227,
+    "n_nonzero": 4,
+    "exact_a": 0.0,
+    "exact_b": 0.0,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.84,
+    "recall_b": 0.87,
+    "d_recall": -0.03,
+    "ci95": [
+      -0.16,
+      0.1
+    ],
+    "p_wilcoxon": 0.8331,
+    "n_nonzero": 7,
+    "exact_a": 0.7,
+    "exact_b": 0.75,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      2,
+      3
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "raw",
+    "recall_a": 0.84,
+    "recall_b": 0.0,
+    "d_recall": 0.84,
+    "ci95": [
+      0.69,
+      0.96
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.7,
+    "exact_b": 0.0,
+    "p_mcnemar": 0.0001,
+    "discordant": [
+      14,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "gumbel",
+    "mode_b": "sample",
+    "recall_a": 0.84,
+    "recall_b": 0.72,
+    "d_recall": 0.12,
+    "ci95": [
+      -0.04,
+      0.29
+    ],
+    "p_wilcoxon": 0.2281,
+    "n_nonzero": 8,
+    "exact_a": 0.7,
+    "exact_b": 0.6,
+    "p_mcnemar": 0.625,
+    "discordant": [
+      3,
+      1
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw",
+    "recall_a": 0.87,
+    "recall_b": 0.0,
+    "d_recall": 0.87,
+    "ci95": [
+      0.73,
+      0.98
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.75,
+    "exact_b": 0.0,
+    "p_mcnemar": 0.0001,
+    "discordant": [
+      15,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "sample",
+    "recall_a": 0.87,
+    "recall_b": 0.72,
+    "d_recall": 0.15,
+    "ci95": [
+      0.0,
+      0.3
+    ],
+    "p_wilcoxon": 0.2483,
+    "n_nonzero": 3,
+    "exact_a": 0.75,
+    "exact_b": 0.6,
+    "p_mcnemar": 0.25,
+    "discordant": [
+      3,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "dsl",
+    "mode_a": "raw",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.72,
+    "d_recall": -0.72,
+    "ci95": [
+      -0.89,
+      -0.53
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 15,
+    "exact_a": 0.0,
+    "exact_b": 0.6,
+    "p_mcnemar": 0.0005,
+    "discordant": [
+      0,
+      12
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "moi(\u03b2=1)",
+    "recall_a": 0.76,
+    "recall_b": 0.85,
+    "d_recall": -0.09,
+    "ci95": [
+      -0.26,
+      0.07
+    ],
+    "p_wilcoxon": 0.4352,
+    "n_nonzero": 6,
+    "exact_a": 0.6,
+    "exact_b": 0.65,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      1,
+      2
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "raw",
+    "recall_a": 0.76,
+    "recall_b": 0.0,
+    "d_recall": 0.76,
+    "ci95": [
+      0.57,
+      0.92
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 16,
+    "exact_a": 0.6,
+    "exact_b": 0.0,
+    "p_mcnemar": 0.0005,
+    "discordant": [
+      12,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "gumbel",
+    "mode_b": "sample",
+    "recall_a": 0.76,
+    "recall_b": 0.81,
+    "d_recall": -0.05,
+    "ci95": [
+      -0.21,
+      0.09
+    ],
+    "p_wilcoxon": 0.6859,
+    "n_nonzero": 5,
+    "exact_a": 0.6,
+    "exact_b": 0.65,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      1,
+      2
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "raw",
+    "recall_a": 0.85,
+    "recall_b": 0.0,
+    "d_recall": 0.85,
+    "ci95": [
+      0.7,
+      0.96
+    ],
+    "p_wilcoxon": 0.0,
+    "n_nonzero": 18,
+    "exact_a": 0.65,
+    "exact_b": 0.0,
+    "p_mcnemar": 0.0002,
+    "discordant": [
+      13,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "moi(\u03b2=1)",
+    "mode_b": "sample",
+    "recall_a": 0.85,
+    "recall_b": 0.81,
+    "d_recall": 0.04,
+    "ci95": [
+      0.0,
+      0.12
+    ],
+    "p_wilcoxon": 1.0,
+    "n_nonzero": 1,
+    "exact_a": 0.65,
+    "exact_b": 0.65,
+    "p_mcnemar": 1.0,
+    "discordant": [
+      0,
+      0
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-8B",
+    "k": 5,
+    "trials": 20,
+    "m": 40,
+    "seed": 0,
+    "arm": "kv_latent_only",
+    "payload": "token",
+    "mode_a": "raw",
+    "mode_b": "sample",
+    "recall_a": 0.0,
+    "recall_b": 0.81,
+    "d_recall": -0.81,
+    "ci95": [
+      -0.95,
+      -0.64
+    ],
+    "p_wilcoxon": 0.0001,
+    "n_nonzero": 17,
+    "exact_a": 0.0,
+    "exact_b": 0.65,
+    "p_mcnemar": 0.0002,
+    "discordant": [
+      0,
+      13
+    ]
+  }
+]

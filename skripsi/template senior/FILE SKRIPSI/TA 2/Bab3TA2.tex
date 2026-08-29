@@ -1,0 +1,51 @@
+\chapter{XXXXXXXX}
+
+\section{Catatan}
+Bab 3 di TA 2 ini mencakup pembahasan tentang metode yang kamu pakai.
+
+\section{Analisis Klaster}
+Analisis klaster merupakan sebuah analisis statistika multivariat yang bertujuan untuk mengelompokkan objek berdasarkan kemiripannya. Klaster yang terbentuk akan memuat objek-objek yang memiliki kesamaan karakteristik.
+
+\subsection{Pengertian Analisis Klaster}
+\citeauthor{kaufman} (\citeyear{kaufman}) mengungkapkan bahwa analisis klaster merupakan teknik untuk menemukan kelompok dalam kumpulan data. Data dikelompokkan dengan tujuan, data yang berada pada satu kelompok memiliki kemiripan yang dekat, dan memiliki perbedaan yang jelas dengan kelompok yang lain. Secara statistika, dapat dinyatakan bahwa data-data yang berada pada satu kelompok memiliki homogenitas yang tinggi dan antara satu kelompok dengan yang lain memiliki heterogenitas yang tinggi \citep{hair}. Analisis klaster dapat dikatakan sebagai analisis yang primitif karena tidak ada asumsi di dalamnya tentang banyak kelompok yang terbentuk. Pengelompokan murni dilakukan atas dasar persamaan jarak \citep{johnsonwichern}. Oleh karena itu, hasil klaster akan sangat dipengaruhi oleh ukuran jarak yang dipakai.
+
+\subsection{Struktur Data Analisis Klaster}
+Pada analisis klaster, jenis data yang digunakan adalah data \textit{cross-section}. Data jenis ini tersusun dari sebanyak \textit{n} objek dan \textit{p} variabel. Biasanya tabel data akan memiliki bentuk sebagai berikut.
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+    \textbf{Item} & \textbf{Variabel 1} & \textbf{Variabel 2} & \ldots & \textbf{Variabel \textit{k}} & \ldots & \textbf{Variabel \textit{p}} \\ \hline
+    Item 1: & $x_{11}$ & $x_{12}$ & \ldots & $x_{1k}$ & \ldots & $x_{1p}$ \\ \hline
+    Item 2: & $x_{21}$ & $x_{22}$ & \ldots & $x_{2k}$ & \ldots & $x_{2p}$ \\ \hline
+    \vdots & \vdots & \vdots & & \vdots & & \vdots \\ \hline
+    Item \textit{j}: & $x_{j1}$ & $x_{j2}$ & \ldots & $x_{jk}$ & \ldots & $x_{jp}$ \\ \hline
+    \vdots & \vdots & \vdots & & \vdots & & \vdots \\ \hline
+    Item \textit{n}: & $x_{n1}$ & $x_{n2}$ & \ldots & $x_{nk}$ & \ldots & $x_{np}$ \\ \hline
+    \end{tabular}
+    \caption{Struktur data \textit{cross-section}.}
+    \label{tab:cr}
+\end{table}
+\par Pada Tabel \ref{tab:cr}, baris menunjukkan objek/item yang akan dikelompokkan, dan kolom menunjukkan variabel yang digunakan. Nilai $x_{jk}$ menunjukkan data variabel ke-\textit{k} item ke-\textit{j}.
+\subsection{Standarisasi Data}
+\par Perbedaan skala atau ukuran satuan pada variabel-variabel yang ada pada data dapat menyebabkan ketidakvalidan pada hasil perhitungan analisis klaster. Untuk mengatasi hal itu, standarisasi perlu dilakukan pada data. Standarisasi akan membuat tiap-tiap nilai data memiliki skala yang sama, sehingga memperkecil perbedaan antar kelompok dan menghilangkan bias yang ditimbulkan karena perbedaan skala pada beberapa variabel dalam data. \citeauthor{hair} (\citeyear{hair}) menjelaskan bahwa Salah satu teknik standarisasi yang paling umum digunakan adalah standarisasi \textit{z-score}. Teknik ini dilakukan dengan mengubah nilai data ke dalam bentuk skor \textit{z} atau skor \textit{standardized}. Setiap nilai data yang dikurangi dengan rata-rata (\textit{mean}) dan kemudian dibagi dengan standar deviasi akan menghasilkan \textit{z-score}. Nilai \textit{z-szore} dapat dihitung dengan persamaan berikut.
+\begin{equation}
+    \bm{z_{ik} = \frac{x_{ij}-\Bar{x_{k}}}{s_{k}}}.
+\end{equation} 
+dengan $z_{ik}$ adalah nilai \textit{z-score} item ke-\textit{i} variabel ke-\textit{k}, $x_{ik}$ adalah nilai data item ke-\textit{i} variabel ke-\textit{k}, $\bar{x_{k}}$ merupakan rata-rata data variabel ke-\textit{j}, dan $s_k$ adalah standar deviasi data variabel ke-\textit{k}.
+
+\subsection{Pencilan}
+Pencilan atau \textit{outlier} merupakan observasi yang memiliki nilai ekstrem dengan karakteristik unit yang sangat berbeda dengan obervasi-obervasi lainnya. Pencilan dapat terjadi karena adanya kesalahan \textit{input}, kesalahan dalam mengambil sampel, ataupun populasi sebenarnya memiliki data pencilan. \citeauthor{hair} (\citeyear{hair}) mengartikan pencilan (\textit{outlier}) sebagai berikut.
+\begin{enumerate}
+    \item Pengamatan yang benar-benar menyimpang dan tidak representatif terhadap populasi.
+    \item Pengamatan yang mewakili segmen kecil atau tidak signifikan dalam populasi. Pengambilan sampel yang terlalu kecil menyebabkan kerepresentatifan kelompok dalam sampel menjadi buruk.
+\end{enumerate}
+\par \citeauthor{hair} (\citeyear{hair}) membagi hasil analisis klaster dengan data pencilan menjadi tiga kasus, yakni sebagai berikut.
+\begin{enumerate}
+    \item Kasus pertama
+            \par \textit{Outlier} atau pencilan menyebabkan distorsi pada struktur sebenarnya, akibatnya klaster menjadi tidak representatif terhadap populasi.
+    \item Kasus kedua
+            \par Pada data dengan pencilan, penghapusan pencilan (\textit{outlier}) dapat menghasilkan klaster yang lebih akurat dan representatif terhadap populasi.
+    \item Kasus ketiga
+            \par Pada data dengan pencilan, pencilan tetap harus disertakan meskipun hasil klaster tidak merepresentasikan sampel karena pencilan tersebut merepresentasikan klaster yang valid dan relevan.
+\end{enumerate}
+\par Analisis klaster merupakan analisis yang sangat sensitif terhadap adanya pencilan. Hal ini dapat menimbulkan penyimpangan struktur sampel hasil analisis klaster karena representasi klaster dalam sampel kurang terwakili. Untuk mengatasi hal tersebut, deteksi pencilan perlu dilakukan, Deteksi pencilan dapat dilakukan dengan menggunakan \textit{z-score} atau skor \textit{standardized}. Nilai data perlu diubah ke dalam \textit{z-score}. Hair dalam \citeauthor{ghozali} (\citeyear{ghozali}) menyatakan bahwa data dinyatakan sebagai pencilan ketika data tersebut memiliki nilai \textit{z-score} lebih dari 2,5 untuk sampel berukuran kecil (jumlah sampel kurang dari 80) dan bernilai di kisaran 3 sampai 4 untuk sampel berukuran besar.

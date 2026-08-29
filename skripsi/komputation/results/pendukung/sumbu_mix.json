@@ -1,0 +1,515 @@
+{
+  "_meta": {
+    "catatan": "Sumbu C (mix). Titik ujung alpha=0/1 memakai sel kv_raw/kv_soft (z(0) identik z_raw, z(1) identik z_soft) — bukan sel terpisah. Hipotesis TAK BERARAH: monoton / ber-ambang / tak berpola ketiganya temuan yang sah.",
+    "sumbu_x": "cos ke embedding terdekat (TERUKUR, b7_probe::geometry_mix) — bukan alpha; geometrinya jenuh sehingga alpha bukan skala linier",
+    "unit_analisis_faktor": "satu jalan (arah x seed); lolos gate = len(passing)>0"
+  },
+  "titik": [
+    {
+      "alpha": 0.0,
+      "catatan": "= raw",
+      "cos_embed_mean": 0.312,
+      "cos_embed_min": 0.1636,
+      "cos_embed_max": 0.3845,
+      "faktor": {
+        "tag": "kv_raw",
+        "n_jalan": 20,
+        "jalan_lolos_gate": 10,
+        "laju_lolos_gate": 0.5,
+        "ci95_lolos_gate": [
+          0.272,
+          0.728
+        ],
+        "n_ekspresi": 59,
+        "n_ekspresi_lolos": 27,
+        "ekspresi_per_jalan": 2.95,
+        "percobaan_construct_per_jalan": 1.6,
+        "jalan_perlu_repair": 4,
+        "detik_per_jalan": 77.3,
+        "token_keluar_per_jalan": 803.4,
+        "ic_n_berdert": 26,
+        "ic_mean_abs": 0.01249,
+        "ic_median_abs": 0.01017,
+        "ic_n_tstat_ge2": 17,
+        "ic_laju_tstat_ge2": 0.6538
+      },
+      "bench_humanevalplus": {
+        "bench": "bench_humanevalplus_raw_kv_s0",
+        "n": 100,
+        "akurasi": 0.42,
+        "format": 1.0,
+        "detik": 1782.8,
+        "n_jawaban_ber_cjk": 1,
+        "laju_korupsi_token": 0.01,
+        "contoh_korupsi": "'No'     #Count.digits.in整个fi",
+        "token_per_soal": 176.8
+      },
+      "vs_raw": null,
+      "vs_soft": {
+        "n_pasang": 20,
+        "mean_a": 0.5,
+        "mean_b": 1.0,
+        "delta": -0.5,
+        "b01": 0,
+        "b10": 10,
+        "p_mcnemar_exact": 0.001953125,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_raw": null,
+      "bench_vs_soft": {
+        "n_pasang": 100,
+        "mean_a": 0.42,
+        "mean_b": 0.69,
+        "delta": -0.27,
+        "b01": 4,
+        "b10": 31,
+        "p_mcnemar_exact": 3.4654513001441956e-06,
+        "signifikan_alpha05": true
+      }
+    },
+    {
+      "alpha": 0.25,
+      "catatan": "",
+      "cos_embed_mean": 0.4519,
+      "cos_embed_min": 0.2763,
+      "cos_embed_max": 0.5375,
+      "faktor": {
+        "tag": "kv_mix_a025",
+        "n_jalan": 20,
+        "jalan_lolos_gate": 11,
+        "laju_lolos_gate": 0.55,
+        "ci95_lolos_gate": [
+          0.3153,
+          0.7694
+        ],
+        "n_ekspresi": 68,
+        "n_ekspresi_lolos": 45,
+        "ekspresi_per_jalan": 3.4,
+        "percobaan_construct_per_jalan": 1.1,
+        "jalan_perlu_repair": 2,
+        "detik_per_jalan": 63.2,
+        "token_keluar_per_jalan": 733.5,
+        "ic_n_berdert": 53,
+        "ic_mean_abs": 0.01825,
+        "ic_median_abs": 0.01594,
+        "ic_n_tstat_ge2": 39,
+        "ic_laju_tstat_ge2": 0.7358
+      },
+      "bench_humanevalplus": {
+        "bench": "bench_humanevalplus_mix_kv_s0_a025",
+        "n": 100,
+        "akurasi": 0.28,
+        "format": 0.99,
+        "detik": 2456.2,
+        "n_jawaban_ber_cjk": 4,
+        "laju_korupsi_token": 0.04,
+        "contoh_korupsi": "t):     \"\"\" xs represents系数 o",
+        "token_per_soal": 205.5
+      },
+      "vs_raw": {
+        "n_pasang": 20,
+        "mean_a": 0.55,
+        "mean_b": 0.5,
+        "delta": 0.05,
+        "b01": 5,
+        "b10": 4,
+        "p_mcnemar_exact": 1.0,
+        "signifikan_alpha05": false
+      },
+      "vs_soft": {
+        "n_pasang": 20,
+        "mean_a": 0.55,
+        "mean_b": 1.0,
+        "delta": -0.45,
+        "b01": 0,
+        "b10": 9,
+        "p_mcnemar_exact": 0.00390625,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_raw": {
+        "n_pasang": 100,
+        "mean_a": 0.28,
+        "mean_b": 0.42,
+        "delta": -0.14,
+        "b01": 7,
+        "b10": 21,
+        "p_mcnemar_exact": 0.012540951371192932,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_soft": {
+        "n_pasang": 100,
+        "mean_a": 0.28,
+        "mean_b": 0.69,
+        "delta": -0.41,
+        "b01": 4,
+        "b10": 45,
+        "p_mcnemar_exact": 8.225455871979648e-10,
+        "signifikan_alpha05": true
+      }
+    },
+    {
+      "alpha": 0.5,
+      "catatan": "",
+      "cos_embed_mean": 0.7197,
+      "cos_embed_min": 0.6259,
+      "cos_embed_max": 0.7964,
+      "faktor": {
+        "tag": "kv_mix_a05",
+        "n_jalan": 20,
+        "jalan_lolos_gate": 20,
+        "laju_lolos_gate": 1.0,
+        "ci95_lolos_gate": [
+          0.8316,
+          1.0
+        ],
+        "n_ekspresi": 116,
+        "n_ekspresi_lolos": 94,
+        "ekspresi_per_jalan": 5.8,
+        "percobaan_construct_per_jalan": 1.0,
+        "jalan_perlu_repair": 0,
+        "detik_per_jalan": 61.4,
+        "token_keluar_per_jalan": 511.4,
+        "ic_n_berdert": 96,
+        "ic_mean_abs": 0.01445,
+        "ic_median_abs": 0.0111,
+        "ic_n_tstat_ge2": 52,
+        "ic_laju_tstat_ge2": 0.5417
+      },
+      "bench_humanevalplus": {
+        "bench": "bench_humanevalplus_mix_kv_s0_a05",
+        "n": 100,
+        "akurasi": 0.68,
+        "format": 0.99,
+        "detik": 2146.6,
+        "n_jawaban_ber_cjk": 0,
+        "laju_korupsi_token": 0.0,
+        "contoh_korupsi": null,
+        "token_per_soal": 160.2
+      },
+      "vs_raw": {
+        "n_pasang": 20,
+        "mean_a": 1.0,
+        "mean_b": 0.5,
+        "delta": 0.5,
+        "b01": 10,
+        "b10": 0,
+        "p_mcnemar_exact": 0.001953125,
+        "signifikan_alpha05": true
+      },
+      "vs_soft": {
+        "n_pasang": 20,
+        "mean_a": 1.0,
+        "mean_b": 1.0,
+        "delta": 0.0,
+        "b01": 0,
+        "b10": 0,
+        "p_mcnemar_exact": 1.0,
+        "signifikan_alpha05": false
+      },
+      "bench_vs_raw": {
+        "n_pasang": 100,
+        "mean_a": 0.68,
+        "mean_b": 0.42,
+        "delta": 0.26,
+        "b01": 28,
+        "b10": 2,
+        "p_mcnemar_exact": 8.67992639541626e-07,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_soft": {
+        "n_pasang": 100,
+        "mean_a": 0.68,
+        "mean_b": 0.69,
+        "delta": -0.01,
+        "b01": 6,
+        "b10": 7,
+        "p_mcnemar_exact": 1.0,
+        "signifikan_alpha05": false
+      }
+    },
+    {
+      "alpha": 0.75,
+      "catatan": "",
+      "cos_embed_mean": 0.9244,
+      "cos_embed_min": 0.8163,
+      "cos_embed_max": 0.9579,
+      "faktor": {
+        "tag": "kv_mix_a075",
+        "n_jalan": 20,
+        "jalan_lolos_gate": 20,
+        "laju_lolos_gate": 1.0,
+        "ci95_lolos_gate": [
+          0.8316,
+          1.0
+        ],
+        "n_ekspresi": 119,
+        "n_ekspresi_lolos": 91,
+        "ekspresi_per_jalan": 5.95,
+        "percobaan_construct_per_jalan": 1.0,
+        "jalan_perlu_repair": 0,
+        "detik_per_jalan": 72.2,
+        "token_keluar_per_jalan": 502.5,
+        "ic_n_berdert": 101,
+        "ic_mean_abs": 0.01468,
+        "ic_median_abs": 0.01094,
+        "ic_n_tstat_ge2": 55,
+        "ic_laju_tstat_ge2": 0.5446
+      },
+      "bench_humanevalplus": {
+        "bench": "bench_humanevalplus_mix_kv_s0_a075",
+        "n": 100,
+        "akurasi": 0.69,
+        "format": 0.98,
+        "detik": 1619.7,
+        "n_jawaban_ber_cjk": 0,
+        "laju_korupsi_token": 0.0,
+        "contoh_korupsi": null,
+        "token_per_soal": 118.7
+      },
+      "vs_raw": {
+        "n_pasang": 20,
+        "mean_a": 1.0,
+        "mean_b": 0.5,
+        "delta": 0.5,
+        "b01": 10,
+        "b10": 0,
+        "p_mcnemar_exact": 0.001953125,
+        "signifikan_alpha05": true
+      },
+      "vs_soft": {
+        "n_pasang": 20,
+        "mean_a": 1.0,
+        "mean_b": 1.0,
+        "delta": 0.0,
+        "b01": 0,
+        "b10": 0,
+        "p_mcnemar_exact": 1.0,
+        "signifikan_alpha05": false
+      },
+      "bench_vs_raw": {
+        "n_pasang": 100,
+        "mean_a": 0.69,
+        "mean_b": 0.42,
+        "delta": 0.27,
+        "b01": 32,
+        "b10": 5,
+        "p_mcnemar_exact": 7.427530363202095e-06,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_soft": {
+        "n_pasang": 100,
+        "mean_a": 0.69,
+        "mean_b": 0.69,
+        "delta": 0.0,
+        "b01": 6,
+        "b10": 6,
+        "p_mcnemar_exact": 1.0,
+        "signifikan_alpha05": false
+      }
+    },
+    {
+      "alpha": 1.0,
+      "catatan": "= soft",
+      "cos_embed_mean": 0.9269,
+      "cos_embed_min": 0.7842,
+      "cos_embed_max": 1.0,
+      "faktor": {
+        "tag": "kv_soft",
+        "n_jalan": 20,
+        "jalan_lolos_gate": 20,
+        "laju_lolos_gate": 1.0,
+        "ci95_lolos_gate": [
+          0.8316,
+          1.0
+        ],
+        "n_ekspresi": 111,
+        "n_ekspresi_lolos": 95,
+        "ekspresi_per_jalan": 5.55,
+        "percobaan_construct_per_jalan": 1.0,
+        "jalan_perlu_repair": 0,
+        "detik_per_jalan": 51.5,
+        "token_keluar_per_jalan": 480.9,
+        "ic_n_berdert": 97,
+        "ic_mean_abs": 0.01606,
+        "ic_median_abs": 0.0145,
+        "ic_n_tstat_ge2": 61,
+        "ic_laju_tstat_ge2": 0.6289
+      },
+      "bench_humanevalplus": {
+        "bench": "bench_humanevalplus_soft_kv_s0",
+        "n": 100,
+        "akurasi": 0.69,
+        "format": 0.96,
+        "detik": 1141.5,
+        "n_jawaban_ber_cjk": 0,
+        "laju_korupsi_token": 0.0,
+        "contoh_korupsi": null,
+        "token_per_soal": 121.5
+      },
+      "vs_raw": {
+        "n_pasang": 20,
+        "mean_a": 1.0,
+        "mean_b": 0.5,
+        "delta": 0.5,
+        "b01": 10,
+        "b10": 0,
+        "p_mcnemar_exact": 0.001953125,
+        "signifikan_alpha05": true
+      },
+      "vs_soft": null,
+      "bench_vs_raw": {
+        "n_pasang": 100,
+        "mean_a": 0.69,
+        "mean_b": 0.42,
+        "delta": 0.27,
+        "b01": 31,
+        "b10": 4,
+        "p_mcnemar_exact": 3.4654513001441956e-06,
+        "signifikan_alpha05": true
+      },
+      "bench_vs_soft": null
+    }
+  ],
+  "bentuk_kurva": {
+    "laju_lolos_gate": {
+      "nilai": [
+        0.5,
+        0.55,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spearman_vs_alpha": 0.8944,
+      "pearson_vs_alpha": 0.8792,
+      "spearman_vs_cos": 0.8944,
+      "pearson_vs_cos": 0.9463,
+      "selisih_antar_titik": [
+        0.05,
+        0.45,
+        0.0,
+        0.0
+      ],
+      "monoton": true,
+      "lompatan_terbesar": {
+        "dari_alpha": 0.25,
+        "ke_alpha": 0.5,
+        "dari_cos": 0.4519,
+        "ke_cos": 0.7197,
+        "delta": 0.45,
+        "bagian_dari_rentang_total": 0.9
+      }
+    },
+    "akurasi_humanevalplus": {
+      "nilai": [
+        0.42,
+        0.28,
+        0.68,
+        0.69,
+        0.69
+      ],
+      "spearman_vs_alpha": 0.8721,
+      "pearson_vs_alpha": 0.7865,
+      "spearman_vs_cos": 0.8721,
+      "pearson_vs_cos": 0.8645,
+      "selisih_antar_titik": [
+        -0.14,
+        0.4,
+        0.01,
+        0.0
+      ],
+      "monoton": false,
+      "lompatan_terbesar": {
+        "dari_alpha": 0.25,
+        "ke_alpha": 0.5,
+        "dari_cos": 0.4519,
+        "ke_cos": 0.7197,
+        "delta": 0.4,
+        "bagian_dari_rentang_total": 0.9756
+      }
+    },
+    "ic_mean_abs": {
+      "nilai": [
+        0.01249,
+        0.01825,
+        0.01445,
+        0.01468,
+        0.01606
+      ],
+      "spearman_vs_alpha": 0.4,
+      "pearson_vs_alpha": 0.2645,
+      "spearman_vs_cos": 0.4,
+      "pearson_vs_cos": 0.1501,
+      "selisih_antar_titik": [
+        0.0058,
+        -0.0038,
+        0.0002,
+        0.0014
+      ],
+      "monoton": false,
+      "lompatan_terbesar": {
+        "dari_alpha": 0.0,
+        "ke_alpha": 0.25,
+        "dari_cos": 0.312,
+        "ke_cos": 0.4519,
+        "delta": 0.0058,
+        "bagian_dari_rentang_total": 1.0069
+      }
+    },
+    "ekspresi_per_jalan": {
+      "nilai": [
+        2.95,
+        3.4,
+        5.8,
+        5.95,
+        5.55
+      ],
+      "spearman_vs_alpha": 0.7,
+      "pearson_vs_alpha": 0.8536,
+      "spearman_vs_cos": 0.7,
+      "pearson_vs_cos": 0.941,
+      "selisih_antar_titik": [
+        0.45,
+        2.4,
+        0.15,
+        -0.4
+      ],
+      "monoton": false,
+      "lompatan_terbesar": {
+        "dari_alpha": 0.25,
+        "ke_alpha": 0.5,
+        "dari_cos": 0.4519,
+        "ke_cos": 0.7197,
+        "delta": 2.4,
+        "bagian_dari_rentang_total": 0.8
+      }
+    },
+    "korupsi_cjk_humanevalplus": {
+      "nilai": [
+        1,
+        4,
+        0,
+        0,
+        0
+      ],
+      "spearman_vs_alpha": -0.7826,
+      "pearson_vs_alpha": -0.5477,
+      "spearman_vs_cos": -0.7826,
+      "pearson_vs_cos": -0.6313,
+      "selisih_antar_titik": [
+        3,
+        -4,
+        0,
+        0
+      ],
+      "monoton": false,
+      "lompatan_terbesar": {
+        "dari_alpha": 0.25,
+        "ke_alpha": 0.5,
+        "dari_cos": 0.4519,
+        "ke_cos": 0.7197,
+        "delta": -4,
+        "bagian_dari_rentang_total": 1.0
+      }
+    }
+  }
+}

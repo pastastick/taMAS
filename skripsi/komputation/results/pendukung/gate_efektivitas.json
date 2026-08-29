@@ -1,0 +1,26 @@
+{
+  "arsip_faktor_6jalan_2026-08-10": {
+    "ekspresi": 174,
+    "lolos_gate": 123,
+    "bisa_dievaluasi": 124,
+    "BOCOR_lolos_tapi_mati": 13
+  },
+  "arsip_gate_mati_2026-08-10": {
+    "ekspresi": 105,
+    "lolos_gate": 7,
+    "bisa_dievaluasi": 3,
+    "BOCOR_lolos_tapi_mati": 4
+  },
+  "arsip_pecahan_gabung_2026-08-28": {
+    "ekspresi": 359,
+    "lolos_gate": 268,
+    "bisa_dievaluasi": 275,
+    "BOCOR_lolos_tapi_mati": 36
+  },
+  "matriks": {
+    "ekspresi": 1428,
+    "lolos_gate": 1067,
+    "bisa_dievaluasi": 1116,
+    "BOCOR_lolos_tapi_mati": 101
+  }
+}

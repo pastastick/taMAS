@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "markitdown": {
+      "command": "uvx",
+      "args": ["markitdown-mcp"]
+    },
+    "scrapling": {
+      "command": "/root/.venvs/scrapling/bin/scrapling",
+      "args": ["mcp"]
+    }
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "faktor": {
+    "frontend_kv_and_text_gumbel": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "n_run": 20,
+      "total_s": 4070.4,
+      "rerata_s": 203.5
+    },
+    "frontend_kv_and_text_moi": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "n_run": 20,
+      "total_s": 2712.1,
+      "rerata_s": 135.6
+    },
+    "frontend_kv_and_text_raw": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "raw",
+      "n_run": 20,
+      "total_s": 5912.2,
+      "rerata_s": 295.6
+    },
+    "frontend_kv_and_text_sample": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "n_run": 20,
+      "total_s": 3956.4,
+      "rerata_s": 197.8
+    },
+    "frontend_kv_and_text_soft": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "soft",
+      "n_run": 20,
+      "total_s": 3709.3,
+      "rerata_s": 185.5
+    },
+    "frontend_kv_gumbel": {
+      "comm_mode": "kv",
+      "latent_mode": "gumbel",
+      "n_run": 20,
+      "total_s": 1159.7,
+      "rerata_s": 58.0
+    },
+    "frontend_kv_moi": {
+      "comm_mode": "kv",
+      "latent_mode": "moi",
+      "n_run": 20,
+      "total_s": 1111.6,
+      "rerata_s": 55.6
+    },
+    "frontend_kv_raw": {
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "n_run": 20,
+      "total_s": 1547.0,
+      "rerata_s": 77.3
+    },
+    "frontend_kv_sample": {
+      "comm_mode": "kv",
+      "latent_mode": "sample",
+      "n_run": 20,
+      "total_s": 976.3,
+      "rerata_s": 48.8
+    },
+    "frontend_kv_soft": {
+      "comm_mode": "kv",
+      "latent_mode": "soft",
+      "n_run": 20,
+      "total_s": 1029.0,
+      "rerata_s": 51.5
+    },
+    "frontend_text": {
+      "comm_mode": "text",
+      "latent_mode": "raw",
+      "n_run": 20,
+      "total_s": 3627.2,
+      "rerata_s": 181.4
+    },
+    "frontend_kv_and_text_gumbel.sebelum_gabung_20260828_032843": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "n_run": 8,
+      "total_s": 1228.5,
+      "rerata_s": 153.6
+    },
+    "frontend_kv_and_text_gumbel_s234": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "n_run": 12,
+      "total_s": 2841.9,
+      "rerata_s": 236.8
+    },
+    "frontend_kv_and_text_moi.sebelum_gabung_20260828_032843": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "n_run": 8,
+      "total_s": 816.5,
+      "rerata_s": 102.1
+    },
+    "frontend_kv_and_text_moi_s234": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "n_run": 12,
+      "total_s": 1895.5,
+      "rerata_s": 158.0
+    },
+    "frontend_kv_and_text_sample.sebelum_gabung_20260828_032843": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "n_run": 8,
+      "total_s": 1114.7,
+      "rerata_s": 139.3
+    },
+    "frontend_kv_and_text_sample_s234": {
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "n_run": 12,
+      "total_s": 2841.6,
+      "rerata_s": 236.8
+    },
+    "frontend_kv_mix_a025": {
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "n_run": 20,
+      "total_s": 1263.8,
+      "rerata_s": 63.2
+    },
+    "frontend_kv_mix_a05": {
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "n_run": 20,
+      "total_s": 1227.3,
+      "rerata_s": 61.4
+    },
+    "frontend_kv_mix_a075": {
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "n_run": 20,
+      "total_s": 1443.7,
+      "rerata_s": 72.2
+    }
+  },
+  "bench": {
+    "bench_arc_challenge_gumbel_kv_and_text_lampiran": {
+      "task": "arc_challenge",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 164.9
+    },
+    "bench_arc_challenge_gumbel_kv_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.91,
+      "format_rate": 0.98,
+      "total_time_s": 1591.7
+    },
+    "bench_arc_challenge_moi_kv_and_text_lampiran": {
+      "task": "arc_challenge",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 162.5
+    },
+    "bench_arc_challenge_moi_kv_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.91,
+      "format_rate": 0.98,
+      "total_time_s": 1531.5
+    },
+    "bench_arc_challenge_raw_baseline_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": true,
+      "n": 100,
+      "akurasi": 0.91,
+      "format_rate": 1.0,
+      "total_time_s": 2027.8
+    },
+    "bench_arc_challenge_raw_kv_and_text_lampiran": {
+      "task": "arc_challenge",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 214.0
+    },
+    "bench_arc_challenge_raw_kv_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.89,
+      "format_rate": 1.0,
+      "total_time_s": 2057.9
+    },
+    "bench_arc_challenge_raw_text_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.93,
+      "format_rate": 1.0,
+      "total_time_s": 7595.7
+    },
+    "bench_arc_challenge_sample_kv_and_text_lampiran": {
+      "task": "arc_challenge",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 169.0
+    },
+    "bench_arc_challenge_sample_kv_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.94,
+      "format_rate": 1.0,
+      "total_time_s": 1325.9
+    },
+    "bench_arc_challenge_soft_kv_and_text_lampiran": {
+      "task": "arc_challenge",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 157.3
+    },
+    "bench_arc_challenge_soft_kv_s0": {
+      "task": "arc_challenge",
+      "comm_mode": "kv",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.94,
+      "format_rate": 1.0,
+      "total_time_s": 1400.1
+    },
+    "bench_gsm8k_gumbel_kv_and_text_lampiran": {
+      "task": "gsm8k",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.4,
+      "format_rate": 0.8,
+      "total_time_s": 283.6
+    },
+    "bench_gsm8k_gumbel_kv_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.91,
+      "format_rate": 1.0,
+      "total_time_s": 2814.5
+    },
+    "bench_gsm8k_moi_kv_and_text_lampiran": {
+      "task": "gsm8k",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.6,
+      "format_rate": 1.0,
+      "total_time_s": 296.1
+    },
+    "bench_gsm8k_moi_kv_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.92,
+      "format_rate": 1.0,
+      "total_time_s": 1585.4
+    },
+    "bench_gsm8k_raw_baseline_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": true,
+      "n": 100,
+      "akurasi": 0.92,
+      "format_rate": 1.0,
+      "total_time_s": 1569.9
+    },
+    "bench_gsm8k_raw_kv_and_text_lampiran": {
+      "task": "gsm8k",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 382.5
+    },
+    "bench_gsm8k_raw_kv_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.83,
+      "format_rate": 0.98,
+      "total_time_s": 1971.8
+    },
+    "bench_gsm8k_raw_text_s0": {
+      "task": "gsm8k",
+      "comm_mode": "text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.9,
+      "format_rate": 1.0,
+      "total_time_s": 4919.1
+    },
+    "bench_gsm8k_sample_kv_and_text_lampiran": {
+      "task": "gsm8k",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 283.8
+    },
+    "bench_gsm8k_sample_kv_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.86,
+      "format_rate": 0.97,
+      "total_time_s": 1645.9
+    },
+    "bench_gsm8k_soft_kv_and_text_lampiran": {
+      "task": "gsm8k",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 277.8
+    },
+    "bench_gsm8k_soft_kv_s0": {
+      "task": "gsm8k",
+      "comm_mode": "kv",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.88,
+      "format_rate": 1.0,
+      "total_time_s": 1447.3
+    },
+    "bench_humanevalplus_gumbel_kv_and_text_lampiran": {
+      "task": "humanevalplus",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 1.0,
+      "format_rate": 1.0,
+      "total_time_s": 175.6
+    },
+    "bench_humanevalplus_gumbel_kv_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "gumbel",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.71,
+      "format_rate": 0.97,
+      "total_time_s": 1492.2
+    },
+    "bench_humanevalplus_mix_kv_s0_a025": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.28,
+      "format_rate": 0.99,
+      "total_time_s": 2456.2
+    },
+    "bench_humanevalplus_mix_kv_s0_a05": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.68,
+      "format_rate": 0.99,
+      "total_time_s": 2146.6
+    },
+    "bench_humanevalplus_mix_kv_s0_a075": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "mix",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.69,
+      "format_rate": 0.98,
+      "total_time_s": 1619.7
+    },
+    "bench_humanevalplus_moi_kv_and_text_lampiran": {
+      "task": "humanevalplus",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 1.0,
+      "format_rate": 1.0,
+      "total_time_s": 197.6
+    },
+    "bench_humanevalplus_moi_kv_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "moi",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.72,
+      "format_rate": 1.0,
+      "total_time_s": 1407.6
+    },
+    "bench_humanevalplus_raw_baseline_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": true,
+      "n": 100,
+      "akurasi": 0.72,
+      "format_rate": 1.0,
+      "total_time_s": 1085.8
+    },
+    "bench_humanevalplus_raw_kv_and_text_lampiran": {
+      "task": "humanevalplus",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.2,
+      "format_rate": 1.0,
+      "total_time_s": 395.3
+    },
+    "bench_humanevalplus_raw_kv_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.42,
+      "format_rate": 1.0,
+      "total_time_s": 1782.8
+    },
+    "bench_humanevalplus_raw_text_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "text",
+      "latent_mode": "raw",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.76,
+      "format_rate": 1.0,
+      "total_time_s": 6925.1
+    },
+    "bench_humanevalplus_sample_kv_and_text_lampiran": {
+      "task": "humanevalplus",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 1.0,
+      "format_rate": 1.0,
+      "total_time_s": 159.5
+    },
+    "bench_humanevalplus_sample_kv_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "sample",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.74,
+      "format_rate": 1.0,
+      "total_time_s": 1241.1
+    },
+    "bench_humanevalplus_soft_kv_and_text_lampiran": {
+      "task": "humanevalplus",
+      "comm_mode": "kv_and_text",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 5,
+      "akurasi": 0.8,
+      "format_rate": 1.0,
+      "total_time_s": 154.4
+    },
+    "bench_humanevalplus_soft_kv_s0": {
+      "task": "humanevalplus",
+      "comm_mode": "kv",
+      "latent_mode": "soft",
+      "baseline": false,
+      "n": 100,
+      "akurasi": 0.69,
+      "format_rate": 0.96,
+      "total_time_s": 1141.5
+    }
+  }
+}

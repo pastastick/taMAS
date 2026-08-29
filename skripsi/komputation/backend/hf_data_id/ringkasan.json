@@ -1,0 +1,55 @@
+{
+ "panel_penuh": {
+  "baris": 1286173,
+  "emiten": 896,
+  "mulai": "2019-01-01",
+  "selesai": "2026-01-14"
+ },
+ "universe": {
+  "top45": {
+   "baris": 65520,
+   "emiten_unik": 102,
+   "rerata_emiten_per_hari": 45.0,
+   "hari_perdagangan": 1456,
+   "hari_per_tahun": {
+    "2020": 242,
+    "2021": 247,
+    "2022": 246,
+    "2023": 239,
+    "2024": 237,
+    "2025": 236,
+    "2026": 9
+   }
+  },
+  "top100": {
+   "baris": 145600,
+   "emiten_unik": 214,
+   "rerata_emiten_per_hari": 100.0,
+   "hari_perdagangan": 1456,
+   "hari_per_tahun": {
+    "2020": 242,
+    "2021": 247,
+    "2022": 246,
+    "2023": 239,
+    "2024": 237,
+    "2025": 236,
+    "2026": 9
+   }
+  },
+  "top200": {
+   "baris": 291200,
+   "emiten_unik": 435,
+   "rerata_emiten_per_hari": 200.0,
+   "hari_perdagangan": 1456,
+   "hari_per_tahun": {
+    "2020": 242,
+    "2021": 247,
+    "2022": 246,
+    "2023": 239,
+    "2024": 237,
+    "2025": 236,
+    "2026": 9
+   }
+  }
+ }
+}

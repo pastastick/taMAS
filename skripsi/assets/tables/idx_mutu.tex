@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Mutu sinyal ekspresi pada universe LQ45. ``Hidup'' berarti IC terdefinisi dan nilainya tidak konstan; ``sig.'' berarti $\lvert t\rvert\ge1{,}96$. Ambang deteksi berbeda antar-jendela (Tabel~\ref{tab:ambang}), sehingga kolom sig. TIDAK sebanding langsung antar-jendela.}
+\label{tab:mutu}
+\small
+\begin{tabular}{llrrrrrr}
+\hline
+ & & \multicolumn{3}{c}{Seleksi 2021 ($T$=247)} & \multicolumn{3}{c}{Holdout 2022--2025 ($T$=958)} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Medium & Formulasi & Hidup & Sig. & $\overline{|IC|}$ & Hidup & Sig. & $\overline{|IC|}$ \\
+\hline
+teks & --- & 96 & 11 & 0,0115 & 96 & 18 & 0,0071 \\
+\hline
+kv & \code{raw} & 28 & 5 & 0,0116 & 28 & 8 & 0,0097 \\
+kv & \code{soft} & 92 & 13 & 0,0122 & 92 & 17 & 0,0077 \\
+kv & \code{gumbel} & 98 & 19 & 0,0147 & 98 & 24 & 0,0085 \\
+kv & \code{sample} & 94 & 24 & 0,0170 & 94 & 24 & 0,0089 \\
+kv & \code{moi} & 86 & 18 & 0,0144 & 86 & 13 & 0,0081 \\
+kv & \code{mix} $\alpha$=0,50 & 99 & 15 & 0,0126 & 99 & 20 & 0,0078 \\
+kv & \code{mix} $\alpha$=0,25 & 53 & 11 & 0,0155 & 53 & 10 & 0,0086 \\
+kv & \code{mix} $\alpha$=0,75 & 99 & 18 & 0,0152 & 99 & 19 & 0,0082 \\
+\hline
+kv+teks & \code{raw} & 17 & 3 & 0,0136 & 17 & 5 & 0,0082 \\
+kv+teks & \code{soft} & 98 & 22 & 0,0153 & 98 & 33 & 0,0102 \\
+kv+teks & \code{gumbel} & 106 & 18 & 0,0150 & 106 & 28 & 0,0083 \\
+kv+teks & \code{sample} & 95 & 13 & 0,0126 & 95 & 23 & 0,0077 \\
+kv+teks & \code{moi} & 100 & 26 & 0,0163 & 100 & 23 & 0,0083 \\
+\hline
+\end{tabular}
+\end{table}

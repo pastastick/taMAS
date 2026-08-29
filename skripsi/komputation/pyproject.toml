@@ -1,0 +1,73 @@
+[project]
+name = "quantalatent"
+version = "1.0.0"
+description = "Controlled comparison of latent-step formulations for multi-agent collaboration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Harun Yahya" }]
+dependencies = [
+    # LLM Inference — HF murni (inputs_embeds), TANPA vLLM (lihat komentar di bawah)
+    "torch==2.6.0",       # eksplisit: sebelumnya cuma transitive lewat vllm/accelerate;
+                           # pin cocok driver A40 cu124 (setup_runpod.sh) via [tool.uv.sources]
+    "transformers",
+    "accelerate",          # dipakai transformers from_pretrained; juga dipin di reference/LatentMAS
+    "datasets",            # DITAMBAHKAN 2026-08-10: backend/bench/data.py `from datasets import
+                           # load_dataset` (GSM8K/ARC-Challenge/HumanEval+) — sebelumnya HILANG dari
+                           # pyproject/uv.lock sama sekali, lengan bench akan ModuleNotFoundError.
+    "tqdm",
+    # Data & Analysis
+    "numpy>=2.2.6",
+    "pandas",
+    "scipy",
+    "joblib",
+    # API & Web
+    "python-dotenv",
+    # Utilities
+    "pydantic",
+    "pydantic-settings",
+    "jinja2",
+    "pyyaml",
+    "pyparsing",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "mypy",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend"]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "mypy",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+torchaudio = { index = "pytorch-cu124" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

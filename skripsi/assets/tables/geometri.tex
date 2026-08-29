@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Geometri vektor langkah laten pada Qwen3-8B. Kolom terakhir adalah kosinus terhadap baris matriks embedding masukan yang paling dekat; nilai $1$ berarti vektor tepat berimpit dengan embedding sebuah token.}
+\label{tab:geometri}
+\small
+\begin{tabular}{lccc}
+\hline
+Langkah laten & Bentuk & Anggota ($\star$) & $\max_i \cos(\Phi(h), W_{\text{in}}[i])$ \\
+\hline
+\texttt{raw} & $\rho\,hM/\lVert hM\rVert$ & tidak & 0,312 [0,16; 0,38] \\
+\texttt{soft} & $w = p$ & ya & 0,927 [0,78; 1,00] \\
+\texttt{gumbel} & $w = \mathrm{softmax}((\ell+g)/T)$ & ya & 0,985 [0,86; 1,00] \\
+\texttt{sample} & $w = e_y$ & ya & 1,000 [1,00; 1,00] \\
+\hline
+\multicolumn{4}{l}{\footnotesize $\lVert M-I\rVert_F/\lVert I\rVert_F = 1,04$;\quad $\cos(h, hM)$ rerata $= 0,0112$;\quad $\cos(W_{\text{in}}[i], W_{\text{out}}[i])$ rerata $= 0,0041$.} \\
+\end{tabular}
+\end{table}

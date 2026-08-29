@@ -1,0 +1,195 @@
+% ============================================================
+% Kartu faktor — di-\input dari Subbab 4.11.1 (Bab4.tex).
+% Gaya kartu (kartufaktor, kotakekspresi, fasebadge, barisfield)
+% dan paket (booktabs, tcolorbox) didefinisikan di preamble skripsi.tex.
+% Mengikuti format Lampiran C QuantaAlpha (Factor Identity + Backtest).
+% ============================================================
+
+% Kartu-kartu ini TIDAK dibungkus \begin{figure}: kartufaktor bersifat
+% breakable (bisa melebihi satu halaman), sedangkan sebuah float wajib muat
+% dalam satu halaman -- kombinasi keduanya membuat pdflatex diam-diam
+% memangkas isi yang melebihi tinggi halaman (lihat "Float too large").
+% Nomor Gambar tetap didapat lewat \captionof{figure} (paket caption).
+\begin{kartufaktor}{small\_cap\_stocks\_with\_unusually\_1}
+
+\barisfield{Factor ID:}{\texttt{0ac0ab9b1b9323f8}}
+\barisfield{Trajectory ID:}{\texttt{6e2654008cae}}
+\barisfield{Ronde Evolusi:}{Ronde 0}
+\barisfield{Fase Evolusi:}{\fasebadge{Original}}
+\barisfield{Mode Komunikasi:}{\texttt{text}}
+\barisfield{Arah Eksplorasi:}{\textit{short-term reversal after abnormally
+  high-volume days in small-cap stocks}}
+
+\vspace{2mm}
+\textbf{Hipotesis:}\par
+\textit{``small-cap stocks with unusually high volume on a day are followed by
+negative cross-sectional returns, reflecting liquidity-induced mean
+reversion.''}
+
+\vspace{2.5mm}
+\textbf{Ekspresi Faktor:}
+\begin{kotakekspresi}
+RANK(\$volume) * (TS\_RANK(\$return, 1) ? -1 : 1)
+\end{kotakekspresi}
+
+\textbf{Formulasi Matematis:}
+\begin{equation*}
+  f_t \;=\; \operatorname{RANK}(V_t)\times
+  \begin{cases}
+    -1, & \text{jika } \operatorname{TS\_RANK}(r_t,\,1)\neq 0,\\[1mm]
+    \phantom{-}1, & \text{lainnya,}
+  \end{cases}
+\end{equation*}
+dengan $\operatorname{RANK}(\cdot)$ peringkat persentil \textit{cross-sectional},
+$V_t$ volume harian, $r_t$ \textit{return} harian, dan
+$\operatorname{TS\_RANK}(\cdot,1)$ peringkat deret-waktu berjendela satu hari.
+
+\vspace{2mm}
+\textbf{Diagnosis Agen \textit{Feedback}:}\par
+\textit{``strong, valid mechanism but implementation is shallow''} ---
+kelima ekspresi saudara didiagnosis
+\textit{noise} (\textit{missing normalization}, \textit{wrong window},
+\textit{shallow composition}). Putusan hipotesis:
+\textit{``SUPPORTS --- the mechanism is valid but the implementation is weak.''}
+
+\end{kartufaktor}
+\captionof{figure}{Kartu faktor \textit{trajectory} terbaik batch komparasi
+         (mode \texttt{text}, fase \textit{original}), mengikuti format
+         Lampiran~C QuantaAlpha.}
+\label{fig:kartu-faktor-terbaik}
+
+\vspace{4mm}
+\begin{kartufaktor}{Metrik Backtest --- Trajectory \texttt{6e2654008cae}}
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metrik} & \textbf{Nilai} \\ \midrule
+RankIC \textit{standalone} (\texttt{FactorIC\_mean}) & $\mathbf{0{,}0449}$ \\
+ICIR \textit{standalone}                             & $0{,}4310$ \\ \midrule
+IC (model gabungan)        & $0{,}0165$ \\
+RankIC (model gabungan)    & $0{,}0359$ \\ \midrule
+ARR (\textit{excess, w/ cost})  & $9{,}60\%$ \\
+IR (\textit{w/ cost})           & $0{,}805$ \\
+MDD (\textit{excess, w/ cost})  & $-8{,}35\%$ \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+\textbf{Statistik Rinci:}
+\begin{center}
+\small
+\begin{tabular}{lc@{\hspace{8mm}}lc}
+\toprule
+\textbf{Metrik} & \textbf{Nilai} & \textbf{Metrik} & \textbf{Nilai} \\ \midrule
+Daily Excess Return (w/o cost) & $0{,}0501\%$ & Daily Excess Return (w/ cost) & $0{,}0403\%$ \\
+Excess Return Std              & $0{,}77\%$   & Turnover (FFR)                & $100\%$ \\
+L2 Train Loss                  & $0{,}9938$   & L2 Valid Loss                 & $0{,}9969$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{kartufaktor}
+\captionof{figure}{Metrik \textit{backtest out-of-sample} (2022--2025) \textit{trajectory}
+         terbaik; RankIC \textit{standalone} bebas model, metrik lain berasal
+         dari \textit{backtest} model gabungan LightGBM.}
+\label{fig:metrik-backtest-terbaik}
+
+\vspace{4mm}
+\begin{kotakrespon}{Respon Mentah Agen --- Trajectory \texttt{6e2654008cae} (mode \texttt{text})}
+
+\textbf{Arah Eksplorasi:} \textit{short-term reversal after abnormally
+high-volume days in small-cap stocks}
+
+\vspace{2mm}
+\textbf{Agen Proposal:}\par
+\textit{``observation: small-cap stocks with abnormally high volume on a
+given day tend to show reversal in the next day's cross-sectional
+returns.}
+
+\textit{driver: this is a liquidity-driven reversal, where high volume
+indicates excessive buying or selling pressure, leading to mean
+reversion. the signal is derived from volume and return columns, falls
+within a short horizon band, and predicts negative returns across the
+cross-section.}
+
+\textit{HYPOTHESIS: small-cap stocks with unusually high volume on a day
+are followed by negative cross-sectional returns, reflecting
+liquidity-induced mean reversion.''}
+
+\vspace{2mm}
+\textbf{Agen Design} (\textit{shortlisted functions}):
+
+\noindent\textbf{1.} \texttt{TS\_ZSCORE(\$volume, 1)} --- computes the
+z-score of volume over the past 1 day, measuring how unusual the volume
+is compared to other stocks, indicating liquidity pressure.\par
+\noindent\textbf{2.} \texttt{TS\_MEAN(\$return, 1)} --- computes the mean
+of returns over the past 1 day, the cross-sectional return average
+targeted by the reversal.\par
+\noindent\textbf{3.} \texttt{TS\_RANK(\$return, 1)} --- ranks returns
+across the cross-section today, helping identify stocks with negative
+returns.\par
+\noindent\textbf{4.} \texttt{RANK(\$volume)} --- ranks volume across the
+cross-section today, identifying stocks with unusually high volume.\par
+\noindent\textbf{5.} \texttt{TS\_ZSCORE(\$return, 1) ? -1 : 1} --- a
+binary score based on the z-score of returns; negative values indicate
+negative returns.\par
+\noindent\textbf{6.} \texttt{\$return ? -1 : 1} --- a simple binary score
+based on the return itself, indicating negative or positive returns.
+
+\vspace{2mm}
+\textbf{Agen Construct} (enam ekspresi faktor kandidat):
+
+\noindent\textbf{1.} \texttt{VolumeZScoreReturn}: \texttt{TS\_ZSCORE(\$volume,
+1) * (TS\_MEAN(\$return, 1) ? -1 : 1)} --- multiplies the z-score of
+volume (indicating liquidity pressure) with a binary score of
+cross-sectional returns (negative values indicate negative
+returns).\par
+\noindent\textbf{2.} \texttt{VolumeRankReturn}: \texttt{RANK(\$volume) *
+(TS\_RANK(\$return, 1) ? -1 : 1)} --- multiplies the rank of volume
+(higher ranks indicate higher volume) with a binary score of returns
+(negative values indicate negative returns). \textit{[ekspresi terpilih;
+bandingkan Gambar~\ref{fig:kartu-faktor-terbaik}]}\par
+\noindent\textbf{3.} \texttt{VolumeZScoreReturnGate}:
+\texttt{(TS\_ZSCORE(\$volume, 1) $>$ 1) ? TS\_MEAN(\$return, 1) : 0} ---
+gates the cross-sectional return mean based on the z-score of volume
+(only active for stocks with unusually high volume).\par
+\noindent\textbf{4.} \texttt{VolumeZScoreReturnQuantile}:
+\texttt{TS\_QUANTILE(\$return, 0.1, 1) * TS\_ZSCORE(\$volume, 1)} ---
+combines the 10th percentile of returns (indicating negative returns)
+with the z-score of volume to highlight stocks with both high volume and
+negative returns.\par
+\noindent\textbf{5.} \texttt{VolumeReturnCrossRank}: \texttt{TS\_RANK(\$return,
+1) * (TS\_ZSCORE(\$volume, 1) ? -1 : 1)} --- combines the rank of
+returns (identifying negative returns) with a binary score of volume
+z-scores to emphasize stocks with high volume and negative returns.\par
+\noindent\textbf{6.} \texttt{VolumeReturnZScoreGate}:
+\texttt{(TS\_ZSCORE(\$volume, 1) $>$ 1) ? TS\_ZSCORE(\$return, 1) : 0} ---
+gates the z-score of returns based on the z-score of volume (only active
+for stocks with unusually high volume).
+
+\textbf{Agen Feedback:}\par
+\textbf{Observations:} \textit{The SOTA is determined by [A] standalone
+RankIC+ICIR, where FactorIC\_mean has RankIC=0.0449 and ICIR=0.4310. [B]
+combined model only provides context and does not decide SOTA.}
+
+\textbf{Factor Diagnosis:} \textit{small\_cap\_stocks\_with\_unusually\_1:
+strong, valid mechanism but implementation is shallow.
+small\_cap\_stocks\_with\_unusually\_2: noise, missing normalization.
+small\_cap\_stocks\_with\_unusually\_3: noise, wrong window.
+small\_cap\_stocks\_with\_unusually\_4: noise, shallow composition.
+small\_cap\_stocks\_with\_unusually\_5: noise, missing normalization.}
+
+\textbf{Feedback for Hypothesis:} \textit{SUPPORTS --- the mechanism is
+valid but the implementation is weak (refine the expression). The
+framework still has room for refinement.}
+
+\textbf{Replace Best Result:} \textit{yes}
+
+\end{kotakrespon}
+\captionof{figure}{Respon mentah keempat agen \textit{front-end} (proposal,
+         design, construct, feedback) untuk \textit{trajectory} yang sama,
+         mengikuti format kotak studi kasus Lampiran D LatentMAS
+         \citep{latentmas}; teks dipertahankan dalam bahasa asli keluaran
+         model.}
+\label{fig:respon-mentah}

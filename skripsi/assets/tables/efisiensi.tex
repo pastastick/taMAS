@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering
+\caption{Efisiensi medium KV relatif terhadap medium teks, per persamaan langkah laten. Penghematan token dihitung atas token keluaran per soal; percepatan atas waktu dinding per soal. Kolom akurasi diulang dari Tabel~\ref{tab:hasil-bench} supaya biaya dan mutu terbaca pada satu baris.}
+\label{tab:efisiensi}
+\small
+\begin{tabular}{llrrr}
+\hline
+Tugas & Langkah laten & Akurasi & Penghematan token & Percepatan \\
+\hline
+ARC-C & \texttt{raw} & 0,89 & 79,7\% & $\times3,7$ \\
+ARC-C & \texttt{soft} & 0,94 & 85,7\% & $\times5,4$ \\
+ARC-C & \texttt{gumbel} & 0,91 & 85,7\% & $\times4,8$ \\
+ARC-C & \texttt{sample} & 0,94 & 86,5\% & $\times5,7$ \\
+ARC-C & \texttt{moi} & 0,91 & 86,6\% & $\times5,0$ \\
+\hline
+GSM8K & \texttt{raw} & 0,83 & 75,0\% & $\times2,5$ \\
+GSM8K & \texttt{soft} & 0,88 & 77,2\% & $\times3,4$ \\
+GSM8K & \texttt{gumbel} & 0,91 & 76,7\% & $\times1,8$ \\
+GSM8K & \texttt{sample} & 0,86 & 77,8\% & $\times3,0$ \\
+GSM8K & \texttt{moi} & 0,92 & 77,5\% & $\times3,1$ \\
+\hline
+HumanEval+ & \texttt{raw} & 0,42 & 82,3\% & $\times3,9$ \\
+HumanEval+ & \texttt{soft} & 0,69 & 87,8\% & $\times6,1$ \\
+HumanEval+ & \texttt{gumbel} & 0,71 & 86,9\% & $\times4,7$ \\
+HumanEval+ & \texttt{sample} & 0,74 & 87,4\% & $\times5,6$ \\
+HumanEval+ & \texttt{moi} & 0,72 & 87,8\% & $\times4,9$ \\
+\hline
+\end{tabular}
+\end{table}

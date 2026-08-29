@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[oc]
+.uv/
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+.env
+.env.*
+!.env.example
+
+# Berkas berat / biner. *.parquet termasuk deret IC harian
+# (results/icseries_*.parquet) — regenerable dengan
+# `PYTHONPATH=backend python backend/eval/rescore_all.py`.
+*.pkl
+*.pt
+*.ckpt
+*.parquet
+*.db
+*.safetensors
+*.bin
+*.gguf
+
+# Data pasar & model — diunduh saat setup, bukan di-commit (lihat README §2).
+backend/hf_data/
+backend/data/
+.cache/
+huggingface/
+
+# Keluaran runtime.
+# `llm/client.py` menulis snapshot output LLM ke ./debug/llm_outputs relatif cwd,
+# dan pemanggilan lama meninggalkan direktori log per-run.
+debug/
+log/
+backend/workspace/
+backend/latent_runs/
+
+# Perkakas agen (lock/state lokal, bukan konfigurasi yang dibagikan)
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+~
+
+# CATATAN untuk salinan di repo skripsi (berbeda dari repo `quantalatent`).
+# Di repo pengembangan, `results/` dan `*.h5` TIDAK di-track karena berukuran
+# ratusan megabita dan terus tumbuh. Di salinan ini keduanya JUSTRU di-track:
+# isinya sudah disaring ke berkas yang benar-benar dikutip naskah, dan tanpa
+# angka itu bab hasil tidak dapat dibangun ulang oleh pembaca mana pun.
+# Yang tetap dikecualikan hanya keluaran runtime yang regenerable:
+results/logs/
+results/.cache/
+results/**/llm_outputs/
+
+# ── Pengecualian untuk artefak pasar IDX ───────────────────────────────────
+# Aturan `results/` dan `*.h5` di atas dipertahankan, TETAPI empat kelompok
+# berkas di bawah ini di-track secara sengaja (lewat `git add -f`) karena
+# ukurannya kecil dan tanpanya bab hasil skripsi tidak bisa dibangun ulang:
+#   backend/hf_data_id/daily_pv_idx_lq45.h5   1,1 MB  panel 37 emiten LQ45
+#   results/factor/holdout_daily_pv_idx_*.json ~1 MB  penilaian dua jendela
+#   results/idx/**                             64 KB  agregasi + tabel .tex
+#   results/visual_idx/**                     648 KB  figur bab hasil
+# Sisa `results/` (bench/, probe/, llm_outputs/, arsip) tetap tidak di-track.

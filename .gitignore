@@ -1,0 +1,46 @@
+# ── Repositori skripsi ─────────────────────────────────────────────────────
+# Riwayat lama (branch feat/prompt-redesign-v2 dan sebelumnya) dihapus sengaja
+# pada 2026-08-29 atas permintaan penulis; repositori ini dimulai dari nol.
+
+# Kode eksperimen yang MASIH DIKEMBANGKAN hidup di repositori `quantalatent`
+# yang terpisah. Salinannya pada saat naskah disusun ada di
+# `skripsi/komputation/` dan ITULAH yang di-track di sini. Melacak keduanya
+# akan mengulang persoalan submodule rusak yang baru saja dibereskan:
+# repositori luar dulu mencatat `quantalatent` sebagai gitlink mode 160000
+# tanpa berkas .gitmodules, sehingga `git clone` menghasilkan direktori kosong.
+/quantalatent/
+
+# Keluaran kompilasi LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+venv/
+
+# Rahasia
+.env
+.env.*
+!.env.example
+
+# Berkas sementara editor
+*.swp
+*~
+.DS_Store
+
+# Perkakas agen lokal (state mesin, bukan konfigurasi bersama)
+.claude/

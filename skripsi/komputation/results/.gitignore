@@ -1,0 +1,36 @@
+# Cache data pasar untuk eval/ic.py (regenerable dari backend/hf_data/daily_pv.h5, ~60 MB).
+.cache/
+
+# Log mentah sweep (stdout run, bukan hasil).
+out_*.log
+*.log
+
+# Deret IC harian: *.parquet sudah di-ignore global, dicatat di sini supaya
+# jelas ia SENGAJA tak di-track dan dipulihkan dengan
+# `PYTHONPATH=backend python backend/eval/rescore_all.py`.
+icseries_*.parquet
+
+# Jejak per-agen `run_bench.py --save-traces` bisa ratusan MB per sel; ringkasan
+# + hasil per-soal (yang menopang seluruh angka skripsi) TETAP di-track.
+*_traces.json
+
+# Snapshot prompt+keluaran mentah per panggilan LLM (27 MB dan terus tumbuh).
+# TIDAK di-track supaya repo tak membengkak — TAPI ia BUKAN artefak yang bisa
+# dibangkitkan ulang: isinya transkrip agen dari run yang sudah lewat. Kalau
+# dibutuhkan sebagai lampiran (contoh dialog antar-agen), salin keluar
+# sebelum pod dihapus, jangan mengandalkan git.
+llm_outputs/
+
+# Arsip hasil yang dikemas `scripts/kemas_hasil.sh` untuk ditarik keluar pod.
+# Isinya duplikat berkas yang sudah di-track di sini.
+*.tar.gz
+
+# Transkrip per sel yang dirakit jadi satu berkas Markdown untuk dibaca manusia
+# (`scripts/rakit_transkrip.py`). 73 MB, dan seluruhnya TURUNAN: sumbernya
+# `bench/*.json` + `factor/*.json` yang di-track, ditambah `llm_outputs/` dari
+# arsip `hasil_*.tar.gz`. Bangkitkan ulang dengan
+#   python scripts/rakit_transkrip.py
+lampiran_dibaca/
+
+# Kunci per-sel (PID) — status runtime jalankan_matriks.py, bukan data.
+*.lock

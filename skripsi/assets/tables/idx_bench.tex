@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\caption{Lengan penalaran umum: akurasi pada 100 butir per tolok ukur ($\textit{seed}$ sampel identik antar-sel, diverifikasi lewat \textit{fingerprint} data). Kolom waktu adalah total detik untuk 100 butir. Perhatikan pola kolomnya: selisih \code{raw}/kv terhadap keluarga $\mathcal{R}$ kecil pada ARC-C, sedang pada GSM8K, dan besar pada HumanEval+.}
+\label{tab:bench}
+\small
+\begin{tabular}{lrrrr}
+\hline
+Sel & ARC-C & GSM8K & HumanEval+ & Detik/100 butir \\
+\hline
+\code{raw} tanpa agen (garis dasar) & 0,91 & 0,92 & 0,72 & 1561 \\
+\code{raw} / teks & 0,93 & 0,90 & 0,76 & 6480 \\
+\code{raw} / kv & 0,89 & 0,83 & 0,42 & 1938 \\
+\code{soft} / kv & 0,94 & 0,88 & 0,69 & 1330 \\
+\code{gumbel} / kv & 0,91 & 0,91 & 0,71 & 1966 \\
+\code{sample} / kv & 0,94 & 0,86 & 0,74 & 1404 \\
+\code{moi} / kv & 0,91 & 0,92 & 0,72 & 1508 \\
+\hline
+\end{tabular}
+\end{table}

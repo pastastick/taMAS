@@ -1,0 +1,16 @@
+{
+  "vocab": 151936,
+  "d_h": 2560,
+  "reg_lambda": 1e-05,
+  "frobenius_M_minus_I": 7.270491914823651e-05,
+  "relative_deviation": 1.4369571176168403e-06,
+  "cos(h, hM)_mean": 1.0,
+  "cos(h, hM)_min": 0.9999997019767761,
+  "norm_ratio_mean": 1.0,
+  "gram_eig_min": 4.781658172607422,
+  "gram_eig_max": 16045.5439453125,
+  "shrink_min": 0.9999979138374329,
+  "shrink_mean": 0.9999998807907104,
+  "target_norm(mean ||W_in[i]||)": 1.0973718166351318,
+  "embed_norm_std": 0.171880304813385
+}

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite the thesis below."
+title: "QuantaLatent: a controlled comparison of latent-step formulations for multi-agent collaboration"
+abstract: >-
+  Harness and experiment matrix comparing five latent-step formulations
+  (ridge realignment, soft, Gumbel-softmax, categorical sampling, and Mixture
+  of Inputs) across three inter-agent communication media and four tasks on a
+  local Qwen3-8B, holding agent topology, prompts, backbone, and questions
+  fixed.
+type: software
+license: MIT
+authors:
+  - family-names: Yahya
+    given-names: Harun
+    affiliation: "Universitas Gadjah Mada"
+keywords:
+  - latent reasoning
+  - multi-agent systems
+  - large language models
+  - KV cache
+  - alpha factor generation
+references:
+  - type: article
+    title: "Latent Collaboration in Multi-Agent Systems"
+    year: 2025
+    identifiers:
+      - type: other
+        value: "arXiv:2511.20639"
+  - type: article
+    title: "Text Generation Beyond Discrete Token Sampling"
+    year: 2025
+    identifiers:
+      - type: other
+        value: "arXiv:2505.14827"

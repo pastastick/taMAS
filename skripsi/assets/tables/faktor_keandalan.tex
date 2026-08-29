@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{Keandalan lengan faktor per JALAN (satu jalan = satu pasangan arah $\times$ \textit{seed}). Denominatornya sama di semua sel menurut rancangan, sehingga laju antar-sel sebanding. Kolom terakhir mencatat berapa kali agen \textit{construct} harus dipanggil per jalan: nilai di atas 1 berarti \textit{gate} memicu perbaikan, sehingga ia sekaligus ukuran biaya dan ukuran keandalan.}
+\label{tab:faktor-keandalan}
+\small
+\begin{tabular}{llrrrr}
+\hline
+Medium & Langkah laten & Jalan & Menghasilkan ekspresi & Lolos \textit{gate} & Panggilan/jalan \\
+\hline
+teks & --- & 6 & 6 (100\%) & 6 (100\%) & 1,33 \\
+\hline
+kv & \texttt{raw} & 6 & 4 (67\%) & 1 (17\%) & 2,50 \\
+kv & \texttt{soft} & 6 & 6 (100\%) & 6 (100\%) & 1,00 \\
+kv & \texttt{gumbel} & 6 & 5 (83\%) & 5 (83\%) & 1,33 \\
+kv & \texttt{sample} & 6 & 4 (67\%) & 4 (67\%) & 1,33 \\
+kv & \texttt{moi} & 6 & 5 (83\%) & 5 (83\%) & 1,17 \\
+\hline
+kv+teks & \texttt{raw} & 6 & 3 (50\%) & 2 (33\%) & 1,67 \\
+kv+teks & \texttt{soft} & 6 & 0 (0\%) & 0 (0\%) & 2,00 \\
+kv+teks & \texttt{gumbel} & 6 & 0 (0\%) & 0 (0\%) & 2,00 \\
+kv+teks & \texttt{sample} & 6 & 0 (0\%) & 0 (0\%) & 2,00 \\
+kv+teks & \texttt{moi} & 6 & 0 (0\%) & 0 (0\%) & 2,00 \\
+\hline
+\end{tabular}
+\end{table}

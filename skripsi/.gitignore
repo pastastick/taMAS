@@ -1,0 +1,24 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Hasil PDF (uncomment jika tak ingin di-track)
+# *.pdf
+
+# Bahan pemikiran & perencanaan, bukan naskah — sengaja di luar git.
+pemikiran/
+
+# Skripsi orang lain sebagai rujukan format (65 berkas, 32 MB). Semuanya
+# bisa diunduh ulang dari repositori ETD; tak perlu membebani riwayat repo.
+# Paper arXiv rujukan di assets/briefing/reference_paper/ TETAP di-track
+# karena ia sumber inti penelitian.
+assets/another_skripsi/

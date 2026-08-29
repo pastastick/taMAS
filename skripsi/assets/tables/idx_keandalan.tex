@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\caption{Keandalan dan biaya lengan faktor per JALAN. Satu jalan = satu pasangan (arah, \textit{seed}); denominatornya sama di seluruh sel menurut rancangan, sehingga laju antar-sel sebanding. Kolom terakhir mencatat berapa kali agen \textit{construct} harus dipanggil per jalan; nilai di atas 1 berarti \textit{gate} memicu perbaikan, sehingga kolom itu sekaligus ukuran biaya dan ukuran keandalan.}
+\label{tab:keandalan}
+\small
+\begin{tabular}{llrrrrr}
+\hline
+Medium & Formulasi & Jalan & Lolos \textit{gate} & Ekspresi & Token/jalan & Detik/jalan \\
+\hline
+teks & --- & 20 & 100,0\% & 120 & 2436 & 181 \\
+\hline
+kv & \code{raw} & 20 & 50,0\% & 59 & 803 & 77 \\
+kv & \code{soft} & 20 & 100,0\% & 111 & 481 & 51 \\
+kv & \code{gumbel} & 20 & 100,0\% & 112 & 502 & 58 \\
+kv & \code{sample} & 20 & 95,0\% & 109 & 517 & 49 \\
+kv & \code{moi} & 20 & 95,0\% & 106 & 524 & 56 \\
+kv & \code{mix} $\alpha$=0,50 & 20 & 100,0\% & 116 & 511 & 61 \\
+kv & \code{mix} $\alpha$=0,25 & 20 & 55,0\% & 68 & 734 & 63 \\
+kv & \code{mix} $\alpha$=0,75 & 20 & 100,0\% & 119 & 502 & 72 \\
+\hline
+kv+teks & \code{raw} & 20 & 30,0\% & 29 & 3690 & 296 \\
+kv+teks & \code{soft} & 20 & 100,0\% & 120 & 1920 & 185 \\
+kv+teks & \code{gumbel} & 20 & 100,0\% & 120 & 1991 & 204 \\
+kv+teks & \code{sample} & 20 & 100,0\% & 119 & 2019 & 198 \\
+kv+teks & \code{moi} & 20 & 100,0\% & 120 & 1993 & 136 \\
+\hline
+\end{tabular}
+\end{table}
